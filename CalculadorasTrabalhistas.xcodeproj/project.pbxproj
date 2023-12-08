@@ -8,22 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		E2F81AFF2B23592600E181B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F81AFE2B23592600E181B7 /* AppDelegate.swift */; };
-		E2F81B012B23592600E181B7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F81B002B23592600E181B7 /* SceneDelegate.swift */; };
 		E2F81B032B23592600E181B7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F81B022B23592600E181B7 /* ViewController.swift */; };
-		E2F81B062B23592600E181B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2F81B042B23592600E181B7 /* Main.storyboard */; };
 		E2F81B082B23592700E181B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2F81B072B23592700E181B7 /* Assets.xcassets */; };
 		E2F81B0B2B23592700E181B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2F81B092B23592700E181B7 /* LaunchScreen.storyboard */; };
+		E2F81B152B235A7700E181B7 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F81B142B235A7700E181B7 /* UIColor+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E2F81AFB2B23592600E181B7 /* CalculadorasTrabalhistas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalculadorasTrabalhistas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2F81AFE2B23592600E181B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E2F81B002B23592600E181B7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E2F81B022B23592600E181B7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E2F81B052B23592600E181B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E2F81B072B23592700E181B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E2F81B0A2B23592700E181B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E2F81B0C2B23592700E181B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2F81B142B235A7700E181B7 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +54,46 @@
 		E2F81AFD2B23592600E181B7 /* CalculadorasTrabalhistas */ = {
 			isa = PBXGroup;
 			children = (
-				E2F81AFE2B23592600E181B7 /* AppDelegate.swift */,
-				E2F81B002B23592600E181B7 /* SceneDelegate.swift */,
-				E2F81B022B23592600E181B7 /* ViewController.swift */,
-				E2F81B042B23592600E181B7 /* Main.storyboard */,
-				E2F81B072B23592700E181B7 /* Assets.xcassets */,
-				E2F81B092B23592700E181B7 /* LaunchScreen.storyboard */,
+				E2F81B122B235A5100E181B7 /* Application */,
+				E2F81B132B235A6100E181B7 /* Extension */,
+				E2F81B162B235A9300E181B7 /* Scene */,
+				E2F81B172B235AA400E181B7 /* Resource */,
 				E2F81B0C2B23592700E181B7 /* Info.plist */,
 			);
 			path = CalculadorasTrabalhistas;
+			sourceTree = "<group>";
+		};
+		E2F81B122B235A5100E181B7 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				E2F81AFE2B23592600E181B7 /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		E2F81B132B235A6100E181B7 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E2F81B142B235A7700E181B7 /* UIColor+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		E2F81B162B235A9300E181B7 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				E2F81B022B23592600E181B7 /* ViewController.swift */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		E2F81B172B235AA400E181B7 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				E2F81B072B23592700E181B7 /* Assets.xcassets */,
+				E2F81B092B23592700E181B7 /* LaunchScreen.storyboard */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +156,6 @@
 			files = (
 				E2F81B0B2B23592700E181B7 /* LaunchScreen.storyboard in Resources */,
 				E2F81B082B23592700E181B7 /* Assets.xcassets in Resources */,
-				E2F81B062B23592600E181B7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +166,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2F81B152B235A7700E181B7 /* UIColor+Extension.swift in Sources */,
 				E2F81B032B23592600E181B7 /* ViewController.swift in Sources */,
 				E2F81AFF2B23592600E181B7 /* AppDelegate.swift in Sources */,
-				E2F81B012B23592600E181B7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		E2F81B042B23592600E181B7 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E2F81B052B23592600E181B7 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E2F81B092B23592700E181B7 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -297,9 +317,10 @@
 				INFOPLIST_FILE = CalculadorasTrabalhistas/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,9 +328,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = jadie.CalculadorasTrabalhistas;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -325,9 +349,10 @@
 				INFOPLIST_FILE = CalculadorasTrabalhistas/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -335,9 +360,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = jadie.CalculadorasTrabalhistas;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
