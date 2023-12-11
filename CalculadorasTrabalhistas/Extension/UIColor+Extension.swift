@@ -6,5 +6,6 @@ extension UIColor {
 	static let appBlueHeavy = UIColor(red: 39/255, green: 73/255, blue: 158/255, alpha: 1)
 	static let appGreen = UIColor(red: 35/255, green: 140/255, blue: 70/255, alpha: 1)
 	static let appRed = UIColor(red: 186/255, green: 50/255, blue: 51/255, alpha: 1)
+	static let appGray = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1)
 }
 

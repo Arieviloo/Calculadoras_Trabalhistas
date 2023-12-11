@@ -6,7 +6,13 @@ class HomeCollectionViewCell: UICollectionViewCell {
 	
 	lazy var calculatorButton: UIButton = {
 		$0.translatesAutoresizingMaskIntoConstraints = false
-		$0.backgroundColor = .red
+		$0.backgroundColor = UIColor.appGray
+//		$0.clipsToBounds = true
+		$0.layer.cornerRadius = 15
+		$0.layer.shadowOffset = CGSize(width: 3, height: 6)
+		$0.layer.shadowRadius = 5
+		$0.layer.shadowOpacity = 0.2
+		$0.layer.shouldRasterize = true
 		return $0
 	}(UIButton())
 	
@@ -27,9 +33,9 @@ class HomeCollectionViewCell: UICollectionViewCell {
 	private func configConstraints() {
 		NSLayoutConstraint.activate([
 			calculatorButton.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
-			calculatorButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
-			calculatorButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
-			calculatorButton.heightAnchor.constraint(equalToConstant: 50)
+			calculatorButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
+			calculatorButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15),
+			calculatorButton.heightAnchor.constraint(equalToConstant: 140)
 		])
 	}
 }

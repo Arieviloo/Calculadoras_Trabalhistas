@@ -25,8 +25,6 @@ class HomeViewController: UIViewController {
 		configView()
 	}
 	
-	
-	
 	private func configView() {
 		title = String(localizedKey: "titleHome")
 		self.navigationController?.navigationBar.titleTextAttributes =  [ NSAttributedString.Key.foregroundColor:UIColor.black, NSAttributedString.Key.font:UIFont.systemFont(ofSize: 24, weight: .bold)
@@ -49,10 +47,9 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-			let widthFrame = CGFloat((self.view.frame.width / 2 ) - 15)
-			return CGSize(width: widthFrame , height: 300)
+			let widthFrame = CGFloat((self.view.frame.width / 2 ) - 10)
+			return CGSize(width: widthFrame , height: 200)
 		}
-	
 	
 }
 
