@@ -6,3 +6,4 @@ extension String {
 		self.init(initText)
 	}
 }
+

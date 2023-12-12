@@ -51,5 +51,10 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
 		return CGSize(width: widthFrame , height: 200)
 	}
 	
+	
+	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		let salaryVC = SalaryViewController(name: calculators[indexPath.row].name)
+		navigationController?.pushViewController(salaryVC, animated: true)
+	}
 }
 

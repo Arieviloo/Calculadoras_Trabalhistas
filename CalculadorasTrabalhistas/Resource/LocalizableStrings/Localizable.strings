@@ -1,1 +1,11 @@
+//Title
 "titleHome" = "O que você quer calcular?";
+"whichValueSalary" = "Qual o valor do seu salário bruto?";
+"subTitleValueSalary" = "Aqui você nos fala quanto você ganha sem descontos.";
+"howMuchDependents" = "Quantos dependentes você tem?";
+"subTitleValueDependents" = "São considerados dependentes: filhos, pais, companheiros ou
+pessoas cuja responsabilidade legal seja sua.";
+
+//Button
+"next" = "Próximo";
+"calculate" = "Calcular";
