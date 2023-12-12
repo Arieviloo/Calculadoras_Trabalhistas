@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E290A6E52B288FFA00560137 /* SalaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E290A6E42B288FFA00560137 /* SalaryViewController.swift */; };
+		E290A6E72B28900200560137 /* SalaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E290A6E62B28900200560137 /* SalaryView.swift */; };
 		E2AAE4EE2B279061008A5543 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AAE4ED2B279061008A5543 /* HomeCollectionViewCell.swift */; };
 		E2AAE4F12B2792F2008A5543 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AAE4F02B2792F2008A5543 /* Calculator.swift */; };
 		E2BE94512B274FB3003FE825 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BE94502B274FB3003FE825 /* HomeView.swift */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E290A6E42B288FFA00560137 /* SalaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryViewController.swift; sourceTree = "<group>"; };
+		E290A6E62B28900200560137 /* SalaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryView.swift; sourceTree = "<group>"; };
 		E2AAE4ED2B279061008A5543 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		E2AAE4F02B2792F2008A5543 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		E2BE94502B274FB3003FE825 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -45,6 +49,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E290A6E32B288FE100560137 /* Salary */ = {
+			isa = PBXGroup;
+			children = (
+				E290A6E42B288FFA00560137 /* SalaryViewController.swift */,
+				E290A6E62B28900200560137 /* SalaryView.swift */,
+			);
+			path = Salary;
+			sourceTree = "<group>";
+		};
 		E2AAE4EF2B2792E5008A5543 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +133,7 @@
 		E2F81B162B235A9300E181B7 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				E290A6E32B288FE100560137 /* Salary */,
 				E2BE944F2B274FA0003FE825 /* Home */,
 			);
 			path = Scene;
@@ -206,6 +220,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E290A6E72B28900200560137 /* SalaryView.swift in Sources */,
+				E290A6E52B288FFA00560137 /* SalaryViewController.swift in Sources */,
 				E2F81B152B235A7700E181B7 /* UIColor+Extension.swift in Sources */,
 				E2BE94512B274FB3003FE825 /* HomeView.swift in Sources */,
 				E2AAE4F12B2792F2008A5543 /* Calculator.swift in Sources */,
