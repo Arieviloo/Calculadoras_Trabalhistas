@@ -3,76 +3,43 @@ import UIKit
 class SalaryView: UIView {
 	
 	lazy var salaryLabel: UILabel = {
-		$0.translatesAutoresizingMaskIntoConstraints = false
-		$0.text = String(localizedKey: "whichValueSalary")
-		$0.font = UIFont(name: "Montserrat-light", size: 16)
+		$0.setCustomTitleNormal(title: "whichValueSalary")
 		return $0
 	}(UILabel())
 	
 	lazy var salaryValueTextField: UITextField = {
-		$0.translatesAutoresizingMaskIntoConstraints = false
-		$0.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 12, height: 40))
-		$0.leftViewMode = .always
-		$0.font = UIFont.systemFont(ofSize: 18)
-		$0.backgroundColor = UIColor.appGray
-		$0.clipsToBounds = true
-		$0.layer.cornerRadius = 10
-		$0.autocorrectionType = .no
-		$0.keyboardType = .numbersAndPunctuation
+		$0.setCustomTextField()
 		return $0
 	}(UITextField())
 	
-	lazy var subTitleSalaryLabel: UILabel = {
-		$0.translatesAutoresizingMaskIntoConstraints = false
-		$0.text = String(localizedKey: "subTitleValueSalary")
-		$0.numberOfLines = 0
-		$0.font = UIFont(name: "Montserrat-Medium", size: 10)
+	lazy var subtitleSalaryLabel: UILabel = {
+		$0.setCustomSubtitle(subtitle: "subTitleValueSalary")
 		return $0
 	}(UILabel())
 	
 	lazy var dependentLabel: UILabel = {
-		$0.translatesAutoresizingMaskIntoConstraints = false
-		$0.text = String(localizedKey: "howMuchDependents")
-		$0.font = UIFont(name: "Montserrat-light", size: 16)
+		$0.setCustomTitleNormal(title: "howMuchDependents")
 		return $0
 	}(UILabel())
 	
-	lazy var subTitleDependentLabel: UILabel = {
-		$0.translatesAutoresizingMaskIntoConstraints = false
-		$0.text = String(localizedKey: "subTitleValueDependents")
-		$0.numberOfLines = 0
-		$0.font = UIFont(name: "Montserrat-Medium", size: 10)
+	lazy var subtitleDependentLabel: UILabel = {
+		$0.setCustomSubtitle(subtitle: "subTitleValueDependents")
 		return $0
 	}(UILabel())
 	
 	lazy var dependentValueTextField: UITextField = {
-		$0.translatesAutoresizingMaskIntoConstraints = false
-		$0.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 12, height: 40))
-		$0.leftViewMode = .always
-		$0.font = UIFont.systemFont(ofSize: 18)
-		$0.backgroundColor = UIColor.appGray
-		$0.clipsToBounds = true
-		$0.layer.cornerRadius = 10
-		$0.autocorrectionType = .no
-		$0.keyboardType = .numbersAndPunctuation
+		$0.setCustomTextField()
 		return $0
 	}(UITextField())
 	
 	lazy var nextButton: UIButton = {
-		$0.translatesAutoresizingMaskIntoConstraints = false
-		$0.setTitle(String(localizedKey: "next").uppercased(), for: .normal)
-		$0.titleLabel?.font = UIFont(name: "Montserrat-ExtraBold", size: 18)
-		$0.backgroundColor = UIColor.appBlue
-		$0.tintColor = .white
-		$0.clipsToBounds = true
-		$0.layer.cornerRadius = 10
+		$0.setCustomButton(title: "next", colorBackground: UIColor.appBlue)
 		return $0
 	}(UIButton(type: .system))
 	
 	override init(frame: CGRect) {
 		super.init(frame: frame)
 		backgroundColor = .white
-		
 		configAddView()
 		configConstraints()
 	}
@@ -89,9 +56,9 @@ class SalaryView: UIView {
 	private func configAddView() {
 		addSubview(salaryLabel)
 		addSubview(salaryValueTextField)
-		addSubview(subTitleSalaryLabel)
+		addSubview(subtitleSalaryLabel)
 		addSubview(dependentLabel)
-		addSubview(subTitleDependentLabel)
+		addSubview(subtitleDependentLabel)
 		addSubview(dependentValueTextField)
 		addSubview(nextButton)
 	}
@@ -107,19 +74,19 @@ class SalaryView: UIView {
 			salaryValueTextField.trailingAnchor.constraint(equalTo: salaryLabel.trailingAnchor),
 			salaryValueTextField.heightAnchor.constraint(equalToConstant: 40),
 			
-			subTitleSalaryLabel.topAnchor.constraint(equalTo: salaryValueTextField.bottomAnchor, constant: 10),
-			subTitleSalaryLabel.leadingAnchor.constraint(equalTo: salaryLabel.leadingAnchor),
-			subTitleSalaryLabel.trailingAnchor.constraint(equalTo: salaryLabel.trailingAnchor),
+			subtitleSalaryLabel.topAnchor.constraint(equalTo: salaryValueTextField.bottomAnchor, constant: 10),
+			subtitleSalaryLabel.leadingAnchor.constraint(equalTo: salaryLabel.leadingAnchor),
+			subtitleSalaryLabel.trailingAnchor.constraint(equalTo: salaryLabel.trailingAnchor),
 			
-			dependentLabel.topAnchor.constraint(equalTo: subTitleSalaryLabel.bottomAnchor, constant: 40),
+			dependentLabel.topAnchor.constraint(equalTo: subtitleSalaryLabel.bottomAnchor, constant: 40),
 			dependentLabel.leadingAnchor.constraint(equalTo: salaryLabel.leadingAnchor),
 			dependentLabel.trailingAnchor.constraint(equalTo: salaryLabel.trailingAnchor),
 			
-			subTitleDependentLabel.topAnchor.constraint(equalTo: dependentLabel.bottomAnchor, constant: 10),
-			subTitleDependentLabel.leadingAnchor.constraint(equalTo: salaryLabel.leadingAnchor),
-			subTitleDependentLabel.trailingAnchor.constraint(equalTo: salaryLabel.trailingAnchor),
+			subtitleDependentLabel.topAnchor.constraint(equalTo: dependentLabel.bottomAnchor, constant: 10),
+			subtitleDependentLabel.leadingAnchor.constraint(equalTo: salaryLabel.leadingAnchor),
+			subtitleDependentLabel.trailingAnchor.constraint(equalTo: salaryLabel.trailingAnchor),
 			
-			dependentValueTextField.topAnchor.constraint(equalTo: subTitleDependentLabel.bottomAnchor, constant: 10),
+			dependentValueTextField.topAnchor.constraint(equalTo: subtitleDependentLabel.bottomAnchor, constant: 10),
 			dependentValueTextField.leadingAnchor.constraint(equalTo: salaryLabel.leadingAnchor),
 			dependentValueTextField.trailingAnchor.constraint(equalTo: salaryLabel.trailingAnchor),
 			dependentValueTextField.heightAnchor.constraint(equalToConstant: 40),

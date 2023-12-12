@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E249714F2B28E5BF000AD4F8 /* CustomDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = E249714E2B28E5BF000AD4F8 /* CustomDesign.swift */; };
 		E290A6E52B288FFA00560137 /* SalaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E290A6E42B288FFA00560137 /* SalaryViewController.swift */; };
 		E290A6E72B28900200560137 /* SalaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E290A6E62B28900200560137 /* SalaryView.swift */; };
 		E290A6EA2B28A06A00560137 /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E290A6E92B28A06A00560137 /* Montserrat-Light.ttf */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E249714E2B28E5BF000AD4F8 /* CustomDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDesign.swift; sourceTree = "<group>"; };
 		E290A6E42B288FFA00560137 /* SalaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryViewController.swift; sourceTree = "<group>"; };
 		E290A6E62B28900200560137 /* SalaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryView.swift; sourceTree = "<group>"; };
 		E290A6E92B28A06A00560137 /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 			children = (
 				E2F81B142B235A7700E181B7 /* UIColor+Extension.swift */,
 				E2BE94572B275232003FE825 /* String+Extension.swift */,
+				E249714E2B28E5BF000AD4F8 /* CustomDesign.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 				E2F81B152B235A7700E181B7 /* UIColor+Extension.swift in Sources */,
 				E2BE94512B274FB3003FE825 /* HomeView.swift in Sources */,
 				E2AAE4F12B2792F2008A5543 /* Calculator.swift in Sources */,
+				E249714F2B28E5BF000AD4F8 /* CustomDesign.swift in Sources */,
 				E2F81B032B23592600E181B7 /* HomeViewController.swift in Sources */,
 				E2BE94582B275232003FE825 /* String+Extension.swift in Sources */,
 				E2F81AFF2B23592600E181B7 /* AppDelegate.swift in Sources */,
