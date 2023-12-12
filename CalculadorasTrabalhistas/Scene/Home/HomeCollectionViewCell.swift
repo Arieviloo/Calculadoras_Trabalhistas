@@ -23,7 +23,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
 	
 	lazy var nameCalculatorLabel: UILabel = {
 		$0.translatesAutoresizingMaskIntoConstraints = false
-		$0.font = UIFont.systemFont(ofSize: 14)
+		$0.font = UIFont(name: "Montserrat-Medium", size: 16)
 		return $0
 	}(UILabel())
 	
