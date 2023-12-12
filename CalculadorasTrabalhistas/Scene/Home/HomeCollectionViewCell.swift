@@ -4,7 +4,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
 	
 	static let identifier = "HomeCollectionViewCell"
 	
-	lazy var calculatorButton: UIButton = {
+	lazy var calculatorButton: UIView = {
 		$0.translatesAutoresizingMaskIntoConstraints = false
 		$0.backgroundColor = UIColor.appGray
 		$0.layer.cornerRadius = 15
@@ -12,9 +12,8 @@ class HomeCollectionViewCell: UICollectionViewCell {
 		$0.layer.shadowRadius = 5
 		$0.layer.shadowOpacity = 0.2
 		$0.layer.shouldRasterize = true
-		$0.addTarget(self, action: #selector(tappedCalculator), for: .touchUpInside)
 		return $0
-	}(UIButton())
+	}(UIView())
 	
 	lazy var iconCalculatorImage: UIImageView = {
 		$0.translatesAutoresizingMaskIntoConstraints = false
@@ -41,10 +40,6 @@ class HomeCollectionViewCell: UICollectionViewCell {
 	public func setDataCalculator(_ name: String, _ icon: String) {
 		self.nameCalculatorLabel.text = name
 		self.iconCalculatorImage.image = UIImage(named: icon)
-	}
-	
-	@objc func tappedCalculator() {
-		print("tapped")
 	}
 	
 	private func configAddView() {

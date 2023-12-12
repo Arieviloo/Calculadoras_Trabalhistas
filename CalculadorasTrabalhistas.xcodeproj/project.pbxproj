@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E290A6E52B288FFA00560137 /* SalaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E290A6E42B288FFA00560137 /* SalaryViewController.swift */; };
+		E290A6E72B28900200560137 /* SalaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E290A6E62B28900200560137 /* SalaryView.swift */; };
+		E290A6EA2B28A06A00560137 /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E290A6E92B28A06A00560137 /* Montserrat-Light.ttf */; };
+		E290A6EC2B28A09400560137 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E290A6EB2B28A09400560137 /* Montserrat-Medium.ttf */; };
+		E290A6EE2B28A0AA00560137 /* Montserrat-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E290A6ED2B28A0AA00560137 /* Montserrat-ExtraBold.ttf */; };
 		E2AAE4EE2B279061008A5543 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AAE4ED2B279061008A5543 /* HomeCollectionViewCell.swift */; };
 		E2AAE4F12B2792F2008A5543 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AAE4F02B2792F2008A5543 /* Calculator.swift */; };
 		E2BE94512B274FB3003FE825 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BE94502B274FB3003FE825 /* HomeView.swift */; };
@@ -20,6 +25,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E290A6E42B288FFA00560137 /* SalaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryViewController.swift; sourceTree = "<group>"; };
+		E290A6E62B28900200560137 /* SalaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryView.swift; sourceTree = "<group>"; };
+		E290A6E92B28A06A00560137 /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
+		E290A6EB2B28A09400560137 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
+		E290A6ED2B28A0AA00560137 /* Montserrat-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBold.ttf"; sourceTree = "<group>"; };
 		E2AAE4ED2B279061008A5543 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		E2AAE4F02B2792F2008A5543 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		E2BE94502B274FB3003FE825 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -45,6 +55,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E290A6E32B288FE100560137 /* Salary */ = {
+			isa = PBXGroup;
+			children = (
+				E290A6E42B288FFA00560137 /* SalaryViewController.swift */,
+				E290A6E62B28900200560137 /* SalaryView.swift */,
+			);
+			path = Salary;
+			sourceTree = "<group>";
+		};
+		E290A6E82B28A04100560137 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				E290A6ED2B28A0AA00560137 /* Montserrat-ExtraBold.ttf */,
+				E290A6EB2B28A09400560137 /* Montserrat-Medium.ttf */,
+				E290A6E92B28A06A00560137 /* Montserrat-Light.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		E2AAE4EF2B2792E5008A5543 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				E2BE944F2B274FA0003FE825 /* Home */,
+				E290A6E32B288FE100560137 /* Salary */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -128,6 +158,7 @@
 		E2F81B172B235AA400E181B7 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				E290A6E82B28A04100560137 /* Fonts */,
 				E2BE94522B2751CA003FE825 /* LocalizableStrings */,
 				E2F81B072B23592700E181B7 /* Assets.xcassets */,
 				E2F81B092B23592700E181B7 /* LaunchScreen.storyboard */,
@@ -193,6 +224,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E290A6EA2B28A06A00560137 /* Montserrat-Light.ttf in Resources */,
+				E290A6EE2B28A0AA00560137 /* Montserrat-ExtraBold.ttf in Resources */,
+				E290A6EC2B28A09400560137 /* Montserrat-Medium.ttf in Resources */,
 				E2F81B0B2B23592700E181B7 /* LaunchScreen.storyboard in Resources */,
 				E2BE94562B2751F7003FE825 /* Localizable.strings in Resources */,
 				E2F81B082B23592700E181B7 /* Assets.xcassets in Resources */,
@@ -206,6 +240,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E290A6E72B28900200560137 /* SalaryView.swift in Sources */,
+				E290A6E52B288FFA00560137 /* SalaryViewController.swift in Sources */,
 				E2F81B152B235A7700E181B7 /* UIColor+Extension.swift in Sources */,
 				E2BE94512B274FB3003FE825 /* HomeView.swift in Sources */,
 				E2AAE4F12B2792F2008A5543 /* Calculator.swift in Sources */,

@@ -47,9 +47,14 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-			let widthFrame = CGFloat((self.view.frame.width / 2 ) - 10)
-			return CGSize(width: widthFrame , height: 200)
-		}
+		let widthFrame = CGFloat((self.view.frame.width / 2 ) - 10)
+		return CGSize(width: widthFrame , height: 200)
+	}
 	
+	
+	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		let salaryVC = SalaryViewController(name: calculators[indexPath.row].name)
+		navigationController?.pushViewController(salaryVC, animated: true)
+	}
 }
 
