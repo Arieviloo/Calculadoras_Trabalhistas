@@ -10,10 +10,10 @@ import UIKit
 class HomeViewController: UIViewController {
 	private let homeView = HomeView()
 	private let calculators: [Calculator] = [
-		Calculator(name: "salario", icon: "teste1"),
-		Calculator(name: "salario", icon: "teste1"),
-		Calculator(name: "salario", icon: "teste1"),
-		Calculator(name: "salario", icon: "teste1"),
+		Calculator(name: "Salário Líquido", icon: "icon-salariominimo"),
+		Calculator(name: "Férias", icon: "icon-ferias"),
+		Calculator(name: "Rescisão", icon: "icon-rescisao"),
+		Calculator(name: "Décimo Terceiro", icon: "icon-decimoterceiro"),
 	]
 	
 	override func loadView() {
@@ -42,7 +42,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
 	
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewCell.identifier, for: indexPath) as? HomeCollectionViewCell else { return UICollectionViewCell() }
-		
+		cell.setDataCalculator(calculators[indexPath.row].name, calculators[indexPath.row].icon)
 		return cell
 	}
 	
