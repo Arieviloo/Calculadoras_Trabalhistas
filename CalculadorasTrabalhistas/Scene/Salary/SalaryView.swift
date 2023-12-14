@@ -1,6 +1,15 @@
 import UIKit
 
+protocol SalaryViewProtocol: NSObject {
+	func tappedNext()
+}
+
 class SalaryView: UIView {
+	
+	private weak var delegate: SalaryViewProtocol?
+	public func delegate(delegate: SalaryViewProtocol) {
+		self.delegate = delegate
+	}
 	
 	lazy var salaryLabel: UILabel = {
 		$0.setCustomTitleNormal(title: "whichValueSalary")
@@ -34,6 +43,7 @@ class SalaryView: UIView {
 	
 	lazy var nextButton: UIButton = {
 		$0.setCustomButton(title: "next", colorBackground: UIColor.appBlue)
+		$0.addTarget(self, action: #selector(tappedNext), for: .touchUpInside)
 		return $0
 	}(UIButton(type: .system))
 	
@@ -53,6 +63,10 @@ class SalaryView: UIView {
 		dependentValueTextField.delegate = delegate
 	}
 	
+	@objc func tappedNext() {
+		self.delegate?.tappedNext()
+	}
+	
 	private func configAddView() {
 		addSubview(salaryLabel)
 		addSubview(salaryValueTextField)
@@ -66,8 +80,8 @@ class SalaryView: UIView {
 	private func configConstraints() {
 		NSLayoutConstraint.activate([
 			salaryLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 40),
-			salaryLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 10),
-			salaryLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -10),
+			salaryLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+			salaryLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
 			
 			salaryValueTextField.topAnchor.constraint(equalTo: salaryLabel.bottomAnchor, constant: 10),
 			salaryValueTextField.leadingAnchor.constraint(equalTo: salaryLabel.leadingAnchor),

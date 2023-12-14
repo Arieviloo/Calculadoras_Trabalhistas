@@ -21,6 +21,7 @@ class SalaryViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		self.salaryView.configTextFieldDelegate(delegate: self)
+		self.salaryView.delegate(delegate: self)
 	}
 	
 }
@@ -30,4 +31,13 @@ extension SalaryViewController: UITextFieldDelegate {
 		textField.resignFirstResponder()
 		return true
 	}
+}
+
+extension SalaryViewController: SalaryViewProtocol {
+	func tappedNext() {
+		let additionalVC = AdditionalViewController()
+		navigationController?.pushViewController(additionalVC, animated: true)
+	}
+	
+	
 }

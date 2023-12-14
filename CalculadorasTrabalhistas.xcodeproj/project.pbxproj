@@ -13,6 +13,8 @@
 		E290A6EA2B28A06A00560137 /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E290A6E92B28A06A00560137 /* Montserrat-Light.ttf */; };
 		E290A6EC2B28A09400560137 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E290A6EB2B28A09400560137 /* Montserrat-Medium.ttf */; };
 		E290A6EE2B28A0AA00560137 /* Montserrat-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E290A6ED2B28A0AA00560137 /* Montserrat-ExtraBold.ttf */; };
+		E2945DB32B29E20100A1C582 /* AdditionalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2945DB22B29E20100A1C582 /* AdditionalViewController.swift */; };
+		E2945DB52B29E20900A1C582 /* AdditionalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2945DB42B29E20900A1C582 /* AdditionalView.swift */; };
 		E2AAE4EE2B279061008A5543 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AAE4ED2B279061008A5543 /* HomeCollectionViewCell.swift */; };
 		E2AAE4F12B2792F2008A5543 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AAE4F02B2792F2008A5543 /* Calculator.swift */; };
 		E2BE94512B274FB3003FE825 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BE94502B274FB3003FE825 /* HomeView.swift */; };
@@ -32,6 +34,8 @@
 		E290A6E92B28A06A00560137 /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
 		E290A6EB2B28A09400560137 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
 		E290A6ED2B28A0AA00560137 /* Montserrat-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBold.ttf"; sourceTree = "<group>"; };
+		E2945DB22B29E20100A1C582 /* AdditionalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalViewController.swift; sourceTree = "<group>"; };
+		E2945DB42B29E20900A1C582 /* AdditionalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalView.swift; sourceTree = "<group>"; };
 		E2AAE4ED2B279061008A5543 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		E2AAE4F02B2792F2008A5543 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		E2BE94502B274FB3003FE825 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -74,6 +78,15 @@
 				E290A6E92B28A06A00560137 /* Montserrat-Light.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		E2945DB12B29E1D400A1C582 /* Additional */ = {
+			isa = PBXGroup;
+			children = (
+				E2945DB22B29E20100A1C582 /* AdditionalViewController.swift */,
+				E2945DB42B29E20900A1C582 /* AdditionalView.swift */,
+			);
+			path = Additional;
 			sourceTree = "<group>";
 		};
 		E2AAE4EF2B2792E5008A5543 /* Model */ = {
@@ -125,6 +138,7 @@
 				E2F81B122B235A5100E181B7 /* Application */,
 				E2F81B132B235A6100E181B7 /* Extension */,
 				E2F81B162B235A9300E181B7 /* Scene */,
+				E2945DB12B29E1D400A1C582 /* Additional */,
 				E2F81B172B235AA400E181B7 /* Resource */,
 				E2F81B0C2B23592700E181B7 /* Info.plist */,
 			);
@@ -244,6 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E290A6E72B28900200560137 /* SalaryView.swift in Sources */,
+				E2945DB32B29E20100A1C582 /* AdditionalViewController.swift in Sources */,
 				E290A6E52B288FFA00560137 /* SalaryViewController.swift in Sources */,
 				E2F81B152B235A7700E181B7 /* UIColor+Extension.swift in Sources */,
 				E2BE94512B274FB3003FE825 /* HomeView.swift in Sources */,
@@ -253,6 +268,7 @@
 				E2BE94582B275232003FE825 /* String+Extension.swift in Sources */,
 				E2F81AFF2B23592600E181B7 /* AppDelegate.swift in Sources */,
 				E2AAE4EE2B279061008A5543 /* HomeCollectionViewCell.swift in Sources */,
+				E2945DB52B29E20900A1C582 /* AdditionalView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -3,8 +3,10 @@
 "whichValueSalary" = "Qual o valor do seu salário bruto?";
 "subTitleValueSalary" = "Aqui você nos fala quanto você ganha sem descontos.";
 "howMuchDependents" = "Quantos dependentes você tem?";
-"subTitleValueDependents" = "São considerados dependentes: filhos, pais, companheiros ou
-pessoas cuja responsabilidade legal seja sua.";
+"subTitleValueDependents" = "São considerados dependentes: filhos, pais, companheiros ou pessoas cuja responsabilidade legal seja sua.";
+"questionDangerousnessAdditional" = "Recebe Adicional de Periculosidade?";
+"questionInsalubrityAdditional" = "Recebe Adicional de Insalubridade?";
+"questionLevelInsalubrity" = "Selecione o nível de insalubridade:";
 
 //Button
 "next" = "Próximo";
