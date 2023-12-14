@@ -1,6 +1,16 @@
 import UIKit
 
+protocol AdditionalViewProtocol: NSObject {
+	func tappedAdditionalInsalubrity()
+	func tappedNext()
+}
+
 class AdditionalView: UIView {
+	
+	private weak var delegate: AdditionalViewProtocol?
+	public func delegate(delegate: AdditionalViewProtocol) {
+		self.delegate = delegate
+	}
 	
 	private let percents = ["10%", "20%", "40%"]
 	
@@ -11,8 +21,9 @@ class AdditionalView: UIView {
 	
 	lazy var toggleDangerousnessSwitch: UISwitch = {
 		$0.translatesAutoresizingMaskIntoConstraints = false
-		$0.isEnabled = true
+		$0.transform = CGAffineTransform(scaleX: 1, y: 0.70)
 		$0.onTintColor = UIColor.appGreenLight
+		$0.isEnabled = true
 		return $0
 	}(UISwitch())
 	
@@ -23,10 +34,20 @@ class AdditionalView: UIView {
 	
 	lazy var toggleInsalubritySwitch: UISwitch = {
 		$0.translatesAutoresizingMaskIntoConstraints = false
-		$0.isEnabled = true
+		$0.transform = CGAffineTransform(scaleX: 1, y: 0.70)
 		$0.onTintColor = UIColor.appGreenLight
+		$0.isEnabled = true
+		$0.addTarget(self, action: #selector(tappedAdditionalInsalubrity), for: .touchUpInside)
+		
 		return $0
 	}(UISwitch())
+	
+	lazy var contentView: UIStackView = {
+		$0.translatesAutoresizingMaskIntoConstraints = false
+		$0.axis = .vertical
+		$0.isHidden = true
+		return $0
+	}(UIStackView())
 	
 	lazy var levelInsalybrityLabel: UILabel = {
 		$0.setCustomTitleNormal(title: "questionLevelInsalubrity")
@@ -43,6 +64,7 @@ class AdditionalView: UIView {
 	
 	lazy var nextButton: UIButton = {
 		$0.setCustomButton(title: "next", colorBackground: UIColor.appBlue)
+		$0.addTarget(self, action: #selector(tappedNext), for: .touchUpInside)
 		return $0
 	}(UIButton(type: .system))
 	
@@ -58,13 +80,22 @@ class AdditionalView: UIView {
 		fatalError("init(coder:) has not been implemented")
 	}
 	
+	@objc func tappedAdditionalInsalubrity() {
+		self.delegate?.tappedAdditionalInsalubrity()
+	}
+	
+	@objc func tappedNext() {
+		self.delegate?.tappedNext()
+	}
+	
 	private func configAddView() {
 		addSubview(dangerousnessLabel)
 		addSubview(toggleDangerousnessSwitch)
 		addSubview(insalubrityLabel)
 		addSubview(toggleInsalubritySwitch)
-		addSubview(levelInsalybrityLabel)
-		addSubview(btnSelect)
+		addSubview(contentView)
+		contentView.addArrangedSubview(levelInsalybrityLabel)
+		contentView.addArrangedSubview(btnSelect)
 		addSubview(nextButton)
 	}
 	
@@ -76,6 +107,7 @@ class AdditionalView: UIView {
 			toggleDangerousnessSwitch.leadingAnchor.constraint(equalTo: dangerousnessLabel.trailingAnchor),
 			toggleDangerousnessSwitch.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
 			toggleDangerousnessSwitch.centerYAnchor.constraint(equalTo: dangerousnessLabel.centerYAnchor),
+			toggleDangerousnessSwitch.heightAnchor.constraint(equalToConstant: 20),
 			
 			insalubrityLabel.topAnchor.constraint(equalTo: dangerousnessLabel.bottomAnchor, constant: 30),
 			insalubrityLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
@@ -84,15 +116,19 @@ class AdditionalView: UIView {
 			toggleInsalubritySwitch.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
 			toggleInsalubritySwitch.centerYAnchor.constraint(equalTo: insalubrityLabel.centerYAnchor),
 			
-			levelInsalybrityLabel.topAnchor.constraint(equalTo: insalubrityLabel.bottomAnchor, constant: 30),
-			levelInsalybrityLabel.leadingAnchor.constraint(equalTo: insalubrityLabel.leadingAnchor),
-			levelInsalybrityLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
+			contentView.topAnchor.constraint(equalTo: insalubrityLabel.bottomAnchor, constant: 30),
+			contentView.leadingAnchor.constraint(equalTo: insalubrityLabel.leadingAnchor),
+			contentView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
 			
-			btnSelect.topAnchor.constraint(equalTo: levelInsalybrityLabel.bottomAnchor, constant: 10),
-			btnSelect.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-			btnSelect.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
+			levelInsalybrityLabel.topAnchor.constraint(equalTo: contentView.topAnchor),
+			levelInsalybrityLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+			levelInsalybrityLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
 			
-			nextButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -200),
+			btnSelect.topAnchor.constraint(equalTo: levelInsalybrityLabel.bottomAnchor),
+			btnSelect.leadingAnchor.constraint(equalTo: levelInsalybrityLabel.leadingAnchor),
+			btnSelect.trailingAnchor.constraint(equalTo: levelInsalybrityLabel.trailingAnchor),
+			
+			nextButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -200),
 			nextButton.centerXAnchor.constraint(equalTo: centerXAnchor),
 			nextButton.widthAnchor.constraint(equalToConstant: 160),
 			nextButton.heightAnchor.constraint(equalToConstant: 45),

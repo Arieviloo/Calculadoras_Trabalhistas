@@ -105,7 +105,7 @@ class SalaryView: UIView {
 			dependentValueTextField.trailingAnchor.constraint(equalTo: salaryLabel.trailingAnchor),
 			dependentValueTextField.heightAnchor.constraint(equalToConstant: 40),
 			
-			nextButton.topAnchor.constraint(equalTo: dependentValueTextField.bottomAnchor, constant: 50),
+			nextButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -200),
 			nextButton.centerXAnchor.constraint(equalTo: centerXAnchor),
 			nextButton.widthAnchor.constraint(equalToConstant: 160),
 			nextButton.heightAnchor.constraint(equalToConstant: 45),
