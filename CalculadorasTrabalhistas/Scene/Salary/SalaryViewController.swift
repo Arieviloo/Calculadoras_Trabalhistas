@@ -3,10 +3,12 @@ import UIKit
 class SalaryViewController: UIViewController {
 	
 	private let salaryView = SalaryView()
+	private var calculator: Calculator?
 	
-	init(name: String) {
+	init(calculator: Calculator) {
 		super.init(nibName: nil, bundle: nil)
-		title = "\(name)"
+		self.calculator = calculator
+		title = "\(calculator.name)"
 	}
 	
 	required init?(coder: NSCoder) {
@@ -35,7 +37,8 @@ extension SalaryViewController: UITextFieldDelegate {
 
 extension SalaryViewController: SalaryViewProtocol {
 	func tappedNext() {
-		let additionalVC = AdditionalViewController()
+		guard let calculator else { return }
+		let additionalVC = AdditionalViewController(calculator: calculator)
 		navigationController?.pushViewController(additionalVC, animated: true)
 	}
 	

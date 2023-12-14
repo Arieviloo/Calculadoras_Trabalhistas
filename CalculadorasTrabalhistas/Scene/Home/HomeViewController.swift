@@ -10,7 +10,7 @@ import UIKit
 class HomeViewController: UIViewController {
 	private let homeView = HomeView()
 	private let calculators: [Calculator] = [
-		Calculator(name: "Salário Líquido", icon: "icon-salariominimo"),
+		Calculator(name: "Salário Líquido", icon: "icon-salariominimo", nameViewController: "NetSalaryViewController"),
 		Calculator(name: "Férias", icon: "icon-ferias"),
 		Calculator(name: "Rescisão", icon: "icon-rescisao"),
 		Calculator(name: "Décimo Terceiro", icon: "icon-decimoterceiro"),
@@ -53,7 +53,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
 	
 	
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-		let salaryVC = SalaryViewController(name: calculators[indexPath.row].name)
+		let salaryVC = SalaryViewController(calculator: calculators[indexPath.row])
 		navigationController?.pushViewController(salaryVC, animated: true)
 	}
 }
