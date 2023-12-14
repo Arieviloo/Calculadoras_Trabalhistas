@@ -92,7 +92,7 @@ class AdditionalView: UIView {
 			btnSelect.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
 			btnSelect.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
 			
-			nextButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -200),
+			nextButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -200),
 			nextButton.centerXAnchor.constraint(equalTo: centerXAnchor),
 			nextButton.widthAnchor.constraint(equalToConstant: 160),
 			nextButton.heightAnchor.constraint(equalToConstant: 45),
