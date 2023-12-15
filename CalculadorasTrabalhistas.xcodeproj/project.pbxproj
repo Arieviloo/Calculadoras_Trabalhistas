@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E201C0FC2B2C722800DFCDEF /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E201C0FB2B2C722800DFCDEF /* UIViewController+Extension.swift */; };
 		E21074862B2BC2FB00A7D523 /* NetSalaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21074852B2BC2FB00A7D523 /* NetSalaryViewController.swift */; };
 		E21074882B2BC30200A7D523 /* NetSalaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21074872B2BC30200A7D523 /* NetSalaryView.swift */; };
 		E249714F2B28E5BF000AD4F8 /* CustomDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = E249714E2B28E5BF000AD4F8 /* CustomDesign.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E201C0FB2B2C722800DFCDEF /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		E21074852B2BC2FB00A7D523 /* NetSalaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetSalaryViewController.swift; sourceTree = "<group>"; };
 		E21074872B2BC30200A7D523 /* NetSalaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetSalaryView.swift; sourceTree = "<group>"; };
 		E249714E2B28E5BF000AD4F8 /* CustomDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDesign.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 				E2F81B142B235A7700E181B7 /* UIColor+Extension.swift */,
 				E2BE94572B275232003FE825 /* String+Extension.swift */,
 				E249714E2B28E5BF000AD4F8 /* CustomDesign.swift */,
+				E201C0FB2B2C722800DFCDEF /* UIViewController+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 				E290A6E72B28900200560137 /* SalaryView.swift in Sources */,
 				E2945DB32B29E20100A1C582 /* AdditionalViewController.swift in Sources */,
 				E21074862B2BC2FB00A7D523 /* NetSalaryViewController.swift in Sources */,
+				E201C0FC2B2C722800DFCDEF /* UIViewController+Extension.swift in Sources */,
 				E290A6E52B288FFA00560137 /* SalaryViewController.swift in Sources */,
 				E2F81B152B235A7700E181B7 /* UIColor+Extension.swift in Sources */,
 				E2BE94512B274FB3003FE825 /* HomeView.swift in Sources */,
