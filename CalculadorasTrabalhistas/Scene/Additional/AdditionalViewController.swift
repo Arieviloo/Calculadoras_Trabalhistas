@@ -38,9 +38,13 @@ extension AdditionalViewController: AdditionalViewProtocol {
 	
 	func tappedNext() {
 		guard let calculatorVC = calculator?.nameViewController else { return }
-		if let  nextVC = "\(calculatorVC)".getViewController() {
-			navigationController?.pushViewController(nextVC, animated: true)
-		}
+		guard let calculator else { return }
+		let next = getCalculatorViewController(calculator: calculator)
+		navigationController?.pushViewController(next, animated: true)
+//		if let  nextVC = "\(calculatorVC)".getViewController() {
+//			nextVC.getCalculatorViewController(calculator: calculator)
+//			navigationController?.pushViewController(nextVC, animated: true)
+//		}
 	}
 	
 	
