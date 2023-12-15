@@ -6,6 +6,7 @@ class NetSalaryViewController: UIViewController {
 	
 	init(calculator: Calculator) {
 		super.init(nibName: nil, bundle: nil)
+		title = calculator.name
 		dump(calculator)
 	}
 	
