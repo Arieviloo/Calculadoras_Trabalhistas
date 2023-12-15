@@ -13,6 +13,12 @@ extension UILabel {
 		font = UIFont(name: "Montserrat-Medium", size: 10)
 		numberOfLines = 0
 	}
+	
+	func setCustomTitleOptional(title: String) {
+		translatesAutoresizingMaskIntoConstraints = false
+		text = String(localizedKey: "\(title)")
+		font = UIFont(name: "Montserrat-light", size: 8)
+	}
 }
 
 extension UITextField {
