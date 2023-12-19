@@ -21,7 +21,7 @@ class AdditionalView: UIView {
 	
 	lazy var toggleDangerousnessSwitch: UISwitch = {
 		$0.translatesAutoresizingMaskIntoConstraints = false
-		$0.transform = CGAffineTransform(scaleX: 1, y: 0.70)
+//		$0.transform = CGAffineTransform(scaleX: 1, y: 0.70)
 		$0.onTintColor = UIColor.appGreenLight
 		$0.isEnabled = true
 		return $0
@@ -34,7 +34,7 @@ class AdditionalView: UIView {
 	
 	lazy var toggleInsalubritySwitch: UISwitch = {
 		$0.translatesAutoresizingMaskIntoConstraints = false
-		$0.transform = CGAffineTransform(scaleX: 1, y: 0.70)
+//		$0.transform = CGAffineTransform(scaleX: 1, y: 0.70)
 		$0.onTintColor = UIColor.appGreenLight
 		$0.isEnabled = true
 		$0.addTarget(self, action: #selector(tappedAdditionalInsalubrity), for: .touchUpInside)
@@ -109,7 +109,7 @@ class AdditionalView: UIView {
 			toggleDangerousnessSwitch.centerYAnchor.constraint(equalTo: dangerousnessLabel.centerYAnchor),
 			toggleDangerousnessSwitch.heightAnchor.constraint(equalToConstant: 20),
 			
-			insalubrityLabel.topAnchor.constraint(equalTo: dangerousnessLabel.bottomAnchor, constant: 30),
+			insalubrityLabel.topAnchor.constraint(equalTo: dangerousnessLabel.bottomAnchor, constant: 40),
 			insalubrityLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
 			
 			toggleInsalubritySwitch.leadingAnchor.constraint(equalTo: insalubrityLabel.trailingAnchor),
