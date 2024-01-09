@@ -9,6 +9,8 @@ import UIKit
 
 class HomeViewController: UIViewController {
 	private let homeView = HomeView()
+	
+	//adicionar esse obj em outro local
 	private let calculators: [Calculator] = [
 		Calculator(name: "Salário Líquido", icon: "icon-salariominimo", nameViewController: "NetSalaryViewController"),
 		Calculator(name: "Férias", icon: "icon-ferias"),
@@ -36,7 +38,6 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		print(calculators.count)
 		return calculators.count
 	}
 	

@@ -1,6 +1,15 @@
 import UIKit
 
+protocol NetSalaryViewProtocol: NSObject {
+	func tappedCalculate()
+}
+
 class NetSalaryView: UIView {
+	
+	private weak var delegate: NetSalaryViewProtocol?
+	public func delegate(delegate: NetSalaryViewProtocol) {
+		self.delegate = delegate
+	}
 	
 	lazy var otherAdditionalLabel: UILabel = {
 		$0.setCustomTitleNormal(title: "questionOtherAdditional")
@@ -40,9 +49,12 @@ class NetSalaryView: UIView {
 		fatalError("init(coder:) has not been implemented")
 	}
 	
-	@objc
-	func tappedCalculate() {
-		print("tapped")
+	@objc func tappedCalculate() {
+		self.delegate?.tappedCalculate()
+	}
+	
+	public func configTextFieldDelegate(delegate: UITextFieldDelegate) {
+		self.otherAdditionalTextField.delegate = delegate
 	}
 	
 	private func configAddSubview() {

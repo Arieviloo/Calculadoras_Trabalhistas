@@ -8,7 +8,7 @@ class AdditionalViewController: UIViewController {
 		super.init(nibName: nil, bundle: nil)
 		self.calculator = calculator
 		title = "\(calculator.name)"
-		print(calculator)
+		dump(calculator)
 	}
 	
 	required init?(coder: NSCoder) {
