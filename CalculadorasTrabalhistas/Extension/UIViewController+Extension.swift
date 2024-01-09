@@ -11,4 +11,13 @@ extension UIViewController {
 			return UIViewController()
 		}
 	}
+
+	func formatCurrency(string: String, textField: UITextField) {
+		let formatter = NumberFormatter()
+		formatter.numberStyle = NumberFormatter.Style.currency
+		formatter.locale = NSLocale(localeIdentifier: "pt_BR") as Locale
+		let numberFromField = (NSString(string: string).doubleValue)/100
+		textField.text = formatter.string(from: numberFromField as NSNumber)
+	}
+
 }

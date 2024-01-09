@@ -23,6 +23,7 @@
 		E2BE94512B274FB3003FE825 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BE94502B274FB3003FE825 /* HomeView.swift */; };
 		E2BE94562B2751F7003FE825 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E2BE94552B2751F7003FE825 /* Localizable.strings */; };
 		E2BE94582B275232003FE825 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BE94572B275232003FE825 /* String+Extension.swift */; };
+		E2CB9F382B32303B003553F4 /* SalaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CB9F372B32303B003553F4 /* SalaryViewModel.swift */; };
 		E2F81AFF2B23592600E181B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F81AFE2B23592600E181B7 /* AppDelegate.swift */; };
 		E2F81B032B23592600E181B7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F81B022B23592600E181B7 /* HomeViewController.swift */; };
 		E2F81B082B23592700E181B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2F81B072B23592700E181B7 /* Assets.xcassets */; };
@@ -47,6 +48,7 @@
 		E2BE94502B274FB3003FE825 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		E2BE94552B2751F7003FE825 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		E2BE94572B275232003FE825 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		E2CB9F372B32303B003553F4 /* SalaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryViewModel.swift; sourceTree = "<group>"; };
 		E2F81AFB2B23592600E181B7 /* CalculadorasTrabalhistas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalculadorasTrabalhistas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2F81AFE2B23592600E181B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2F81B022B23592600E181B7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				E290A6E42B288FFA00560137 /* SalaryViewController.swift */,
+				E2CB9F372B32303B003553F4 /* SalaryViewModel.swift */,
 				E290A6E62B28900200560137 /* SalaryView.swift */,
 			);
 			path = Salary;
@@ -282,6 +285,7 @@
 				E2F81B152B235A7700E181B7 /* UIColor+Extension.swift in Sources */,
 				E2BE94512B274FB3003FE825 /* HomeView.swift in Sources */,
 				E21074882B2BC30200A7D523 /* NetSalaryView.swift in Sources */,
+				E2CB9F382B32303B003553F4 /* SalaryViewModel.swift in Sources */,
 				E2AAE4F12B2792F2008A5543 /* Calculator.swift in Sources */,
 				E249714F2B28E5BF000AD4F8 /* CustomDesign.swift in Sources */,
 				E2F81B032B23592600E181B7 /* HomeViewController.swift in Sources */,

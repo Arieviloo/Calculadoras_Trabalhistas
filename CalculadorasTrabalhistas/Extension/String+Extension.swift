@@ -6,13 +6,13 @@ extension String {
 		self.init(initText)
 	}
 	
-	func getViewController() -> UIViewController? {
-		if let appName = Bundle.main.infoDictionary?["CFBundleName"] as? String {
-			if let viewControllerType = NSClassFromString("\(appName).\(self)") as? UIViewController.Type {
-				return viewControllerType.init()
-			}
-		}
-		return nil
-	}
+//	func getViewController() -> UIViewController? {
+//		if let appName = Bundle.main.infoDictionary?["CFBundleName"] as? String {
+//			if let viewControllerType = NSClassFromString("\(appName).\(self)") as? UIViewController.Type {
+//				return viewControllerType.init()
+//			}
+//		}
+//		return nil
+//	}
 }
 
