@@ -2,10 +2,10 @@ struct Calculator {
 	var name: String
 	var icon: String
 	var nameViewController: String?
-	var valueSalaryGross: Float?
+	var valueSalaryGross: Double?
 	var valueNumberDependent: Int?
 	var additionalDangerousness: Bool?
 	var additionalInsalubrity: Bool?
 	var valueLevelInsalubrity: Int?
-	var valueOutherAdditional: Float?
+	var valueOutherAdditional: Double?
 }
