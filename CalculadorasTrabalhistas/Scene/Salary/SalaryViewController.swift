@@ -34,7 +34,7 @@ extension SalaryViewController: UITextFieldDelegate {
 		return true
 	}
 	func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool { // return NO to not change text
-		
+
 		if salaryView.salaryValueTextField.isEditing {
 			switch string {
 			case "0"..."9":
@@ -63,7 +63,13 @@ extension SalaryViewController: UITextFieldDelegate {
 
 extension SalaryViewController: SalaryViewProtocol {
 	func tappedNext() {
-		guard let calculator else { return }
+		guard var calculator else { return }
+	
+		let valueSalary = (NSString(string: currentString).doubleValue)/100
+		let valueDependent = (NSString(string: salaryView.dependentValueTextField.text ?? "0").integerValue)
+		calculator.valueSalaryGross = valueSalary
+		calculator.valueNumberDependent = valueDependent
+		
 		let additionalVC = AdditionalViewController(calculator: calculator)
 		navigationController?.pushViewController(additionalVC, animated: true)
 	}
