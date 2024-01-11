@@ -8,5 +8,5 @@ struct Calculator {
 	var valueAditionalDangerousness: Double?
 	var isAdditionalInsalubrity: Bool?
 	var valueLevelInsalubrity: Double?
-	var valueOutherAdditional: Double?
+	var valueOtherAdditional: Double?
 }
