@@ -3,11 +3,13 @@ import UIKit
 class NetSalaryViewController: UIViewController {
 	
 	private let netSalaryView = NetSalaryView()
+	private var calculator: Calculator?
 	var currentString = ""
 	
 	init(calculator: Calculator) {
 		super.init(nibName: nil, bundle: nil)
 		title = calculator.name
+		self.calculator = calculator
 		dump(calculator)
 	}
 	
@@ -29,12 +31,6 @@ extension NetSalaryViewController: UITextFieldDelegate {
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 		textField.resignFirstResponder()
 		return true
-	}
-}
-
-extension NetSalaryViewController: NetSalaryViewProtocol {
-	func tappedCalculate() {
-		print("NetSalaryViewController")
 	}
 	
 	func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -61,4 +57,13 @@ extension NetSalaryViewController: NetSalaryViewProtocol {
 		}
 		return false
 	}
+}
+
+extension NetSalaryViewController: NetSalaryViewProtocol {
+	func tappedCalculate() {
+		guard var calculator else { return }
+		let valueOtherAdditionalSalary = (NSString(string: currentString).doubleValue)/100
+		calculator.valueOtherAdditional = valueOtherAdditionalSalary
+	}
+	
 }
