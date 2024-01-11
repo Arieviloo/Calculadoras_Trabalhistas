@@ -37,14 +37,30 @@ extension AdditionalViewController: AdditionalViewProtocol {
 	}
 	
 	func tappedNext() {
-		guard let calculator else { return }
+		guard var calculator else { return }
+		let isOnAdditionalDangerousness = additionalView.toggleDangerousnessSwitch.isOn
+		let valueAdditionalDangerousness = isOnAdditionalDangerousness ? 0.30 : 0
+		let isOnAdditionalInsalubrity = additionalView.toggleInsalubritySwitch.isOn
+		let valueLevelInsalubrity = isOnAdditionalInsalubrity ? selectLevelInsalubrity(index: additionalView.btnSelect.selectedSegmentIndex) : 0
+		
+		calculator.isAdditionalDangerousness = isOnAdditionalDangerousness
+		calculator.valueAditionalDangerousness = valueAdditionalDangerousness
+		calculator.isAdditionalInsalubrity = isOnAdditionalInsalubrity
+		calculator.valueLevelInsalubrity = valueLevelInsalubrity
+		
 		let next = getCalculatorViewController(calculator: calculator)
 		navigationController?.pushViewController(next, animated: true)
-//		if let  nextVC = "\(calculatorVC)".getViewController() {
-//			nextVC.getCalculatorViewController(calculator: calculator)
-//			navigationController?.pushViewController(nextVC, animated: true)
-//		}
 	}
 	
+	func selectLevelInsalubrity(index: Int) -> Double {
+		switch index {
+		case 1 :
+			return 0.20
+		case 2 :
+			return 0.40
+		default :
+			return 0.10
+		}
+	}
 	
 }

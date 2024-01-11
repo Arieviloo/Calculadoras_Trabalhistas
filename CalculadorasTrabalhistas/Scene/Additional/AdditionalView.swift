@@ -59,6 +59,7 @@ class AdditionalView: UIView {
 		$0.contentMode = .scaleAspectFill
 		$0.backgroundColor = UIColor.appBlueLight
 		$0.selectedSegmentTintColor = UIColor.appGreenLight
+		$0.selectedSegmentIndex = 0
 		return $0
 	}(UISegmentedControl(items: percents))
 	
