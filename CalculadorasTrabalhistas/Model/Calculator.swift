@@ -4,8 +4,9 @@ struct Calculator {
 	var nameViewController: String?
 	var valueSalaryGross: Double?
 	var valueNumberDependent: Int?
-	var additionalDangerousness: Bool?
-	var additionalInsalubrity: Bool?
-	var valueLevelInsalubrity: Int?
+	var isAdditionalDangerousness: Bool?
+	var valueAditionalDangerousness: Double?
+	var isAdditionalInsalubrity: Bool?
+	var valueLevelInsalubrity: Double?
 	var valueOutherAdditional: Double?
 }
