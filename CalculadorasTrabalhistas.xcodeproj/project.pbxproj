@@ -10,6 +10,8 @@
 		E201C0FC2B2C722800DFCDEF /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E201C0FB2B2C722800DFCDEF /* UIViewController+Extension.swift */; };
 		E21074862B2BC2FB00A7D523 /* NetSalaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21074852B2BC2FB00A7D523 /* NetSalaryViewController.swift */; };
 		E21074882B2BC30200A7D523 /* NetSalaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21074872B2BC30200A7D523 /* NetSalaryView.swift */; };
+		E21CC28D2B5565C10089933E /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21CC28C2B5565C10089933E /* ResultViewController.swift */; };
+		E21CC28F2B5565CB0089933E /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21CC28E2B5565CB0089933E /* ResultView.swift */; };
 		E249714F2B28E5BF000AD4F8 /* CustomDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = E249714E2B28E5BF000AD4F8 /* CustomDesign.swift */; };
 		E290A6E52B288FFA00560137 /* SalaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E290A6E42B288FFA00560137 /* SalaryViewController.swift */; };
 		E290A6E72B28900200560137 /* SalaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E290A6E62B28900200560137 /* SalaryView.swift */; };
@@ -35,6 +37,8 @@
 		E201C0FB2B2C722800DFCDEF /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		E21074852B2BC2FB00A7D523 /* NetSalaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetSalaryViewController.swift; sourceTree = "<group>"; };
 		E21074872B2BC30200A7D523 /* NetSalaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetSalaryView.swift; sourceTree = "<group>"; };
+		E21CC28C2B5565C10089933E /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		E21CC28E2B5565CB0089933E /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		E249714E2B28E5BF000AD4F8 /* CustomDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDesign.swift; sourceTree = "<group>"; };
 		E290A6E42B288FFA00560137 /* SalaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryViewController.swift; sourceTree = "<group>"; };
 		E290A6E62B28900200560137 /* SalaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryView.swift; sourceTree = "<group>"; };
@@ -76,6 +80,15 @@
 				E21074872B2BC30200A7D523 /* NetSalaryView.swift */,
 			);
 			path = NetSalary;
+			sourceTree = "<group>";
+		};
+		E21CC28B2B5565B00089933E /* Result */ = {
+			isa = PBXGroup;
+			children = (
+				E21CC28C2B5565C10089933E /* ResultViewController.swift */,
+				E21CC28E2B5565CB0089933E /* ResultView.swift */,
+			);
+			path = Result;
 			sourceTree = "<group>";
 		};
 		E290A6E32B288FE100560137 /* Salary */ = {
@@ -184,6 +197,7 @@
 		E2F81B162B235A9300E181B7 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				E21CC28B2B5565B00089933E /* Result */,
 				E2BE944F2B274FA0003FE825 /* Home */,
 				E290A6E32B288FE100560137 /* Salary */,
 				E2945DB12B29E1D400A1C582 /* Additional */,
@@ -285,8 +299,10 @@
 				E2F81B152B235A7700E181B7 /* UIColor+Extension.swift in Sources */,
 				E2BE94512B274FB3003FE825 /* HomeView.swift in Sources */,
 				E21074882B2BC30200A7D523 /* NetSalaryView.swift in Sources */,
+				E21CC28D2B5565C10089933E /* ResultViewController.swift in Sources */,
 				E2CB9F382B32303B003553F4 /* SalaryViewModel.swift in Sources */,
 				E2AAE4F12B2792F2008A5543 /* Calculator.swift in Sources */,
+				E21CC28F2B5565CB0089933E /* ResultView.swift in Sources */,
 				E249714F2B28E5BF000AD4F8 /* CustomDesign.swift in Sources */,
 				E2F81B032B23592600E181B7 /* HomeViewController.swift in Sources */,
 				E2BE94582B275232003FE825 /* String+Extension.swift in Sources */,
