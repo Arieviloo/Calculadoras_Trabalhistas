@@ -11,6 +11,19 @@
 "subtitleQuestionOtherAdditional" = "Aqui você considera horas extras, comissões, etc.";
 "optional" = "(opcional)";
 
+
 //Button
 "next" = "Próximo";
 "calculate" = "Calcular";
+
+//Result
+"result" = "Resultado";
+"yourEarnings" = "Seus ganhos";
+"yourDiscounts" = "Seus descontos";
+"grossSalary" = "Sálario bruto";
+"additionalDanguerouss" = "Adicional de periculosidade";
+"additionalInsalubrity" = "Adicional de insalubridade";
+"otherAdditional" = "Outros adicionais";
+"inss" = "INSS";
+"irrf" = "IRRF";
+"otherDiscounts" = "Outros descontos";
