@@ -37,7 +37,7 @@ extension NetSalaryViewController: UITextFieldDelegate {
 			switch string {
 			case "0"..."9":
 				currentString += string
-				formatCurrency(string: currentString, textField: netSalaryView.otherAdditionalTextField)
+				currencyInputFormatting(string: currentString, textField: netSalaryView.otherAdditionalTextField)
 			default:
 				let array = Array(string)
 				var currentStringArray = Array(currentString)
@@ -47,7 +47,7 @@ extension NetSalaryViewController: UITextFieldDelegate {
 					for character in currentStringArray {
 						currentString += String(character)
 					}
-					formatCurrency(string: currentString, textField: netSalaryView.otherAdditionalTextField)
+					currencyInputFormatting(string: currentString, textField: netSalaryView.otherAdditionalTextField)
 				}
 			}
 			
