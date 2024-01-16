@@ -10,7 +10,6 @@ class NetSalaryViewController: UIViewController {
 		super.init(nibName: nil, bundle: nil)
 		title = calculator.name
 		self.calculator = calculator
-		dump(calculator)
 	}
 	
 	required init?(coder: NSCoder) {
@@ -64,6 +63,9 @@ extension NetSalaryViewController: NetSalaryViewProtocol {
 		guard var calculator else { return }
 		let valueOtherAdditionalSalary = (NSString(string: currentString).doubleValue)/100
 		calculator.valueOtherAdditional = valueOtherAdditionalSalary
+		let resultVC = ResultViewController(calculator: calculator)
+		
+		navigationController?.pushViewController(resultVC, animated: true)
 	}
 	
 }
