@@ -26,17 +26,19 @@ class ResultViewController: UIViewController {
 	private func calculateNetSalary(calculator: Calculator) {
 		
 		let grossSalary = calculator.valueSalaryGross ?? 0
-		let additionalDangerouss = calculator.valueAdditionalDangerousness ?? 0
-		let additionalInsalubrity = calculator.valueLevelInsalubrity ?? 0
+		let additionalDangerouss = porcentage(porcent: calculator.valueAdditionalDangerousness ?? 0, of: grossSalary)
+		let additionalInsalubrity = porcentage(porcent: calculator.valueLevelInsalubrity ?? 0, of: grossSalary)
 		let otherAdditinal = calculator.valueOtherAdditional ?? 0
+		print("sal ", grossSalary + additionalDangerouss + additionalInsalubrity)
+		let inss = calculateInss(salary: grossSalary + additionalDangerouss + additionalInsalubrity)
 		
 		resultView.valueGrossSalaryLabel.text = formatCurrency(value: grossSalary)
-		resultView.valueAdditionalDangeroussLabel.text = formatCurrency(value: porcentage(porcent: additionalDangerouss, of: grossSalary))
-		resultView.valueAdditionalInsalubrityLabel.text = formatCurrency(value: porcentage(porcent: additionalInsalubrity, of: grossSalary))
+		resultView.valueAdditionalDangeroussLabel.text = formatCurrency(value: additionalDangerouss)
+		resultView.valueAdditionalInsalubrityLabel.text = formatCurrency(value: additionalInsalubrity)
 		resultView.valueOtherAdditionalLabel.text = formatCurrency(value: otherAdditinal)
 		
-		let pom = calculateInss(salary: grossSalary)
-		print("pommmm - > ", pom)
+		resultView.valueInssLabel.text = formatCurrency(value: inss)
+		
 	}
 	
 	private func porcentage(porcent: Double, of value: Double) -> Double {
@@ -45,31 +47,31 @@ class ResultViewController: UIViewController {
 	
 	private func calculateInss(salary: Double) -> Double {
 		var resultInss = 0.0
-		var rangeSalary = 0.0
-		let porcents = [0.075, 0.09, 0.12, 0.14]
-		let minSalary = [1412, 2666.69, 4000.04, 7786.02]
+		var lastRangeSalary = 0.0
+		let aliquots = [0.075, 0.09, 0.12, 0.14]
+		let minSalary = [1412, 2666.68, 4000.03, 7786.02]
 		
 		for minimun in minSalary {
 			if let indexMinSalary = minSalary.firstIndex(of: minimun) {
 				print(indexMinSalary)
-				print(rangeSalary)
+				print(lastRangeSalary)
 				if salary <= minimun && indexMinSalary == 0 {
-					resultInss = salary * porcents[0]
+					resultInss = salary * aliquots[0]
 					break
 				}
 				if salary <= minimun && indexMinSalary != 0 {
-					resultInss = ((salary - rangeSalary) * porcents[indexMinSalary]) + resultInss
+					resultInss = ((salary - lastRangeSalary) * aliquots[indexMinSalary]) + resultInss
 					break
 				}
 				
 				if salary > minimun {
 					if indexMinSalary == 0 {
-						resultInss = minimun * porcents[0]
+						resultInss = minimun * aliquots[0]
 					}
 					if indexMinSalary != 0 {
-						resultInss = ((minimun - rangeSalary) * porcents[indexMinSalary]) + resultInss
+						resultInss = ((minimun - lastRangeSalary) * aliquots[indexMinSalary]) + resultInss
 					}
-					rangeSalary = minimun
+					lastRangeSalary = minimun
 				}
 			}
 		}
