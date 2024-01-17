@@ -24,7 +24,8 @@ extension UIViewController {
 		let formatter = NumberFormatter()
 		formatter.numberStyle = NumberFormatter.Style.currency
 		formatter.locale = NSLocale(localeIdentifier: "pt_BR") as Locale
-		return formatter.string(from: value as NSNumber)!
+		guard let numberFormat = formatter.string(from: value as NSNumber) else { return "0"}
+		return numberFormat
 	}
 
 }

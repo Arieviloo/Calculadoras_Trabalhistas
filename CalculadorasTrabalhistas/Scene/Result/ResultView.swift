@@ -40,13 +40,13 @@ class ResultView: UIView {
 		return $0
 	}(UILabel())
 	
-	lazy var additionalDangueroussLabel: UILabel = {
-		$0.setCustomTitleNormal(title: "additionalDanguerouss")
+	lazy var additionalDangeroussLabel: UILabel = {
+		$0.setCustomTitleNormal(title: "additionalDangerouss")
 		$0.font = UIFont(name: "Montserrat-light", size: 12)
 		return $0
 	}(UILabel())
 	
-	lazy var valueAdditionalDangueroussLabel: UILabel = {
+	lazy var valueAdditionalDangeroussLabel: UILabel = {
 		$0.translatesAutoresizingMaskIntoConstraints = false
 		$0.text = "R$ 10.000,00"
 		$0.font = UIFont(name: "Montserrat-light", size: 12)
@@ -159,8 +159,8 @@ class ResultView: UIView {
 		contentView.addSubview(yourEarningsLabel)
 		contentView.addSubview(grossSalaryLabel)
 		contentView.addSubview(valueGrossSalaryLabel)
-		contentView.addSubview(additionalDangueroussLabel)
-		contentView.addSubview(valueAdditionalDangueroussLabel)
+		contentView.addSubview(additionalDangeroussLabel)
+		contentView.addSubview(valueAdditionalDangeroussLabel)
 		contentView.addSubview(additionalInsalubrityLabel)
 		contentView.addSubview(valueAdditionalInsalubrityLabel)
 		contentView.addSubview(otherAdditionalLabel)
@@ -197,13 +197,13 @@ class ResultView: UIView {
 			valueGrossSalaryLabel.centerYAnchor.constraint(equalTo: grossSalaryLabel.centerYAnchor),
 			valueGrossSalaryLabel.trailingAnchor.constraint(equalTo: yourEarningsLabel.trailingAnchor),
 			
-			additionalDangueroussLabel.topAnchor.constraint(equalTo: grossSalaryLabel.bottomAnchor, constant: 10),
-			additionalDangueroussLabel.leadingAnchor.constraint(equalTo: yourEarningsLabel.leadingAnchor),
+			additionalDangeroussLabel.topAnchor.constraint(equalTo: grossSalaryLabel.bottomAnchor, constant: 10),
+			additionalDangeroussLabel.leadingAnchor.constraint(equalTo: yourEarningsLabel.leadingAnchor),
 			
-			valueAdditionalDangueroussLabel.centerYAnchor.constraint(equalTo: additionalDangueroussLabel.centerYAnchor),
-			valueAdditionalDangueroussLabel.trailingAnchor.constraint(equalTo: yourEarningsLabel.trailingAnchor),
+			valueAdditionalDangeroussLabel.centerYAnchor.constraint(equalTo: additionalDangeroussLabel.centerYAnchor),
+			valueAdditionalDangeroussLabel.trailingAnchor.constraint(equalTo: yourEarningsLabel.trailingAnchor),
 			
-			additionalInsalubrityLabel.topAnchor.constraint(equalTo: additionalDangueroussLabel.bottomAnchor, constant: 10),
+			additionalInsalubrityLabel.topAnchor.constraint(equalTo: additionalDangeroussLabel.bottomAnchor, constant: 10),
 			additionalInsalubrityLabel.leadingAnchor.constraint(equalTo: yourEarningsLabel.leadingAnchor),
 			
 			valueAdditionalInsalubrityLabel.topAnchor.constraint(equalTo: additionalInsalubrityLabel.topAnchor),

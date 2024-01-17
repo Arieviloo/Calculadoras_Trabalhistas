@@ -5,7 +5,7 @@ struct Calculator {
 	var valueSalaryGross: Double?
 	var valueNumberDependent: Int?
 	var isAdditionalDangerousness: Bool?
-	var valueAditionalDangerousness: Double?
+	var valueAdditionalDangerousness: Double?
 	var isAdditionalInsalubrity: Bool?
 	var valueLevelInsalubrity: Double?
 	var valueOtherAdditional: Double?

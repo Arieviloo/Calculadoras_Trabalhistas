@@ -44,7 +44,7 @@ extension AdditionalViewController: AdditionalViewProtocol {
 		let valueLevelInsalubrity = isOnAdditionalInsalubrity ? selectLevelInsalubrity(index: additionalView.btnSelect.selectedSegmentIndex) : 0
 		
 		calculator.isAdditionalDangerousness = isOnAdditionalDangerousness
-		calculator.valueAditionalDangerousness = valueAdditionalDangerousness
+		calculator.valueAdditionalDangerousness = valueAdditionalDangerousness
 		calculator.isAdditionalInsalubrity = isOnAdditionalInsalubrity
 		calculator.valueLevelInsalubrity = valueLevelInsalubrity
 		
