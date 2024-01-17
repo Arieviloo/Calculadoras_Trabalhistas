@@ -29,7 +29,6 @@ class ResultViewController: UIViewController {
 		let additionalDangerouss = porcentage(porcent: calculator.valueAdditionalDangerousness ?? 0, of: grossSalary)
 		let additionalInsalubrity = porcentage(porcent: calculator.valueLevelInsalubrity ?? 0, of: grossSalary)
 		let otherAdditinal = calculator.valueOtherAdditional ?? 0
-		print("sal ", grossSalary + additionalDangerouss + additionalInsalubrity)
 		let inss = calculateInss(salary: grossSalary + additionalDangerouss + additionalInsalubrity)
 		
 		resultView.valueGrossSalaryLabel.text = formatCurrency(value: grossSalary)
@@ -53,8 +52,6 @@ class ResultViewController: UIViewController {
 		
 		for minimun in minSalary {
 			if let indexMinSalary = minSalary.firstIndex(of: minimun) {
-				print(indexMinSalary)
-				print(lastRangeSalary)
 				if salary <= minimun && indexMinSalary == 0 {
 					resultInss = salary * aliquots[0]
 					break
