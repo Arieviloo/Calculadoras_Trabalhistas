@@ -11,6 +11,16 @@ class NetSalaryView: UIView {
 		self.delegate = delegate
 	}
 	
+	lazy var otherDiscountLabel: UILabel = {
+		$0.setCustomTitleNormal(title: "questionOtherDiscount")
+		return $0
+	}(UILabel())
+	
+	lazy var otherDiscountTextField: UITextField = {
+		$0.setCustomTextField()
+		return $0
+	}(UITextField())
+	
 	lazy var otherAdditionalLabel: UILabel = {
 		$0.setCustomTitleNormal(title: "questionOtherAdditional")
 		return $0
@@ -55,9 +65,12 @@ class NetSalaryView: UIView {
 	
 	public func configTextFieldDelegate(delegate: UITextFieldDelegate) {
 		self.otherAdditionalTextField.delegate = delegate
+		self.otherDiscountTextField.delegate = delegate
 	}
 	
 	private func configAddSubview() {
+		addSubview(otherDiscountLabel)
+		addSubview(otherDiscountTextField)
 		addSubview(otherAdditionalLabel)
 		addSubview(optionalLabel)
 		addSubview(otherAdditionalTextField)
@@ -67,19 +80,29 @@ class NetSalaryView: UIView {
 	
 	private func configConstraints() {
 		NSLayoutConstraint.activate([
-			otherAdditionalLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 40),
-			otherAdditionalLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+			
+			otherDiscountLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 40),
+			otherDiscountLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+			otherDiscountLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
+			
+			otherDiscountTextField.topAnchor.constraint(equalTo: otherDiscountLabel.bottomAnchor, constant: 10),
+			otherDiscountTextField.leadingAnchor.constraint(equalTo: otherDiscountLabel.leadingAnchor),
+			otherDiscountTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
+			otherDiscountTextField.heightAnchor.constraint(equalToConstant: 40),
+			
+			otherAdditionalLabel.topAnchor.constraint(equalTo: otherDiscountTextField.bottomAnchor, constant: 40),
+			otherAdditionalLabel.leadingAnchor.constraint(equalTo: otherDiscountLabel.leadingAnchor),
 			
 			optionalLabel.topAnchor.constraint(equalTo: otherAdditionalLabel.topAnchor),
 			optionalLabel.leadingAnchor.constraint(equalTo: otherAdditionalLabel.trailingAnchor, constant: 5),
 			
 			otherAdditionalTextField.topAnchor.constraint(equalTo: otherAdditionalLabel.bottomAnchor, constant: 10),
-			otherAdditionalTextField.leadingAnchor.constraint(equalTo: otherAdditionalLabel.leadingAnchor),
+			otherAdditionalTextField.leadingAnchor.constraint(equalTo: otherDiscountLabel.leadingAnchor),
 			otherAdditionalTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
 			otherAdditionalTextField.heightAnchor.constraint(equalToConstant: 40),
 			
 			subtitleOtherAdditionalLabel.topAnchor.constraint(equalTo: otherAdditionalTextField.bottomAnchor, constant: 10),
-			subtitleOtherAdditionalLabel.leadingAnchor.constraint(equalTo: otherAdditionalLabel.leadingAnchor),
+			subtitleOtherAdditionalLabel.leadingAnchor.constraint(equalTo: otherDiscountLabel.leadingAnchor),
 			subtitleOtherAdditionalLabel.trailingAnchor.constraint(equalTo: otherAdditionalTextField.trailingAnchor),
 			
 			calculateButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -200),

@@ -28,22 +28,21 @@ class ResultViewController: UIViewController {
 		let grossSalary = calculator.valueSalaryGross ?? 0
 		let additionalDangerouss = porcentage(porcent: calculator.valueAdditionalDangerousness ?? 0, of: grossSalary)
 		let additionalInsalubrity = porcentage(porcent: calculator.valueLevelInsalubrity ?? 0, of: grossSalary)
-		let otherDiscount = calculator.valueOtherAdditional ?? 0
-		let inss = calculateInss(salary: grossSalary + additionalDangerouss + additionalInsalubrity)
-		
-		let salary = grossSalary + additionalDangerouss + additionalInsalubrity
-		print(salary)
+		let otherDiscount = calculator.valueOtherDiscount ?? 0
+		let otherAdditional = calculator.valueOtherAdditional ?? 0
+		let totalSalaryWithoutDiscount = grossSalary + additionalDangerouss + additionalInsalubrity + otherAdditional
+		let inss = calculateInss(salary: totalSalaryWithoutDiscount)
 		let discount = otherDiscount + inss
-		
-		let irrf = calculateIrrf(salary: salary, discount: discount, numberDependence: calculator.valueNumberDependent ?? 0)
+		let irrf = calculateIrrf(salary: totalSalaryWithoutDiscount, discount: discount, numberDependence: calculator.valueNumberDependent ?? 0)
 		print(irrf)
 		resultView.valueGrossSalaryLabel.text = formatCurrency(value: grossSalary)
 		resultView.valueAdditionalDangeroussLabel.text = formatCurrency(value: additionalDangerouss)
 		resultView.valueAdditionalInsalubrityLabel.text = formatCurrency(value: additionalInsalubrity)
-		resultView.valueOtherAdditionalLabel.text = formatCurrency(value: otherDiscount)
+		resultView.valueOtherAdditionalLabel.text = formatCurrency(value: otherAdditional)
 		
 		resultView.valueInssLabel.text = formatCurrency(value: inss)
 		resultView.valueIrrfLabel.text = formatCurrency(value: irrf)
+		resultView.valueOtherDiscountsLabel.text = formatCurrency(value: otherDiscount)
 	}
 	
 	private func porcentage(porcent: Double, of value: Double) -> Double {

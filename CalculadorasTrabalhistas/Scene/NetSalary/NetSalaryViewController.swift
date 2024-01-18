@@ -5,6 +5,7 @@ class NetSalaryViewController: UIViewController {
 	private let netSalaryView = NetSalaryView()
 	private var calculator: Calculator?
 	var currentString = ""
+	var currentStringDiscount = ""
 	
 	init(calculator: Calculator) {
 		super.init(nibName: nil, bundle: nil)
@@ -33,6 +34,26 @@ extension NetSalaryViewController: UITextFieldDelegate {
 	}
 	
 	func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+		if netSalaryView.otherDiscountTextField.isEditing {
+			switch string {
+			case "0"..."9":
+				currentStringDiscount += string
+				currencyInputFormatting(string: currentStringDiscount, textField: netSalaryView.otherDiscountTextField)
+			default:
+				let array = Array(string)
+				var currentStringArray = Array(currentStringDiscount)
+				if array.count == 0 && currentStringArray.count != 0 {
+					currentStringArray.removeLast()
+					currentStringDiscount = ""
+					for character in currentStringArray {
+						currentStringDiscount += String(character)
+					}
+					currencyInputFormatting(string: currentStringDiscount, textField: netSalaryView.otherDiscountTextField)
+				}
+			}
+			
+		}
+		
 		if netSalaryView.otherAdditionalTextField.isEditing {
 			switch string {
 			case "0"..."9":
@@ -51,9 +72,8 @@ extension NetSalaryViewController: UITextFieldDelegate {
 				}
 			}
 			
-		} else {
-			return true
 		}
+		
 		return false
 	}
 }
@@ -62,6 +82,8 @@ extension NetSalaryViewController: NetSalaryViewProtocol {
 	func tappedCalculate() {
 		guard var calculator else { return }
 		let valueOtherAdditionalSalary = (NSString(string: currentString).doubleValue)/100
+		let valueOtherDiscount = (NSString(string: currentStringDiscount).doubleValue)/100
+		calculator.valueOtherDiscount = valueOtherDiscount
 		calculator.valueOtherAdditional = valueOtherAdditionalSalary
 		let resultVC = ResultViewController(calculator: calculator)
 		
