@@ -34,6 +34,8 @@ class ResultViewController: UIViewController {
 		let inss = calculateInss(salary: totalSalaryWithoutDiscount)
 		let discount = otherDiscount + inss
 		let irrf = calculateIrrf(salary: totalSalaryWithoutDiscount, discount: discount, numberDependence: calculator.valueNumberDependent ?? 0)
+		
+		let resultTotal = totalSalaryWithoutDiscount - (discount + irrf)
 		print(irrf)
 		resultView.valueGrossSalaryLabel.text = formatCurrency(value: grossSalary)
 		resultView.valueAdditionalDangeroussLabel.text = formatCurrency(value: additionalDangerouss)
@@ -43,6 +45,8 @@ class ResultViewController: UIViewController {
 		resultView.valueInssLabel.text = formatCurrency(value: inss)
 		resultView.valueIrrfLabel.text = formatCurrency(value: irrf)
 		resultView.valueOtherDiscountsLabel.text = formatCurrency(value: otherDiscount)
+		
+		resultView.valueResultLabel.text = formatCurrency(value: resultTotal)
 	}
 	
 	private func porcentage(porcent: Double, of value: Double) -> Double {
@@ -108,8 +112,8 @@ class ResultViewController: UIViewController {
 				}
 				
 				if baseSalary > base && indexCalculation == 3 {
-					let descountAliquot = aliquots[indexCalculation - 1]
-					let descountDeduction = deductions[indexCalculation - 1]
+					let descountAliquot = aliquots[indexCalculation]
+					let descountDeduction = deductions[indexCalculation]
 					descountIrrf = (baseSalary * descountAliquot) - descountDeduction
 					break
 				}
