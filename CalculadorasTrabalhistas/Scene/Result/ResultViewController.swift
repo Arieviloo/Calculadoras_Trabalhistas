@@ -1,12 +1,12 @@
 import UIKit
 
 class ResultViewController: UIViewController {
+	
 	private let resultView = ResultView()
 	
 	init(calculator: Calculator) {
 		super.init(nibName: nil, bundle: nil)
 		calculateNetSalary(calculator: calculator)
-		dump(calculator)
 	}
 	
 	required init?(coder: NSCoder) {
@@ -36,7 +36,7 @@ class ResultViewController: UIViewController {
 		let irrf = calculateIrrf(salary: totalSalaryWithoutDiscount, discount: discount, numberDependence: calculator.valueNumberDependent ?? 0)
 		
 		let resultTotal = totalSalaryWithoutDiscount - (discount + irrf)
-		print(irrf)
+		
 		resultView.valueGrossSalaryLabel.text = formatCurrency(value: grossSalary)
 		resultView.valueAdditionalDangeroussLabel.text = formatCurrency(value: additionalDangerouss)
 		resultView.valueAdditionalInsalubrityLabel.text = formatCurrency(value: additionalInsalubrity)
@@ -86,12 +86,7 @@ class ResultViewController: UIViewController {
 	}
 	
 	private func calculateIrrf(salary: Double, discount: Double, numberDependence: Int) -> Double {
-		print("1 - ", salary)
-		print("2 - ", discount)
-		print("3 - ", numberDependence)
 		let baseSalary = salary - discount - (Double(numberDependence) * 189.59)
-		print("4 - ", baseSalary)
-		
 		let baseCalculations = [2112, 2826.65, 3751.05, 4664.68]
 		let aliquots = [0.075, 0.15, 0.225, 0.275]
 		let deductions = [158.40, 370.40, 651.73, 884.96]

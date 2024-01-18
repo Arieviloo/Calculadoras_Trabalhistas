@@ -51,7 +51,6 @@ extension NetSalaryViewController: UITextFieldDelegate {
 					currencyInputFormatting(string: currentStringDiscount, textField: netSalaryView.otherDiscountTextField)
 				}
 			}
-			
 		}
 		
 		if netSalaryView.otherAdditionalTextField.isEditing {
@@ -71,7 +70,6 @@ extension NetSalaryViewController: UITextFieldDelegate {
 					currencyInputFormatting(string: currentString, textField: netSalaryView.otherAdditionalTextField)
 				}
 			}
-			
 		}
 		
 		return false

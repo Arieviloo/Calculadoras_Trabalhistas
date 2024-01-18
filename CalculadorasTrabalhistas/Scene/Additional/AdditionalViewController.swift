@@ -8,7 +8,6 @@ class AdditionalViewController: UIViewController {
 		super.init(nibName: nil, bundle: nil)
 		self.calculator = calculator
 		title = "\(calculator.name)"
-		dump(calculator)
 	}
 	
 	required init?(coder: NSCoder) {
@@ -24,7 +23,6 @@ class AdditionalViewController: UIViewController {
 		self.additionalView.delegate(delegate: self)
 	}
 }
-
 
 extension AdditionalViewController: AdditionalViewProtocol {
 	func tappedAdditionalInsalubrity() {
