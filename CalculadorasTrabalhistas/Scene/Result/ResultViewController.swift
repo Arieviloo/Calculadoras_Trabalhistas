@@ -28,16 +28,22 @@ class ResultViewController: UIViewController {
 		let grossSalary = calculator.valueSalaryGross ?? 0
 		let additionalDangerouss = porcentage(porcent: calculator.valueAdditionalDangerousness ?? 0, of: grossSalary)
 		let additionalInsalubrity = porcentage(porcent: calculator.valueLevelInsalubrity ?? 0, of: grossSalary)
-		let otherAdditinal = calculator.valueOtherAdditional ?? 0
+		let otherDiscount = calculator.valueOtherAdditional ?? 0
 		let inss = calculateInss(salary: grossSalary + additionalDangerouss + additionalInsalubrity)
 		
+		let salary = grossSalary + additionalDangerouss + additionalInsalubrity
+		print(salary)
+		let discount = otherDiscount + inss
+		
+		let irrf = calculateIrrf(salary: salary, discount: discount, numberDependence: calculator.valueNumberDependent ?? 0)
+		print(irrf)
 		resultView.valueGrossSalaryLabel.text = formatCurrency(value: grossSalary)
 		resultView.valueAdditionalDangeroussLabel.text = formatCurrency(value: additionalDangerouss)
 		resultView.valueAdditionalInsalubrityLabel.text = formatCurrency(value: additionalInsalubrity)
-		resultView.valueOtherAdditionalLabel.text = formatCurrency(value: otherAdditinal)
+		resultView.valueOtherAdditionalLabel.text = formatCurrency(value: otherDiscount)
 		
 		resultView.valueInssLabel.text = formatCurrency(value: inss)
-		
+		resultView.valueIrrfLabel.text = formatCurrency(value: irrf)
 	}
 	
 	private func porcentage(porcent: Double, of value: Double) -> Double {
@@ -74,6 +80,44 @@ class ResultViewController: UIViewController {
 		}
 		
 		return resultInss
+	}
+	
+	private func calculateIrrf(salary: Double, discount: Double, numberDependence: Int) -> Double {
+		print("1 - ", salary)
+		print("2 - ", discount)
+		print("3 - ", numberDependence)
+		let baseSalary = salary - discount - (Double(numberDependence) * 189.59)
+		print("4 - ", baseSalary)
+		
+		let baseCalculations = [2112, 2826.65, 3751.05, 4664.68]
+		let aliquots = [0.075, 0.15, 0.225, 0.275]
+		let deductions = [158.40, 370.40, 651.73, 884.96]
+		var descountIrrf = 0.0
+		
+		for base in baseCalculations {
+			if let indexCalculation = baseCalculations.firstIndex(of: base) {
+				if baseSalary <= base && indexCalculation == 0 {
+					descountIrrf = 0.0
+					break
+				}
+				
+				if baseSalary <= base {
+					let descountAliquot = aliquots[indexCalculation - 1]
+					let descountDeduction = deductions[indexCalculation - 1]
+					descountIrrf = (baseSalary * descountAliquot) - descountDeduction
+					break
+				}
+				
+				if baseSalary > base && indexCalculation == 3 {
+					let descountAliquot = aliquots[indexCalculation - 1]
+					let descountDeduction = deductions[indexCalculation - 1]
+					descountIrrf = (baseSalary * descountAliquot) - descountDeduction
+					break
+				}
+			}
+			
+		}
+		return descountIrrf
 	}
 	
 }
