@@ -11,6 +11,8 @@
 "questionOtherAdditional" = "Outros adicionais";
 "subtitleQuestionOtherAdditional" = "Aqui você considera horas extras, comissões, etc.";
 "optional" = "(opcional)";
+"simulateAgain" = "Simular Novamente";
+"doAnotherCalculation" = "Fazer outro cálculo";
 
 
 //Button

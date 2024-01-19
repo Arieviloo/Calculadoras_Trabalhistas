@@ -1,12 +1,14 @@
 import UIKit
 
 class ResultViewController: UIViewController {
+	
 	private let resultView = ResultView()
+	private var calculator: Calculator?
 	
 	init(calculator: Calculator) {
 		super.init(nibName: nil, bundle: nil)
 		calculateNetSalary(calculator: calculator)
-		dump(calculator)
+		self.calculator = calculator
 	}
 	
 	required init?(coder: NSCoder) {
@@ -19,6 +21,7 @@ class ResultViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		resultView.delegate(delegate: self)
 		
 		title = String(localizedKey: "result")
 	}
@@ -36,7 +39,7 @@ class ResultViewController: UIViewController {
 		let irrf = calculateIrrf(salary: totalSalaryWithoutDiscount, discount: discount, numberDependence: calculator.valueNumberDependent ?? 0)
 		
 		let resultTotal = totalSalaryWithoutDiscount - (discount + irrf)
-		print(irrf)
+		
 		resultView.valueGrossSalaryLabel.text = formatCurrency(value: grossSalary)
 		resultView.valueAdditionalDangeroussLabel.text = formatCurrency(value: additionalDangerouss)
 		resultView.valueAdditionalInsalubrityLabel.text = formatCurrency(value: additionalInsalubrity)
@@ -74,6 +77,10 @@ class ResultViewController: UIViewController {
 					if indexMinSalary == 0 {
 						resultInss = minimun * aliquots[0]
 					}
+					if indexMinSalary == 3 {
+						resultInss = 908.85
+						break
+					}
 					if indexMinSalary != 0 {
 						resultInss = ((minimun - lastRangeSalary) * aliquots[indexMinSalary]) + resultInss
 					}
@@ -86,12 +93,7 @@ class ResultViewController: UIViewController {
 	}
 	
 	private func calculateIrrf(salary: Double, discount: Double, numberDependence: Int) -> Double {
-		print("1 - ", salary)
-		print("2 - ", discount)
-		print("3 - ", numberDependence)
 		let baseSalary = salary - discount - (Double(numberDependence) * 189.59)
-		print("4 - ", baseSalary)
-		
 		let baseCalculations = [2112, 2826.65, 3751.05, 4664.68]
 		let aliquots = [0.075, 0.15, 0.225, 0.275]
 		let deductions = [158.40, 370.40, 651.73, 884.96]
@@ -123,4 +125,14 @@ class ResultViewController: UIViewController {
 		return descountIrrf
 	}
 	
+}
+
+extension ResultViewController: ResultViewProtocol {
+	func tappedOutrobtn() {
+		
+		if let destinationViewController = navigationController?.viewControllers
+			.filter({$0 is SalaryViewController})
+			.first {navigationController?.popToViewController(destinationViewController, animated: true)
+		}
+	}
 }
