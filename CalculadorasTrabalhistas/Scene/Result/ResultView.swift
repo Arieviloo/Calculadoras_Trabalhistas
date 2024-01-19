@@ -2,6 +2,7 @@ import UIKit
 
 protocol ResultViewProtocol: NSObject {
 	func tappedSimulateAgainButton()
+	func tappedOtherCalculationButton()
 }
 
 class ResultView: UIView {
@@ -157,8 +158,17 @@ class ResultView: UIView {
 		return $0
 	}(UIButton(type: .system))
 	
+	lazy var otherCalculationButton: UIButton = {
+		$0.setCustomButton(title: "doAnotherCalculation", colorBackground: UIColor.appBlueHeavy)
+		$0.addTarget(self, action: #selector(tappedOtherCalculationButton), for: .touchUpInside)
+		return $0
+	}(UIButton(type: .system))
+	
 	@objc func tappedSimulateAgainButton() {
 		self.delegate?.tappedSimulateAgainButton()
+	}
+	@objc func tappedOtherCalculationButton() {
+		self.delegate?.tappedOtherCalculationButton()
 	}
 	
 	override init(frame: CGRect) {
@@ -194,6 +204,7 @@ class ResultView: UIView {
 		contentView.addSubview(resultLabel)
 		contentView.addSubview(valueResultLabel)
 		addSubview(simulateAgainButton)
+		addSubview(otherCalculationButton)
 	}
 	
 	private func configConstraints() {
@@ -266,7 +277,12 @@ class ResultView: UIView {
 			simulateAgainButton.topAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 50),
 			simulateAgainButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
 			simulateAgainButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-			simulateAgainButton.heightAnchor.constraint(equalToConstant: 45)
+			simulateAgainButton.heightAnchor.constraint(equalToConstant: 45),
+			
+			otherCalculationButton.topAnchor.constraint(equalTo: simulateAgainButton.bottomAnchor, constant: 10),
+			otherCalculationButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+			otherCalculationButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+			otherCalculationButton.heightAnchor.constraint(equalToConstant: 45)
 	
 		])
 	}
