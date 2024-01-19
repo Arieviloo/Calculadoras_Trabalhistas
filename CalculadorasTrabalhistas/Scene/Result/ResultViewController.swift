@@ -134,4 +134,9 @@ extension ResultViewController: ResultViewProtocol {
 			.first {navigationController?.popToViewController(destinationViewController, animated: true)
 		}
 	}
+	
+	func tappedOtherCalculationButton() {
+		navigationController?.popToRootViewController(animated: true)
+	}
+	
 }
