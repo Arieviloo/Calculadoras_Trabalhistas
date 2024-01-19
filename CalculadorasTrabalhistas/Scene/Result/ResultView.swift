@@ -1,6 +1,15 @@
 import UIKit
 
+protocol ResultViewProtocol: NSObject {
+	func tappedOutrobtn()
+}
+
 class ResultView: UIView {
+	
+	private var delegate: ResultViewProtocol?
+	func delegate(delegate: ResultViewProtocol) {
+		self.delegate = delegate
+	}
 	
 	lazy var titleLabel: UILabel = {
 		$0.translatesAutoresizingMaskIntoConstraints = false
@@ -142,6 +151,15 @@ class ResultView: UIView {
 		return $0
 	}(UILabel())
 	
+	lazy var simulateAgainButton: UIButton = {
+		$0.setCustomButton(title: "simulateAgain", colorBackground: UIColor.appBlueLight)
+		return $0
+	}(UIButton())
+	
+	@objc func tappedOutrobtn() {
+		self.delegate?.tappedOutrobtn()
+	}
+	
 	override init(frame: CGRect) {
 		super.init(frame: frame)
 		backgroundColor = .white
@@ -174,6 +192,7 @@ class ResultView: UIView {
 		contentView.addSubview(valueOtherDiscountsLabel)
 		contentView.addSubview(resultLabel)
 		contentView.addSubview(valueResultLabel)
+		addSubview(simulateAgainButton)
 	}
 	
 	private func configConstraints() {
@@ -241,7 +260,12 @@ class ResultView: UIView {
 			resultLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
 			
 			valueResultLabel.topAnchor.constraint(equalTo: resultLabel.bottomAnchor, constant: 5),
-			valueResultLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor)
+			valueResultLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+			
+			simulateAgainButton.topAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 50),
+			simulateAgainButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+			simulateAgainButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+			simulateAgainButton.heightAnchor.constraint(equalToConstant: 45)
 	
 		])
 	}

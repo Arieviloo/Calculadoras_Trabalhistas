@@ -3,10 +3,12 @@ import UIKit
 class ResultViewController: UIViewController {
 	
 	private let resultView = ResultView()
+	private var calculator: Calculator?
 	
 	init(calculator: Calculator) {
 		super.init(nibName: nil, bundle: nil)
 		calculateNetSalary(calculator: calculator)
+		self.calculator = calculator
 	}
 	
 	required init?(coder: NSCoder) {
@@ -19,6 +21,7 @@ class ResultViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		resultView.delegate(delegate: self)
 		
 		title = String(localizedKey: "result")
 	}
@@ -74,6 +77,10 @@ class ResultViewController: UIViewController {
 					if indexMinSalary == 0 {
 						resultInss = minimun * aliquots[0]
 					}
+					if indexMinSalary == 3 {
+						resultInss = 908.85
+						break
+					}
 					if indexMinSalary != 0 {
 						resultInss = ((minimun - lastRangeSalary) * aliquots[indexMinSalary]) + resultInss
 					}
@@ -118,4 +125,14 @@ class ResultViewController: UIViewController {
 		return descountIrrf
 	}
 	
+}
+
+extension ResultViewController: ResultViewProtocol {
+	func tappedOutrobtn() {
+		
+		if let destinationViewController = navigationController?.viewControllers
+			.filter({$0 is SalaryViewController})
+			.first {navigationController?.popToViewController(destinationViewController, animated: true)
+		}
+	}
 }
