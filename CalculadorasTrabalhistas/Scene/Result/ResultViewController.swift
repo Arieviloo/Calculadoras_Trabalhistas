@@ -128,8 +128,7 @@ class ResultViewController: UIViewController {
 }
 
 extension ResultViewController: ResultViewProtocol {
-	func tappedOutrobtn() {
-		
+	func tappedSimulateAgainButton() {
 		if let destinationViewController = navigationController?.viewControllers
 			.filter({$0 is SalaryViewController})
 			.first {navigationController?.popToViewController(destinationViewController, animated: true)

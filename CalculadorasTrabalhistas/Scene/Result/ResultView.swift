@@ -1,7 +1,7 @@
 import UIKit
 
 protocol ResultViewProtocol: NSObject {
-	func tappedOutrobtn()
+	func tappedSimulateAgainButton()
 }
 
 class ResultView: UIView {
@@ -153,11 +153,12 @@ class ResultView: UIView {
 	
 	lazy var simulateAgainButton: UIButton = {
 		$0.setCustomButton(title: "simulateAgain", colorBackground: UIColor.appBlueLight)
+		$0.addTarget(self, action: #selector(tappedSimulateAgainButton), for: .touchUpInside)
 		return $0
-	}(UIButton())
+	}(UIButton(type: .system))
 	
-	@objc func tappedOutrobtn() {
-		self.delegate?.tappedOutrobtn()
+	@objc func tappedSimulateAgainButton() {
+		self.delegate?.tappedSimulateAgainButton()
 	}
 	
 	override init(frame: CGRect) {
