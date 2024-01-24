@@ -3,19 +3,17 @@ import UIKit
 class SalaryViewController: UIViewController {
 	
 	private let salaryView = SalaryView()
-	private var calculator: Calculator?
-	var currentString = ""
+	private let salaryVM = SalaryViewModel()
+	private var currentString = ""
 	
 	init(calculator: Calculator) {
 		super.init(nibName: nil, bundle: nil)
-		self.calculator = calculator
-		title = "\(calculator.name)"
+		salaryVM.setCalculator(calculator: calculator)
 	}
 	
 	required init?(coder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
 	}
-	
 	
 	override func loadView() {
 		view = salaryView
@@ -23,6 +21,11 @@ class SalaryViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		configView()
+	}
+	
+	private func configView() {
+		title = salaryVM.getTitle()
 		self.salaryView.configTextFieldDelegate(delegate: self)
 		self.salaryView.delegate(delegate: self)
 	}
@@ -33,7 +36,8 @@ extension SalaryViewController: UITextFieldDelegate {
 		textField.resignFirstResponder()
 		return true
 	}
-	func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool { // return NO to not change text
+	func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool { 
+		// return NO to not change text
 
 		if salaryView.salaryValueTextField.isEditing {
 			switch string {
@@ -63,13 +67,11 @@ extension SalaryViewController: UITextFieldDelegate {
 
 extension SalaryViewController: SalaryViewProtocol {
 	func tappedNext() {
-		guard var calculator else { return }
-	
 		let valueSalary = (NSString(string: currentString).doubleValue)/100
 		let valueDependent = (NSString(string: salaryView.dependentValueTextField.text ?? "0").integerValue)
-		calculator.valueSalaryGross = valueSalary
-		calculator.valueNumberDependent = valueDependent
+		salaryVM.setSalaryAndDependent(salary: valueSalary, numberDependent: valueDependent)
 		
+		guard let calculator = salaryVM.calculator else { return }
 		let additionalVC = AdditionalViewController(calculator: calculator)
 		navigationController?.pushViewController(additionalVC, animated: true)
 	}
