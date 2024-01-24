@@ -9,14 +9,7 @@ import UIKit
 
 class HomeViewController: UIViewController {
 	private let homeView = HomeView()
-	
-	//adicionar esse obj em outro local
-	private let calculators: [Calculator] = [
-		Calculator(name: "Salário Líquido", icon: "icon-salariominimo", nameViewController: "NetSalaryViewController"),
-		Calculator(name: "Férias", icon: "icon-ferias"),
-		Calculator(name: "Rescisão", icon: "icon-rescisao"),
-		Calculator(name: "Décimo Terceiro", icon: "icon-decimoterceiro"),
-	]
+	private let homeVM = HomeViewModel()
 	
 	override func loadView() {
 		view = homeView
@@ -38,12 +31,12 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		return calculators.count
+		return homeVM.numberOfItens()
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewCell.identifier, for: indexPath) as? HomeCollectionViewCell else { return UICollectionViewCell() }
-		cell.setDataCalculator(calculators[indexPath.row].name, calculators[indexPath.row].icon)
+		cell.setDataCalculator(homeVM.getListCalculator[indexPath.row].name, homeVM.getListCalculator[indexPath.row].icon)
 		return cell
 	}
 	
@@ -54,7 +47,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
 	
 	
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-		let salaryVC = SalaryViewController(calculator: calculators[indexPath.row])
+		let salaryVC = SalaryViewController(calculator: homeVM.getListCalculator[indexPath.row])
 		navigationController?.pushViewController(salaryVC, animated: true)
 	}
 }
