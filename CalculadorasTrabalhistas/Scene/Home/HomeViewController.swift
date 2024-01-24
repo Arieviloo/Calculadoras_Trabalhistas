@@ -21,10 +21,9 @@ class HomeViewController: UIViewController {
 	}
 	
 	private func configView() {
-		title = String(localizedKey: "titleHome")
-		self.navigationController?.navigationBar.titleTextAttributes =  [ NSAttributedString.Key.foregroundColor:UIColor.black, NSAttributedString.Key.font:UIFont.systemFont(ofSize: 24, weight: .bold)
-		]
-		view.backgroundColor = .white
+		title = homeVM.getTitle()
+		self.navigationController?.navigationBar.titleTextAttributes =  homeVM.getCustomTitle()
+		view.backgroundColor = homeVM.getColorBackground()
 		self.homeView.configProtocolCollectionView(delegate: self, dataSource: self)
 	}
 }
@@ -41,8 +40,8 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-		let widthFrame = CGFloat((self.view.frame.width / 2 ) - 10)
-		return CGSize(width: widthFrame , height: 200)
+		let sizeCollection = homeVM.sizeCollectionView(view: self.view)
+		return sizeCollection
 	}
 	
 	
