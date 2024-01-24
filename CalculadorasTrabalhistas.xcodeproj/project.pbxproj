@@ -12,6 +12,7 @@
 		E21074882B2BC30200A7D523 /* NetSalaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21074872B2BC30200A7D523 /* NetSalaryView.swift */; };
 		E21CC28D2B5565C10089933E /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21CC28C2B5565C10089933E /* ResultViewController.swift */; };
 		E21CC28F2B5565CB0089933E /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21CC28E2B5565CB0089933E /* ResultView.swift */; };
+		E24090242B61508F00EBA746 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24090232B61508F00EBA746 /* HomeViewModel.swift */; };
 		E249714F2B28E5BF000AD4F8 /* CustomDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = E249714E2B28E5BF000AD4F8 /* CustomDesign.swift */; };
 		E290A6E52B288FFA00560137 /* SalaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E290A6E42B288FFA00560137 /* SalaryViewController.swift */; };
 		E290A6E72B28900200560137 /* SalaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E290A6E62B28900200560137 /* SalaryView.swift */; };
@@ -39,6 +40,7 @@
 		E21074872B2BC30200A7D523 /* NetSalaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetSalaryView.swift; sourceTree = "<group>"; };
 		E21CC28C2B5565C10089933E /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		E21CC28E2B5565CB0089933E /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
+		E24090232B61508F00EBA746 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		E249714E2B28E5BF000AD4F8 /* CustomDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDesign.swift; sourceTree = "<group>"; };
 		E290A6E42B288FFA00560137 /* SalaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryViewController.swift; sourceTree = "<group>"; };
 		E290A6E62B28900200560137 /* SalaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryView.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				E2F81B022B23592600E181B7 /* HomeViewController.swift */,
+				E24090232B61508F00EBA746 /* HomeViewModel.swift */,
 				E2BE94502B274FB3003FE825 /* HomeView.swift */,
 				E2AAE4ED2B279061008A5543 /* HomeCollectionViewCell.swift */,
 			);
@@ -291,6 +294,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E24090242B61508F00EBA746 /* HomeViewModel.swift in Sources */,
 				E290A6E72B28900200560137 /* SalaryView.swift in Sources */,
 				E2945DB32B29E20100A1C582 /* AdditionalViewController.swift in Sources */,
 				E21074862B2BC2FB00A7D523 /* NetSalaryViewController.swift in Sources */,
