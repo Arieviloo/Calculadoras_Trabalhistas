@@ -32,11 +32,7 @@ class AdditionalViewController: UIViewController {
 extension AdditionalViewController: AdditionalViewProtocol {
 	func tappedAdditionalInsalubrity() {
 		let toogle = additionalView.toggleInsalubritySwitch
-		if toogle.isOn {
-			additionalView.contentView.isHidden = false
-		} else {
-			additionalView.contentView.isHidden = true
-		}
+		additionalView.isHiddenLevelInsalubrity(isOn: !toogle.isOn)
 	}
 	
 	func tappedNext() {
