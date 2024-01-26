@@ -55,8 +55,7 @@ extension SalaryViewController: UITextFieldDelegate {
 					}
 					currencyInputFormatting(string: currentString, textField: salaryView.salaryValueTextField)
 				}
-			}
-			
+			}	
 		} else {
 			return true
 		}

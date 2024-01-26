@@ -3,11 +3,11 @@ import UIKit
 class AdditionalViewController: UIViewController {
 	private let additionalView = AdditionalView()
 	private var calculator: Calculator?
+	private let additionalVM = AdditionalViewModel()
 	
 	init(calculator: Calculator) {
 		super.init(nibName: nil, bundle: nil)
-		self.calculator = calculator
-		title = "\(calculator.name)"
+		additionalVM.setCalculator(calculator: calculator)
 	}
 	
 	required init?(coder: NSCoder) {
@@ -20,6 +20,11 @@ class AdditionalViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		configView()
+	}
+	
+	private func configView() {
+		title = additionalVM.getTitle()
 		self.additionalView.delegate(delegate: self)
 	}
 }
@@ -35,30 +40,23 @@ extension AdditionalViewController: AdditionalViewProtocol {
 	}
 	
 	func tappedNext() {
-		guard var calculator else { return }
 		let isOnAdditionalDangerousness = additionalView.toggleDangerousnessSwitch.isOn
 		let valueAdditionalDangerousness = isOnAdditionalDangerousness ? 0.30 : 0
 		let isOnAdditionalInsalubrity = additionalView.toggleInsalubritySwitch.isOn
-		let valueLevelInsalubrity = isOnAdditionalInsalubrity ? selectLevelInsalubrity(index: additionalView.btnSelect.selectedSegmentIndex) : 0
+		let valueLevelInsalubrity = isOnAdditionalInsalubrity ? additionalVM.selectLevelInsalubrity(index: additionalView.btnSelect.selectedSegmentIndex) : 0
 		
-		calculator.isAdditionalDangerousness = isOnAdditionalDangerousness
-		calculator.valueAdditionalDangerousness = valueAdditionalDangerousness
-		calculator.isAdditionalInsalubrity = isOnAdditionalInsalubrity
-		calculator.valueLevelInsalubrity = valueLevelInsalubrity
+		additionalVM.setAdditional(
+			isDangerousness: isOnAdditionalDangerousness,
+			valueDangerousness: valueAdditionalDangerousness,
+			isInsalubrity: isOnAdditionalInsalubrity,
+			valueLevelInsalubrity: valueLevelInsalubrity
+		)
 		
+		guard let calculator = additionalVM.calculator else { return }
 		let next = getCalculatorViewController(calculator: calculator)
 		navigationController?.pushViewController(next, animated: true)
 	}
 	
-	func selectLevelInsalubrity(index: Int) -> Double {
-		switch index {
-		case 1 :
-			return 0.20
-		case 2 :
-			return 0.40
-		default :
-			return 0.10
-		}
-	}
+
 	
 }
