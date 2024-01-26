@@ -89,6 +89,10 @@ class AdditionalView: UIView {
 		self.delegate?.tappedNext()
 	}
 	
+	public func setHiddenLevelInsalubrity(isOn: Bool) {
+		self.contentView.isHidden = isOn
+	}
+	
 	private func configAddView() {
 		addSubview(dangerousnessLabel)
 		addSubview(toggleDangerousnessSwitch)
