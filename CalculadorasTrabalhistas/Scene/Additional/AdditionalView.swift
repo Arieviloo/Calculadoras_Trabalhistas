@@ -89,7 +89,7 @@ class AdditionalView: UIView {
 		self.delegate?.tappedNext()
 	}
 	
-	public func setHiddenLevelInsalubrity(isOn: Bool) {
+	public func isHiddenLevelInsalubrity(isOn: Bool) {
 		self.contentView.isHidden = isOn
 	}
 	
