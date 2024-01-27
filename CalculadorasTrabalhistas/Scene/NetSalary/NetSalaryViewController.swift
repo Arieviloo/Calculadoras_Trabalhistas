@@ -3,14 +3,13 @@ import UIKit
 class NetSalaryViewController: UIViewController {
 	
 	private let netSalaryView = NetSalaryView()
-	private var calculator: Calculator?
+	private let netSalaryVM = NetSalaryViewModel()
 	var currentString = ""
 	var currentStringDiscount = ""
 	
 	init(calculator: Calculator) {
 		super.init(nibName: nil, bundle: nil)
-		title = calculator.name
-		self.calculator = calculator
+		netSalaryVM.setCalculator(calculator: calculator)
 	}
 	
 	required init?(coder: NSCoder) {
@@ -22,6 +21,11 @@ class NetSalaryViewController: UIViewController {
 	}
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		configView()
+	}
+	
+	private func configView() {
+		title = netSalaryVM.getTitle()
 		netSalaryView.delegate(delegate: self)
 		netSalaryView.configTextFieldDelegate(delegate: self)
 	}
@@ -78,13 +82,12 @@ extension NetSalaryViewController: UITextFieldDelegate {
 
 extension NetSalaryViewController: NetSalaryViewProtocol {
 	func tappedCalculate() {
-		guard var calculator else { return }
-		let valueOtherAdditionalSalary = (NSString(string: currentString).doubleValue)/100
+		let valueOtherAdditional = (NSString(string: currentString).doubleValue)/100
 		let valueOtherDiscount = (NSString(string: currentStringDiscount).doubleValue)/100
-		calculator.valueOtherDiscount = valueOtherDiscount
-		calculator.valueOtherAdditional = valueOtherAdditionalSalary
-		let resultVC = ResultViewController(calculator: calculator)
+		netSalaryVM.setOtherDiscountAndOtherAdditional(discount: valueOtherDiscount, additional: valueOtherAdditional)
 		
+		guard let calculator = netSalaryVM.calculator else { return }
+		let resultVC = ResultViewController(calculator: calculator)
 		navigationController?.pushViewController(resultVC, animated: true)
 	}
 	
