@@ -1,9 +1,13 @@
 import UIKit
 
 class ResultViewModel {
-	private var calculator: Calculator?
+	private(set) var calculator: Calculator?
 	
 	public func setCalculator(calculator: Calculator) { self.calculator = calculator }
+	
+	public func porcentage(porcent: Double, of value: Double) -> Double {
+		return value * porcent
+	}
 		
 	public func calculateInss(salary: Double) -> Double {
 		var resultInss = 0.0
