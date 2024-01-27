@@ -4,10 +4,13 @@ class ResultViewController: UIViewController {
 	
 	private let resultView = ResultView()
 	private var calculator: Calculator?
+	private let resultVM = ResultViewModel()
 	
 	init(calculator: Calculator) {
 		super.init(nibName: nil, bundle: nil)
 		calculateNetSalary(calculator: calculator)
+		resultVM.setCalculator(calculator: calculator)
+		
 		self.calculator = calculator
 	}
 	
