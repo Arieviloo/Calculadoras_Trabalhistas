@@ -12,4 +12,5 @@ class SalaryViewModel {
 	}
 		
 	public func getTitle() -> String { calculator?.name ?? ""}
+	
 }

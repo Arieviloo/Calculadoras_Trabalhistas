@@ -45,7 +45,6 @@ class ResultView: UIView {
 	
 	lazy var valueGrossSalaryLabel: UILabel = {
 		$0.translatesAutoresizingMaskIntoConstraints = false
-		$0.text = "R$ 10.000,00"
 		$0.font = UIFont(name: "Montserrat-light", size: 12)
 		return $0
 	}(UILabel())
@@ -58,7 +57,6 @@ class ResultView: UIView {
 	
 	lazy var valueAdditionalDangeroussLabel: UILabel = {
 		$0.translatesAutoresizingMaskIntoConstraints = false
-		$0.text = "R$ 10.000,00"
 		$0.font = UIFont(name: "Montserrat-light", size: 12)
 		return $0
 	}(UILabel())
@@ -71,7 +69,6 @@ class ResultView: UIView {
 	
 	lazy var valueAdditionalInsalubrityLabel: UILabel = {
 		$0.translatesAutoresizingMaskIntoConstraints = false
-		$0.text = "R$ 10.000,00"
 		$0.font = UIFont(name: "Montserrat-light", size: 12)
 		return $0
 	}(UILabel())
@@ -84,7 +81,6 @@ class ResultView: UIView {
 	
 	lazy var valueOtherAdditionalLabel: UILabel = {
 		$0.translatesAutoresizingMaskIntoConstraints = false
-		$0.text = "R$ 10.000,00"
 		$0.font = UIFont(name: "Montserrat-light", size: 12)
 		return $0
 	}(UILabel())
@@ -105,7 +101,6 @@ class ResultView: UIView {
 	
 	lazy var valueInssLabel: UILabel = {
 		$0.translatesAutoresizingMaskIntoConstraints = false
-		$0.text = "R$ 10.000,00"
 		$0.font = UIFont(name: "Montserrat-light", size: 12)
 		return $0
 	}(UILabel())
@@ -118,7 +113,6 @@ class ResultView: UIView {
 	
 	lazy var valueIrrfLabel: UILabel = {
 		$0.translatesAutoresizingMaskIntoConstraints = false
-		$0.text = "R$ 10.000,00"
 		$0.font = UIFont(name: "Montserrat-light", size: 12)
 		return $0
 	}(UILabel())
@@ -131,7 +125,6 @@ class ResultView: UIView {
 	
 	lazy var valueOtherDiscountsLabel: UILabel = {
 		$0.translatesAutoresizingMaskIntoConstraints = false
-		$0.text = "R$ 10.000,00"
 		$0.font = UIFont(name: "Montserrat-light", size: 12)
 		return $0
 	}(UILabel())
@@ -146,7 +139,6 @@ class ResultView: UIView {
 	
 	lazy var valueResultLabel: UILabel = {
 		$0.translatesAutoresizingMaskIntoConstraints = false
-		$0.text = "R$ 10.000,00"
 		$0.font = UIFont(name: "Montserrat-ExtraBold", size: 20)
 		$0.textColor = UIColor.appBlue
 		return $0
@@ -169,6 +161,23 @@ class ResultView: UIView {
 	}
 	@objc func tappedOtherCalculationButton() {
 		self.delegate?.tappedOtherCalculationButton()
+	}
+	
+	public func setValueEarning(grossSalary: String, dangerouss: String, insalubrity: String, otherAdditional: String) {
+		valueGrossSalaryLabel.text = grossSalary
+		valueAdditionalDangeroussLabel.text = dangerouss
+		valueAdditionalInsalubrityLabel.text = insalubrity
+		valueOtherAdditionalLabel.text = otherAdditional
+	}
+	
+	public func setValueDiscount(inss: String, irrf: String, otherDiscount: String) {
+		valueInssLabel.text = inss
+		valueIrrfLabel.text = irrf
+		valueOtherDiscountsLabel.text = otherDiscount
+	}
+	
+	public func setValueResult(result: String) {
+		valueResultLabel.text = result
 	}
 	
 	override init(frame: CGRect) {
