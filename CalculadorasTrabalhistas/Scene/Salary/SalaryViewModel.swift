@@ -7,8 +7,8 @@ class SalaryViewModel {
 	public func setCalculator(calculator: Calculator) { self.calculator = calculator }
 	
 	public func setSalaryAndDependent(salary: Double, numberDependent: Int) {
-		self.calculator?.valueSalaryGross = salary
-		self.calculator?.valueNumberDependent = numberDependent
+		calculator?.valueSalaryGross = salary
+		calculator?.valueNumberDependent = numberDependent
 	}
 		
 	public func getTitle() -> String { calculator?.name ?? ""}
