@@ -28,6 +28,7 @@
 		E2AB18002B642CB100AAEBD8 /* NetSalaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AB17FF2B642CB100AAEBD8 /* NetSalaryViewModel.swift */; };
 		E2B425932B691B6600306713 /* CalculadorasTrabalhistasTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B425922B691B6600306713 /* CalculadorasTrabalhistasTests.swift */; };
 		E2B4259C2B691B8500306713 /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B4259B2B691B8500306713 /* HomeViewModelTests.swift */; };
+		E2B425A12B693C9600306713 /* SalaryViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B425A02B693C9600306713 /* SalaryViewModelTests.swift */; };
 		E2BE94512B274FB3003FE825 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BE94502B274FB3003FE825 /* HomeView.swift */; };
 		E2BE94562B2751F7003FE825 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E2BE94552B2751F7003FE825 /* Localizable.strings */; };
 		E2BE94582B275232003FE825 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BE94572B275232003FE825 /* String+Extension.swift */; };
@@ -72,6 +73,7 @@
 		E2B425902B691B6600306713 /* CalculadorasTrabalhistasTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalculadorasTrabalhistasTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2B425922B691B6600306713 /* CalculadorasTrabalhistasTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculadorasTrabalhistasTests.swift; sourceTree = "<group>"; };
 		E2B4259B2B691B8500306713 /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewModelTests.swift; path = ../../../../../../Documents/HomeViewModelTests.swift; sourceTree = "<group>"; };
+		E2B425A02B693C9600306713 /* SalaryViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryViewModelTests.swift; sourceTree = "<group>"; };
 		E2BE94502B274FB3003FE825 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		E2BE94552B2751F7003FE825 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		E2BE94572B275232003FE825 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				E2B4259A2B691B7700306713 /* Home */,
+				E2B4259D2B693ACF00306713 /* Salary */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -184,6 +187,14 @@
 				E2B4259B2B691B8500306713 /* HomeViewModelTests.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		E2B4259D2B693ACF00306713 /* Salary */ = {
+			isa = PBXGroup;
+			children = (
+				E2B425A02B693C9600306713 /* SalaryViewModelTests.swift */,
+			);
+			path = Salary;
 			sourceTree = "<group>";
 		};
 		E2BE944F2B274FA0003FE825 /* Home */ = {
@@ -384,6 +395,7 @@
 			files = (
 				E2B425932B691B6600306713 /* CalculadorasTrabalhistasTests.swift in Sources */,
 				E2B4259C2B691B8500306713 /* HomeViewModelTests.swift in Sources */,
+				E2B425A12B693C9600306713 /* SalaryViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
