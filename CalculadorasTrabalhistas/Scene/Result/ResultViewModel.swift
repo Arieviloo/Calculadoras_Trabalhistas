@@ -44,8 +44,8 @@ class ResultViewModel {
 		return resultInss
 	}
 	
-	public func calculateIrrf(salary: Double, discount: Double, numberDependence: Int) -> Double {
-		let baseSalary = salary - discount - (Double(numberDependence) * 189.59)
+	public func calculateIrrf(salary: Double, discount: Double, numberDependent: Int) -> Double {
+		let baseSalary = salary - discount - (Double(numberDependent) * 189.59)
 		let baseCalculations = [2112, 2826.65, 3751.05, 4664.68]
 		let aliquots = [0.075, 0.15, 0.225, 0.275]
 		let deductions = [158.40, 370.40, 651.73, 884.96]
