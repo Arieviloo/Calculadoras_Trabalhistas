@@ -39,7 +39,7 @@ class ResultViewController: UIViewController {
 		let totalSalaryWithoutDiscount = grossSalary + additionalDangerouss + additionalInsalubrity + otherAdditional
 		let inss = resultVM.calculateInss(salary: totalSalaryWithoutDiscount)
 		let discount = otherDiscount + inss
-		let irrf = resultVM.calculateIrrf(salary: totalSalaryWithoutDiscount, discount: discount, numberDependence: calculator.valueNumberDependent ?? 0)
+		let irrf = resultVM.calculateIrrf(salary: totalSalaryWithoutDiscount, discount: discount, numberDependent: calculator.valueNumberDependent ?? 0)
 		
 		let resultTotal = totalSalaryWithoutDiscount - (discount + irrf)
 		
