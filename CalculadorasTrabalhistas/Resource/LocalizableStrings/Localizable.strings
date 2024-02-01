@@ -13,6 +13,10 @@
 "optional" = "(opcional)";
 "simulateAgain" = "Simular Novamente";
 "doAnotherCalculation" = "Fazer outro cálculo";
+"howManyDaysDfVacation" = "Quantos dias de férias você vai tirar?";
+"willSellVacation" = "Você vai vender suas férias?";
+"homManyDays" = "Quantos dias?";
+"willAnticipateThirteenth" = "Você vai antecipar seu 13º Salário ?";
 
 //Button
 "next" = "Próximo";
