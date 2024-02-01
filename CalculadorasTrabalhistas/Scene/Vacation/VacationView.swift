@@ -1,6 +1,16 @@
 import UIKit
 
+protocol VacationViewProtocol {
+	func tappedSellVacation()
+	func tappedNext()
+}
+
 class VacationView: UIView {
+	
+	private var delegate: (VacationViewProtocol)?
+	public func delegate(delegate: VacationViewProtocol) {
+		self.delegate = delegate
+	}
 	
 	lazy var amountVacationLabel: UILabel = {
 		$0.setCustomTitleNormal(title: "howManyDaysDfVacation")
@@ -48,9 +58,14 @@ class VacationView: UIView {
 		$0.onTintColor = UIColor.appGreenLight
 		$0.isEnabled = true
 		$0.transform = CGAffineTransform(scaleX: 0.70, y: 0.70)
-//		$0.addTarget(self, action: #selector(tappedAdditionalInsalubrity), for: .touchUpInside)
 		return $0
 	}(UISwitch())
+	
+	lazy var nextButton: UIButton = {
+		$0.setCustomButton(title: "next", colorBackground: UIColor.appBlue)
+		$0.addTarget(self, action: #selector(tappedNext), for: .touchUpInside)
+		return $0
+	}(UIButton(type: .system))
 	
 	override init(frame: CGRect) {
 		super.init(frame: frame)
@@ -64,14 +79,17 @@ class VacationView: UIView {
 		fatalError("init(coder:) has not been implemented")
 	}
 	
+	public func configTextFieldDelegate(delegate: UITextFieldDelegate) {
+		amountVacationTextField.delegate = delegate
+		homManyDaysTextField.delegate = delegate
+	}
+	
 	@objc func tappedSellVacation() {
-		if willSellVacationSwitch.isOn {
-			homManyDaysLabel.isHidden = false
-			homManyDaysTextField.isHidden = false
-		} else {
-			homManyDaysLabel.isHidden = true
-			homManyDaysTextField.isHidden = true
-		}
+		delegate?.tappedSellVacation()
+	}
+	
+	@objc func tappedNext() {
+		delegate?.tappedNext()
 	}
 	
 	private func configAddView() {
@@ -83,6 +101,7 @@ class VacationView: UIView {
 		addSubview(homManyDaysTextField)
 		addSubview(willAnticipateThirteenthLabel)
 		addSubview(willAnticipateThirteenthSwitch)
+		addSubview(nextButton)
 	}
 	
 	private func configConstraints() {
@@ -118,6 +137,11 @@ class VacationView: UIView {
 			homManyDaysTextField.leadingAnchor.constraint(equalTo: amountVacationLabel.leadingAnchor),
 			homManyDaysTextField.trailingAnchor.constraint(equalTo: amountVacationLabel.trailingAnchor),
 			homManyDaysTextField.heightAnchor.constraint(equalToConstant: 40),
+			
+			nextButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -200),
+			nextButton.centerXAnchor.constraint(equalTo: centerXAnchor),
+			nextButton.widthAnchor.constraint(equalToConstant: 160),
+			nextButton.heightAnchor.constraint(equalToConstant: 45),
 		])
 		
 	}
