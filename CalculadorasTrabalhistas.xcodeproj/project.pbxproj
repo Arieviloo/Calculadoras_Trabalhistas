@@ -318,11 +318,11 @@
 		E2F81B162B235A9300E181B7 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				E2195B262B6BDEA000F029C0 /* Vacation */,
 				E2BE944F2B274FA0003FE825 /* Home */,
 				E290A6E32B288FE100560137 /* Salary */,
 				E2945DB12B29E1D400A1C582 /* Additional */,
 				E21074842B2BC2C400A7D523 /* NetSalary */,
+				E2195B262B6BDEA000F029C0 /* Vacation */,
 				E21CC28B2B5565B00089933E /* Result */,
 			);
 			path = Scene;

@@ -9,7 +9,7 @@ class HomeViewModel {
 	
 	private let calculators: [Calculator] = [
 		Calculator(name: "Salário Líquido", icon: "icon-salariominimo", nameViewController: "NetSalaryViewController"),
-		Calculator(name: "Férias", icon: "icon-ferias"),
+		Calculator(name: "Férias", icon: "icon-ferias", nameViewController: "VacationViewController"),
 		Calculator(name: "Rescisão", icon: "icon-rescisao"),
 		Calculator(name: "Décimo Terceiro", icon: "icon-decimoterceiro"),
 	]

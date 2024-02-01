@@ -2,6 +2,16 @@ import UIKit
 
 class VacationViewController: UIViewController {
 	private let vacationView = VacationView()
+	private let vacationVM = VacationViewModel()
+	
+	init(calculator: Calculator) {
+		super.init(nibName: nil, bundle: nil)
+		vacationVM.setCalculator(calculator: calculator)
+	}
+	
+	required init?(coder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
+	}
 	
 	override func loadView() {
 		view = vacationView
@@ -14,6 +24,7 @@ class VacationViewController: UIViewController {
 	}
 	
 	private func configView() {
+		title = vacationVM.getTitle()
 		vacationView.delegate(delegate: self)
 		vacationView.configTextFieldDelegate(delegate: self)
 	}
@@ -29,7 +40,14 @@ extension VacationViewController: UITextFieldDelegate {
 
 extension VacationViewController: VacationViewProtocol {
 	func tappedNext() {
-		print("button next")
+		vacationVM.setDayVacation(amountDay: (NSString(string: vacationView.amountVacationTextField.text ?? "0").integerValue),
+								  isThirteenth: vacationView.willAnticipateThirteenthSwitch.isOn,
+								  isSell: vacationView.willSellVacationSwitch.isOn,
+								  homManyDay: (NSString(string: vacationView.homManyDaysTextField.text ?? "0").integerValue))
+		
+		guard let calculator = vacationVM.calculator else { return }
+		let nextVC = NetSalaryViewController(calculator: calculator)
+		navigationController?.pushViewController(nextVC, animated: true)
 	}
 	
 	func tappedSellVacation() {
