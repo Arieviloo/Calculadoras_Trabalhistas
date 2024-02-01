@@ -8,6 +8,7 @@ class ResultViewController: UIViewController {
 	init(calculator: Calculator) {
 		super.init(nibName: nil, bundle: nil)
 		resultVM.setCalculator(calculator: calculator)
+		dump(calculator)
 	}
 	
 	required init?(coder: NSCoder) {

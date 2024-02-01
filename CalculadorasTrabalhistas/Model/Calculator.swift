@@ -10,4 +10,9 @@ struct Calculator {
 	var valueLevelInsalubrity: Double?
 	var valueOtherDiscount: Double?
 	var valueOtherAdditional: Double?
+	
+	var amountVacationDay: Int?
+	var willAntecipateThirteenth: Bool?
+	var willSellVacation: Bool?
+	var homManyDay: Int?
 }
