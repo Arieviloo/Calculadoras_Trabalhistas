@@ -16,3 +16,14 @@ struct Calculator {
 	var willSellVacation: Bool?
 	var homManyDay: Int?
 }
+
+struct ResultCalculation {
+	var grossSalary: Double?
+	var additionalDangerouss: Double?
+	var additionalInsalubrity: Double?
+	var otherDiscount: Double?
+	var otherAdditional: Double?
+	var inss: Double?
+	var irrf: Double?
+	var total: Double?
+}

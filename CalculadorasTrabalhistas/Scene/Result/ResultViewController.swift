@@ -8,7 +8,6 @@ class ResultViewController: UIViewController {
 	init(calculator: Calculator) {
 		super.init(nibName: nil, bundle: nil)
 		resultVM.setCalculator(calculator: calculator)
-		dump(calculator)
 	}
 	
 	required init?(coder: NSCoder) {
@@ -26,39 +25,27 @@ class ResultViewController: UIViewController {
 	
 	private func configView() {
 		title = String(localizedKey: "result")
-		guard let calculator = resultVM.calculator else { return }
 		resultView.delegate(delegate: self)
-		calculateNetSalary(calculator: calculator)
+		calculateNetSalary()
 	}
 	
-	private func calculateNetSalary(calculator: Calculator) {
-		let grossSalary = calculator.valueSalaryGross ?? 0
-		let additionalDangerouss = resultVM.porcentage(porcent: calculator.valueAdditionalDangerousness ?? 0, of: grossSalary)
-		let additionalInsalubrity = resultVM.porcentage(porcent: calculator.valueLevelInsalubrity ?? 0, of: grossSalary)
-		let otherDiscount = calculator.valueOtherDiscount ?? 0
-		let otherAdditional = calculator.valueOtherAdditional ?? 0
-		let totalSalaryWithoutDiscount = grossSalary + additionalDangerouss + additionalInsalubrity + otherAdditional
-		let inss = resultVM.calculateInss(salary: totalSalaryWithoutDiscount)
-		let discount = otherDiscount + inss
-		let irrf = resultVM.calculateIrrf(salary: totalSalaryWithoutDiscount, discount: discount, numberDependent: calculator.valueNumberDependent ?? 0)
-		
-		let resultTotal = totalSalaryWithoutDiscount - (discount + irrf)
+	private func calculateNetSalary() {
+		let resultCalculation = resultVM.calculationResultFinal()
 		
 		resultView.setValueEarning(
-			grossSalary: formatCurrency(value: grossSalary),
-			dangerouss: formatCurrency(value: additionalDangerouss),
-			insalubrity: formatCurrency(value: additionalInsalubrity),
-			otherAdditional: formatCurrency(value: otherAdditional)
+			grossSalary: formatCurrency(value: resultCalculation.grossSalary ?? 0),
+			dangerouss: formatCurrency(value: resultCalculation.additionalDangerouss ?? 0),
+			insalubrity: formatCurrency(value: resultCalculation.additionalInsalubrity ?? 0),
+			otherAdditional: formatCurrency(value: resultCalculation.otherAdditional ?? 0)
 		)
 		
 		resultView.setValueDiscount(
-			inss: formatCurrency(value: inss),
-			irrf: formatCurrency(value: irrf),
-			otherDiscount: formatCurrency(value: otherDiscount)
+			inss: formatCurrency(value: resultCalculation.inss ?? 0),
+			irrf: formatCurrency(value: resultCalculation.irrf ?? 0),
+			otherDiscount: formatCurrency(value: resultCalculation.otherDiscount ?? 0)
 		)
 		
-		resultView.setValueResult(result: formatCurrency(value: resultTotal))
-		
+		resultView.setValueResult(result: formatCurrency(value: resultCalculation.total ?? 0))
 	}
 }
 
