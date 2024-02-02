@@ -14,6 +14,19 @@ extension UILabel {
 		numberOfLines = 0
 	}
 	
+	func setTextSmall(title: String) {
+		translatesAutoresizingMaskIntoConstraints = false
+		text = String(localizedKey: "\(title)")
+		font = UIFont(name: "Montserrat-light", size: 12)
+	}
+	
+	func setTextStrong(title: String, color: UIColor) {
+		translatesAutoresizingMaskIntoConstraints = false
+		text = String(localizedKey: "\(title)")
+		font = UIFont(name: "Montserrat-ExtraBold", size: 20)
+		textColor = color
+	}
+	
 	func setCustomTitleOptional(title: String) {
 		translatesAutoresizingMaskIntoConstraints = false
 		text = String(localizedKey: "\(title)")

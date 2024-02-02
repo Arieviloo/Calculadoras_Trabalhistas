@@ -29,17 +29,13 @@ class ResultView: UIView {
 	}(UIView())
 	
 	lazy var yourEarningsLabel: UILabel = {
-		$0.translatesAutoresizingMaskIntoConstraints = false
-		$0.text = String(localizedKey: "yourEarnings")
-		$0.font = UIFont(name: "Montserrat-ExtraBold", size: 20)
-		$0.textColor = UIColor.appGreen
+		$0.setTextStrong(title: "yourEarnings", color:  UIColor.appGreen)
 		return $0
 	}(UILabel())
 	
 	
 	lazy var grossSalaryLabel: UILabel = {
-		$0.setCustomTitleNormal(title: "grossSalary")
-		$0.font = UIFont(name: "Montserrat-light", size: 12)
+		$0.setTextSmall(title: "grossSalary")
 		return $0
 	}(UILabel())
 	
@@ -50,8 +46,7 @@ class ResultView: UIView {
 	}(UILabel())
 	
 	lazy var additionalDangeroussLabel: UILabel = {
-		$0.setCustomTitleNormal(title: "additionalDangerouss")
-		$0.font = UIFont(name: "Montserrat-light", size: 12)
+		$0.setTextSmall(title: "additionalDangerouss")
 		return $0
 	}(UILabel())
 	
@@ -62,8 +57,7 @@ class ResultView: UIView {
 	}(UILabel())
 	
 	lazy var additionalInsalubrityLabel: UILabel = {
-		$0.setCustomTitleNormal(title: "additionalInsalubrity")
-		$0.font = UIFont(name: "Montserrat-light", size: 12)
+		$0.setTextSmall(title: "additionalInsalubrity")
 		return $0
 	}(UILabel())
 	
@@ -74,8 +68,7 @@ class ResultView: UIView {
 	}(UILabel())
 	
 	lazy var otherAdditionalLabel: UILabel = {
-		$0.setCustomTitleNormal(title: "otherAdditional")
-		$0.font = UIFont(name: "Montserrat-light", size: 12)
+		$0.setTextSmall(title: "otherAdditional")
 		return $0
 	}(UILabel())
 	
@@ -86,16 +79,12 @@ class ResultView: UIView {
 	}(UILabel())
 	
 	lazy var yourDiscountsLabel: UILabel = {
-		$0.translatesAutoresizingMaskIntoConstraints = false
-		$0.text = String(localizedKey: "yourDiscounts")
-		$0.font = UIFont(name: "Montserrat-ExtraBold", size: 20)
-		$0.textColor = UIColor.appRed
+		$0.setTextStrong(title: "yourDiscounts", color: UIColor.appRed)
 		return $0
 	}(UILabel())
 	
 	lazy var inssLabel: UILabel = {
-		$0.setCustomTitleNormal(title: "inss")
-		$0.font = UIFont(name: "Montserrat-light", size: 12)
+		$0.setTextSmall(title: "inss")
 		return $0
 	}(UILabel())
 	
@@ -106,8 +95,7 @@ class ResultView: UIView {
 	}(UILabel())
 	
 	lazy var irrfLabel: UILabel = {
-		$0.setCustomTitleNormal(title: "irrf")
-		$0.font = UIFont(name: "Montserrat-light", size: 12)
+		$0.setTextSmall(title: "irrf")
 		return $0
 	}(UILabel())
 	
@@ -118,8 +106,7 @@ class ResultView: UIView {
 	}(UILabel())
 	
 	lazy var otherDiscountsLabel: UILabel = {
-		$0.setCustomTitleNormal(title: "otherDiscounts")
-		$0.font = UIFont(name: "Montserrat-light", size: 12)
+		$0.setTextSmall(title: "otherDiscounts")
 		return $0
 	}(UILabel())
 	
@@ -130,10 +117,7 @@ class ResultView: UIView {
 	}(UILabel())
 	
 	lazy var resultLabel: UILabel = {
-		$0.translatesAutoresizingMaskIntoConstraints = false
-		$0.text = "Seu salário líquido será de"
-		$0.font = UIFont(name: "Montserrat-ExtraBold", size: 20)
-		$0.textColor = UIColor.appBlue
+		$0.setTextStrong(title: "Seu salário líquido será de", color: UIColor.appBlue)
 		return $0
 	}(UILabel())
 	
