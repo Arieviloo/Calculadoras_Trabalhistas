@@ -28,10 +28,18 @@ class ResultViewController: UIViewController {
 		resultView.delegate(delegate: self)
 		calculateNetSalary()
 	}
+	private func viewHidden() {
+		if resultVM.calculator?.name == "Férias" {
+			resultView.salaryVacationLabel.isHidden = false
+			resultView.valueSalaryVacationLabel.isHidden = false
+			resultView.grossSalaryLabel.isHidden = true
+			resultView.grossSalaryLabel.isHidden = true
+		}
+	}
 	
 	private func calculateNetSalary() {
 		let resultCalculation = resultVM.calculationResultFinal()
-		
+		viewHidden()
 		resultView.setValueEarning(
 			grossSalary: formatCurrency(value: resultCalculation.grossSalary ?? 0),
 			dangerouss: formatCurrency(value: resultCalculation.additionalDangerouss ?? 0),
