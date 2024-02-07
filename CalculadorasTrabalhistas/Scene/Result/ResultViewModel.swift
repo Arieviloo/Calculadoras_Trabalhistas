@@ -2,16 +2,18 @@ import UIKit
 
 class ResultViewModel {
 	private(set) var calculator: Calculator?
+	private var resultCalculation = ResultCalculation()
 	
 	public func setCalculator(calculator: Calculator) { self.calculator = calculator }
 	
 	public func calculationResultFinal() -> ResultCalculation {
-		var resultCalculation = ResultCalculation()
 		resultCalculation.grossSalary = calculator?.valueSalaryGross
 		resultCalculation.additionalDangerouss = porcentage(porcent: calculator?.valueAdditionalDangerousness ?? 0, of: resultCalculation.grossSalary ?? 0)
 		resultCalculation.additionalInsalubrity = porcentage(porcent: calculator?.valueLevelInsalubrity ?? 0, of: resultCalculation.grossSalary ?? 0)
 		resultCalculation.otherDiscount = calculator?.valueOtherDiscount ?? 0
 		resultCalculation.otherAdditional = calculator?.valueOtherAdditional ?? 0
+		calculateVacation()
+		
 		let totalSalaryWithoutDiscount = Double(resultCalculation.grossSalary ?? 0) + Double(resultCalculation.additionalDangerouss ?? 0) + Double(resultCalculation.additionalInsalubrity ?? 0) + Double(resultCalculation.otherAdditional ?? 0)
 		resultCalculation.inss = calculateInss(salary: totalSalaryWithoutDiscount)
 		let discount = Double(resultCalculation.otherDiscount ?? 0) + Double(resultCalculation.inss ?? 0)
@@ -20,11 +22,28 @@ class ResultViewModel {
 		
 		return resultCalculation
 	}
-		
+	
 	public func porcentage(porcent: Double, of value: Double) -> Double {
 		return value * porcent
 	}
+	
+	private func calculateVacation() {
+		let valueSalaryForDay = resultCalculation.grossSalary ?? 0.0 / 30
+		let quantityDaysVacation = calculator?.amountVacationDay ?? 0
 		
+		let valueSalaryVacation = valueSalaryForDay * Double(quantityDaysVacation)
+		let valueOneThirdVacation = valueSalaryVacation / 3
+		let valueAllowancePecuniary = valueSalaryForDay * Double(calculator?.homManyDay ?? 0)
+		let valueOneThirdAllowancePecuniary = valueAllowancePecuniary / 3
+		let valueAdvanceFirstInstalmentThirteenth = calculator?.valueSalaryGross ?? 0 / 2
+		
+		resultCalculation.salaryVacation = valueSalaryVacation
+		resultCalculation.oneThirdVacation = valueOneThirdVacation
+		resultCalculation.allowancePecuniary = valueAllowancePecuniary
+		resultCalculation.oneThirdVacation = valueOneThirdVacation
+		resultCalculation.advanceFirstInstalmentThirteenth = valueAdvanceFirstInstalmentThirteenth
+	}
+	
 	public func calculateInss(salary: Double) -> Double {
 		var resultInss = 0.0
 		var lastRangeSalary = 0.0
