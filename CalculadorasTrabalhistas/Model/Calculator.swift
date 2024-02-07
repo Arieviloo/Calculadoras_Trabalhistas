@@ -26,4 +26,10 @@ struct ResultCalculation {
 	var inss: Double?
 	var irrf: Double?
 	var total: Double?
+	
+	var salaryVacation: Double?
+	var oneThirdVacation: Double?
+	var allowancePecuniary: Double?
+	var oneThirdAllowancePecuniary: Double?
+	var advanceFirstInstalmentThirteenth: Double?
 }
