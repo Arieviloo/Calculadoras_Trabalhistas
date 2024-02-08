@@ -28,20 +28,21 @@ class ResultViewModel {
 	}
 	
 	private func calculateVacation() {
-		let valueSalaryForDay = resultCalculation.grossSalary ?? 0.0 / 30
+		let valueSalaryForDay = (calculator?.valueSalaryGross ?? 0) / 30
 		let quantityDaysVacation = calculator?.amountVacationDay ?? 0
-		
 		let valueSalaryVacation = valueSalaryForDay * Double(quantityDaysVacation)
 		let valueOneThirdVacation = valueSalaryVacation / 3
 		let valueAllowancePecuniary = valueSalaryForDay * Double(calculator?.homManyDay ?? 0)
 		let valueOneThirdAllowancePecuniary = valueAllowancePecuniary / 3
-		let valueAdvanceFirstInstalmentThirteenth = calculator?.valueSalaryGross ?? 0 / 2
+		let valueAdvanceFirstInstalmentThirteenth = (calculator?.valueSalaryGross ?? 0) / 2
 		
 		resultCalculation.salaryVacation = valueSalaryVacation
 		resultCalculation.oneThirdVacation = valueOneThirdVacation
 		resultCalculation.allowancePecuniary = valueAllowancePecuniary
+		resultCalculation.oneThirdAllowancePecuniary = valueOneThirdAllowancePecuniary
 		resultCalculation.oneThirdVacation = valueOneThirdVacation
 		resultCalculation.advanceFirstInstalmentThirteenth = valueAdvanceFirstInstalmentThirteenth
+		
 	}
 	
 	public func calculateInss(salary: Double) -> Double {
