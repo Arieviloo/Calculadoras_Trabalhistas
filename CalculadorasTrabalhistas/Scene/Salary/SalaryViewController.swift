@@ -33,7 +33,10 @@ class SalaryViewController: UIViewController {
 
 extension SalaryViewController: UITextFieldDelegate {
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-		textField.resignFirstResponder()
+//		textField.resignFirstResponder()
+		let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+		tap.cancelsTouchesInView = false
+		view.addGestureRecognizer(tap)
 		return true
 	}
 	func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool { 
