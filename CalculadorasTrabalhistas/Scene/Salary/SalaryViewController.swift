@@ -21,6 +21,7 @@ class SalaryViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		self.hideKeyboardWhenTappedAround()
 		configView()
 	}
 	
@@ -32,13 +33,6 @@ class SalaryViewController: UIViewController {
 }
 
 extension SalaryViewController: UITextFieldDelegate {
-	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//		textField.resignFirstResponder()
-		let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
-		tap.cancelsTouchesInView = false
-		view.addGestureRecognizer(tap)
-		return true
-	}
 	func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool { 
 		// return NO to not change text
 

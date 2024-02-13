@@ -44,7 +44,7 @@ extension UITextField {
 		clipsToBounds = true
 		layer.cornerRadius = 10
 		autocorrectionType = .no
-		keyboardType = .numbersAndPunctuation
+		keyboardType = .numberPad
 	}
 }
 
