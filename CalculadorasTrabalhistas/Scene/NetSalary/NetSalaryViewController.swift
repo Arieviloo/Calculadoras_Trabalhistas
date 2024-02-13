@@ -21,6 +21,7 @@ class NetSalaryViewController: UIViewController {
 	}
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		self.hideKeyboardWhenTappedAround()
 		configView()
 	}
 	
@@ -32,11 +33,7 @@ class NetSalaryViewController: UIViewController {
 }
 
 extension NetSalaryViewController: UITextFieldDelegate {
-	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-		textField.resignFirstResponder()
-		return true
-	}
-	
+		
 	func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
 		if netSalaryView.otherDiscountTextField.isEditing {
 			switch string {

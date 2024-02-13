@@ -19,24 +19,16 @@ class VacationViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		
+		self.hideKeyboardWhenTappedAround()
 		configView()
 	}
 	
 	private func configView() {
 		title = vacationVM.getTitle()
 		vacationView.delegate(delegate: self)
-		vacationView.configTextFieldDelegate(delegate: self)
 	}
 }
 
-extension VacationViewController: UITextFieldDelegate {
-	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-		textField.resignFirstResponder()
-		return true
-	}
-	
-}
 
 extension VacationViewController: VacationViewProtocol {
 	func tappedNext() {

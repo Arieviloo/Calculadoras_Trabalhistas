@@ -13,6 +13,12 @@ extension UIViewController {
 			return UIViewController()
 		}
 	}
+	
+	func hideKeyboardWhenTappedAround() {
+		let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+		tap.cancelsTouchesInView = false
+		view.addGestureRecognizer(tap)
+	   }
 
 	func currencyInputFormatting(string: String, textField: UITextField) {
 		let formatter = NumberFormatter()
