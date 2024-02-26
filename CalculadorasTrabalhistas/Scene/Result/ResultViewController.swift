@@ -3,6 +3,7 @@ import UIKit
 class ResultViewController: UIViewController {
 	
 	private let resultView = ResultView()
+	private let vacationResultView = VacationView()
 	private let resultVM = ResultViewModel()
 	
 	init(calculator: Calculator) {
