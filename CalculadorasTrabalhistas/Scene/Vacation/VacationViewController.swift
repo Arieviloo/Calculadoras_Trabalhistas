@@ -38,7 +38,7 @@ extension VacationViewController: VacationViewProtocol {
 								  homManyDay: (NSString(string: vacationView.homManyDaysTextField.text ?? "0").integerValue))
 		
 		guard let calculator = vacationVM.calculator else { return }
-		let nextVC = ResultViewController(calculator: calculator)
+		let nextVC = VacationResultViewController()
 		navigationController?.pushViewController(nextVC, animated: true)
 	}
 	

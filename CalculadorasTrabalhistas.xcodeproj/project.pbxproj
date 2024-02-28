@@ -146,8 +146,8 @@
 		E21CC28B2B5565B00089933E /* Results */ = {
 			isa = PBXGroup;
 			children = (
-				E284F3562B8F71A0002553B7 /* Vacation */,
 				E29208A72B8F71020037D105 /* NetSalary */,
+				E284F3562B8F71A0002553B7 /* Vacation */,
 			);
 			path = Results;
 			sourceTree = "<group>";

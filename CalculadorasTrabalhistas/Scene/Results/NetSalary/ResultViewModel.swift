@@ -6,7 +6,6 @@ class ResultViewModel {
 	
 	public func setCalculator(calculator: Calculator) { self.calculator = calculator }
 	
-	
 	public func calculationResultFinal() -> ResultCalculation {
 		resultCalculation.grossSalary = calculator?.valueSalaryGross
 		resultCalculation.additionalDangerouss = porcentage(porcent: calculator?.valueAdditionalDangerousness ?? 0, of: resultCalculation.grossSalary ?? 0)
