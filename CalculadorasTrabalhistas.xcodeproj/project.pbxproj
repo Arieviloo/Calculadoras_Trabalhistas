@@ -19,6 +19,9 @@
 		E24090242B61508F00EBA746 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24090232B61508F00EBA746 /* HomeViewModel.swift */; };
 		E249714F2B28E5BF000AD4F8 /* CustomDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = E249714E2B28E5BF000AD4F8 /* CustomDesign.swift */; };
 		E24EFECB2B6528FE00B47572 /* ResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24EFECA2B6528FE00B47572 /* ResultViewModel.swift */; };
+		E284F35A2B8F71C3002553B7 /* VacationResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E284F3592B8F71C3002553B7 /* VacationResultView.swift */; };
+		E284F35C2B8F71D3002553B7 /* VacationResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E284F35B2B8F71D3002553B7 /* VacationResultViewModel.swift */; };
+		E284F35F2B8F71F9002553B7 /* VacationResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E284F35E2B8F71F9002553B7 /* VacationResultViewController.swift */; };
 		E290A6E52B288FFA00560137 /* SalaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E290A6E42B288FFA00560137 /* SalaryViewController.swift */; };
 		E290A6E72B28900200560137 /* SalaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E290A6E62B28900200560137 /* SalaryView.swift */; };
 		E290A6EA2B28A06A00560137 /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E290A6E92B28A06A00560137 /* Montserrat-Light.ttf */; };
@@ -69,6 +72,9 @@
 		E24090232B61508F00EBA746 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		E249714E2B28E5BF000AD4F8 /* CustomDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDesign.swift; sourceTree = "<group>"; };
 		E24EFECA2B6528FE00B47572 /* ResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewModel.swift; sourceTree = "<group>"; };
+		E284F3592B8F71C3002553B7 /* VacationResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacationResultView.swift; sourceTree = "<group>"; };
+		E284F35B2B8F71D3002553B7 /* VacationResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacationResultViewModel.swift; sourceTree = "<group>"; };
+		E284F35E2B8F71F9002553B7 /* VacationResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacationResultViewController.swift; sourceTree = "<group>"; };
 		E290A6E42B288FFA00560137 /* SalaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryViewController.swift; sourceTree = "<group>"; };
 		E290A6E62B28900200560137 /* SalaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryView.swift; sourceTree = "<group>"; };
 		E290A6E92B28A06A00560137 /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
@@ -137,14 +143,23 @@
 			path = Vacation;
 			sourceTree = "<group>";
 		};
-		E21CC28B2B5565B00089933E /* Result */ = {
+		E21CC28B2B5565B00089933E /* Results */ = {
 			isa = PBXGroup;
 			children = (
-				E21CC28C2B5565C10089933E /* ResultViewController.swift */,
-				E24EFECA2B6528FE00B47572 /* ResultViewModel.swift */,
-				E21CC28E2B5565CB0089933E /* ResultView.swift */,
+				E29208A72B8F71020037D105 /* NetSalary */,
+				E284F3562B8F71A0002553B7 /* Vacation */,
 			);
-			path = Result;
+			path = Results;
+			sourceTree = "<group>";
+		};
+		E284F3562B8F71A0002553B7 /* Vacation */ = {
+			isa = PBXGroup;
+			children = (
+				E284F35E2B8F71F9002553B7 /* VacationResultViewController.swift */,
+				E284F3592B8F71C3002553B7 /* VacationResultView.swift */,
+				E284F35B2B8F71D3002553B7 /* VacationResultViewModel.swift */,
+			);
+			path = Vacation;
 			sourceTree = "<group>";
 		};
 		E290A6E32B288FE100560137 /* Salary */ = {
@@ -165,6 +180,16 @@
 				E290A6E92B28A06A00560137 /* Montserrat-Light.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		E29208A72B8F71020037D105 /* NetSalary */ = {
+			isa = PBXGroup;
+			children = (
+				E21CC28C2B5565C10089933E /* ResultViewController.swift */,
+				E24EFECA2B6528FE00B47572 /* ResultViewModel.swift */,
+				E21CC28E2B5565CB0089933E /* ResultView.swift */,
+			);
+			path = NetSalary;
 			sourceTree = "<group>";
 		};
 		E2945DB12B29E1D400A1C582 /* Additional */ = {
@@ -323,7 +348,7 @@
 				E2945DB12B29E1D400A1C582 /* Additional */,
 				E21074842B2BC2C400A7D523 /* NetSalary */,
 				E2195B262B6BDEA000F029C0 /* Vacation */,
-				E21CC28B2B5565B00089933E /* Result */,
+				E21CC28B2B5565B00089933E /* Results */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -460,6 +485,7 @@
 				E290A6E72B28900200560137 /* SalaryView.swift in Sources */,
 				E2945DB32B29E20100A1C582 /* AdditionalViewController.swift in Sources */,
 				E24EFECB2B6528FE00B47572 /* ResultViewModel.swift in Sources */,
+				E284F35F2B8F71F9002553B7 /* VacationResultViewController.swift in Sources */,
 				E21074862B2BC2FB00A7D523 /* NetSalaryViewController.swift in Sources */,
 				E201C0FC2B2C722800DFCDEF /* UIViewController+Extension.swift in Sources */,
 				E2000B622B63F722000B5544 /* AdditionalViewModel.swift in Sources */,
@@ -472,8 +498,10 @@
 				E2195B2C2B6BDED000F029C0 /* VacationViewModel.swift in Sources */,
 				E2AB18002B642CB100AAEBD8 /* NetSalaryViewModel.swift in Sources */,
 				E2CB9F382B32303B003553F4 /* SalaryViewModel.swift in Sources */,
+				E284F35C2B8F71D3002553B7 /* VacationResultViewModel.swift in Sources */,
 				E2AAE4F12B2792F2008A5543 /* Calculator.swift in Sources */,
 				E21CC28F2B5565CB0089933E /* ResultView.swift in Sources */,
+				E284F35A2B8F71C3002553B7 /* VacationResultView.swift in Sources */,
 				E249714F2B28E5BF000AD4F8 /* CustomDesign.swift in Sources */,
 				E2F81B032B23592600E181B7 /* HomeViewController.swift in Sources */,
 				E2BE94582B275232003FE825 /* String+Extension.swift in Sources */,
