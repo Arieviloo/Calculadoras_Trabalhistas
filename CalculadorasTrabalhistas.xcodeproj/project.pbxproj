@@ -41,6 +41,7 @@
 		E2BE94512B274FB3003FE825 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BE94502B274FB3003FE825 /* HomeView.swift */; };
 		E2BE94562B2751F7003FE825 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E2BE94552B2751F7003FE825 /* Localizable.strings */; };
 		E2BE94582B275232003FE825 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BE94572B275232003FE825 /* String+Extension.swift */; };
+		E2C9384E2B9180AF008A5E83 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C9384D2B9180AF008A5E83 /* Double+Extension.swift */; };
 		E2CB9F382B32303B003553F4 /* SalaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CB9F372B32303B003553F4 /* SalaryViewModel.swift */; };
 		E2F81AFF2B23592600E181B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F81AFE2B23592600E181B7 /* AppDelegate.swift */; };
 		E2F81B032B23592600E181B7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F81B022B23592600E181B7 /* HomeViewController.swift */; };
@@ -95,6 +96,7 @@
 		E2BE94502B274FB3003FE825 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		E2BE94552B2751F7003FE825 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		E2BE94572B275232003FE825 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		E2C9384D2B9180AF008A5E83 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		E2CB9F372B32303B003553F4 /* SalaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryViewModel.swift; sourceTree = "<group>"; };
 		E2F81AFB2B23592600E181B7 /* CalculadorasTrabalhistas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalculadorasTrabalhistas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2F81AFE2B23592600E181B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -336,6 +338,7 @@
 				E2BE94572B275232003FE825 /* String+Extension.swift */,
 				E249714E2B28E5BF000AD4F8 /* CustomDesign.swift */,
 				E201C0FB2B2C722800DFCDEF /* UIViewController+Extension.swift */,
+				E2C9384D2B9180AF008A5E83 /* Double+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -505,6 +508,7 @@
 				E249714F2B28E5BF000AD4F8 /* CustomDesign.swift in Sources */,
 				E2F81B032B23592600E181B7 /* HomeViewController.swift in Sources */,
 				E2BE94582B275232003FE825 /* String+Extension.swift in Sources */,
+				E2C9384E2B9180AF008A5E83 /* Double+Extension.swift in Sources */,
 				E2F81AFF2B23592600E181B7 /* AppDelegate.swift in Sources */,
 				E2195B2A2B6BDEC800F029C0 /* VacationView.swift in Sources */,
 				E2AAE4EE2B279061008A5543 /* HomeCollectionViewCell.swift in Sources */,
