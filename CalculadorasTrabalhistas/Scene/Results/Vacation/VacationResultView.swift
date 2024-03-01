@@ -7,8 +7,8 @@ protocol VacationResultViewProtocol: NSObject {
 
 class VacationResultView: UIView {
 	
-	private var delegate: ResultViewProtocol?
-	func delegate(delegate: ResultViewProtocol) {
+	private var delegate: VacationResultViewProtocol?
+	func delegate(delegate: VacationResultViewProtocol) {
 		self.delegate = delegate
 	}
 	
