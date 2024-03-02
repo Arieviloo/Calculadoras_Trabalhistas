@@ -19,7 +19,6 @@ class VacationResultViewModel {
 		resultCalculation.oneThirdVacation = valueOneThirdVacation
 		resultCalculation.allowancePecuniary = valueAllowancePecuniary
 		resultCalculation.oneThirdAllowancePecuniary = valueOneThirdAllowancePecuniary
-		resultCalculation.oneThirdVacation = valueOneThirdVacation
 		resultCalculation.advanceFirstInstalmentThirteenth = valueAdvanceFirstInstalmentThirteenth
 		
 	}
