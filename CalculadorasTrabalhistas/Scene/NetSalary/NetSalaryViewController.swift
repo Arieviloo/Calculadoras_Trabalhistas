@@ -84,7 +84,7 @@ extension NetSalaryViewController: NetSalaryViewProtocol {
 		netSalaryVM.setOtherDiscountAndOtherAdditional(discount: valueOtherDiscount, additional: valueOtherAdditional)
 		
 		guard let calculator = netSalaryVM.calculator else { return }
-		let resultVC = ResultViewController(calculator: calculator)
+		let resultVC = getResultViewController(calculator: calculator)
 		navigationController?.pushViewController(resultVC, animated: true)
 	}
 	

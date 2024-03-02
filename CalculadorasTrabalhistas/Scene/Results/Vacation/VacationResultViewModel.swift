@@ -6,7 +6,7 @@ class VacationResultViewModel {
 	
 	public func setCalculator(calculator: Calculator) { self.calculator = calculator }
 	
-	private func calculateVacation() {
+	func calculateVacation() -> ResultCalculation {
 		let valueSalaryForDay = (calculator?.valueSalaryGross ?? 0) / 30
 		let quantityDaysVacation = calculator?.amountVacationDay ?? 0
 		let valueSalaryVacation = valueSalaryForDay * Double(quantityDaysVacation)
@@ -33,8 +33,7 @@ class VacationResultViewModel {
 		resultCalculation.irrf = totalSalaryWithoutDiscount.calculateIrrf(discount: discount, numberDependent: calculator?.valueNumberDependent ?? 0)
 		resultCalculation.total = totalSalaryWithoutDiscount - (discount + Double(resultCalculation.irrf ?? 0))
 		
-		
-		
+		return resultCalculation
 	}
 	
 	public func porcentage(porcent: Double, of value: Double) -> Double {

@@ -146,12 +146,12 @@ class VacationResultView: UIView {
 		self.delegate?.tappedOtherCalculationButton()
 	}
 	
-//	public func setValueEarning(grossSalary: String, dangerouss: String, insalubrity: String, otherAdditional: String) {
-//		valueGrossSalaryLabel.text = grossSalary
-//		valueAdditionalDangeroussLabel.text = dangerouss
-//		valueAdditionalInsalubrityLabel.text = insalubrity
-//		valueOtherAdditionalLabel.text = otherAdditional
-//	}
+	public func setValueEarning(grossSalary: String, dangerouss: String, insalubrity: String, otherAdditional: String) {
+		valueSalaryVacationLabel.text = grossSalary
+		valueAdditionalDangeroussLabel.text = dangerouss
+		valueAdditionalInsalubrityLabel.text = insalubrity
+		valueOtherAdditionalLabel.text = otherAdditional
+	}
 //	
 //	public func setValueDiscount(inss: String, irrf: String, otherDiscount: String) {
 //		valueInssLabel.text = inss
@@ -218,7 +218,7 @@ class VacationResultView: UIView {
 			salaryVacationLabel.leadingAnchor.constraint(equalTo: yourEarningsLabel.leadingAnchor),
 		
 			valueSalaryVacationLabel.centerYAnchor.constraint(equalTo: salaryVacationLabel.centerYAnchor),
-			salaryVacationLabel.trailingAnchor.constraint(equalTo: yourEarningsLabel.trailingAnchor),
+			valueSalaryVacationLabel.trailingAnchor.constraint(equalTo: yourEarningsLabel.trailingAnchor),
 			
 			additionalDangeroussLabel.topAnchor.constraint(equalTo: salaryVacationLabel.bottomAnchor, constant: 10),
 			additionalDangeroussLabel.leadingAnchor.constraint(equalTo: yourEarningsLabel.leadingAnchor),

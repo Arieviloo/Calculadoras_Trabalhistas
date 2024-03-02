@@ -19,8 +19,32 @@ class VacationResultViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		configView()
+	}
+	
+	private func configView() {
 		title = String(localizedKey: "result")
 		vacationResultView.delegate(delegate: self)
+		calculateNetSalary()
+	}
+	
+	private func calculateNetSalary() {
+		let resultCalculation = resultVM.calculateVacation()
+		
+		vacationResultView.setValueEarning(
+			grossSalary: formatCurrency(value: resultCalculation.grossSalary ?? 0),
+			dangerouss: formatCurrency(value: resultCalculation.additionalDangerouss ?? 0),
+			insalubrity: formatCurrency(value: resultCalculation.additionalInsalubrity ?? 0),
+			otherAdditional: formatCurrency(value: resultCalculation.otherAdditional ?? 0)
+		)
+		
+//		resultView.setValueDiscount(
+//			inss: formatCurrency(value: resultCalculation.inss ?? 0),
+//			irrf: formatCurrency(value: resultCalculation.irrf ?? 0),
+//			otherDiscount: formatCurrency(value: resultCalculation.otherDiscount ?? 0)
+//		)
+//		
+//		resultView.setValueResult(result: formatCurrency(value: resultCalculation.total ?? 0))
 	}
 	
 }
