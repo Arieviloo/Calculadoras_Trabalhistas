@@ -35,5 +35,16 @@ extension UIViewController {
 		guard let numberFormat = formatter.string(from: value as NSNumber) else { return "0"}
 		return numberFormat
 	}
+	
+	func getResultViewController(calculator: Calculator) -> UIViewController {
+		let nameCalculator = calculator.nameViewController
+		
+		switch nameCalculator {
+		case "VacationViewController" :
+			return VacationResultViewController(calculator: calculator)
+		default:
+			return ResultViewController(calculator: calculator)
+		}
+	}
 
 }
