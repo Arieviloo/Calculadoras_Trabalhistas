@@ -45,19 +45,6 @@ class ResultView: UIView {
 		return $0
 	}(UILabel())
 	
-	lazy var salaryVacationLabel: UILabel = {
-		$0.setTextSmall(title: "salaryVacation")
-		$0.isHidden = true
-		return $0
-	}(UILabel())
-	
-	lazy var valueSalaryVacationLabel: UILabel = {
-		$0.translatesAutoresizingMaskIntoConstraints = false
-		$0.font = UIFont(name: "Montserrat-light", size: 12)
-		$0.isHidden = true
-		return $0
-	}(UILabel())
-	
 	lazy var additionalDangeroussLabel: UILabel = {
 		$0.setTextSmall(title: "additionalDangerouss")
 		return $0
@@ -194,8 +181,6 @@ class ResultView: UIView {
 		contentView.addSubview(yourEarningsLabel)
 		contentView.addSubview(grossSalaryLabel)
 		contentView.addSubview(valueGrossSalaryLabel)
-		contentView.addSubview(salaryVacationLabel)
-		contentView.addSubview(valueSalaryVacationLabel)
 		contentView.addSubview(additionalDangeroussLabel)
 		contentView.addSubview(valueAdditionalDangeroussLabel)
 		contentView.addSubview(additionalInsalubrityLabel)
@@ -234,12 +219,6 @@ class ResultView: UIView {
 			grossSalaryLabel.leadingAnchor.constraint(equalTo: yourEarningsLabel.leadingAnchor),
 		
 			valueGrossSalaryLabel.centerYAnchor.constraint(equalTo: grossSalaryLabel.centerYAnchor),
-			valueGrossSalaryLabel.trailingAnchor.constraint(equalTo: yourEarningsLabel.trailingAnchor),
-			
-			salaryVacationLabel.topAnchor.constraint(equalTo: yourEarningsLabel.bottomAnchor, constant: 10),
-			salaryVacationLabel.leadingAnchor.constraint(equalTo: yourEarningsLabel.leadingAnchor),
-		
-			valueSalaryVacationLabel.centerYAnchor.constraint(equalTo: salaryVacationLabel.centerYAnchor),
 			valueGrossSalaryLabel.trailingAnchor.constraint(equalTo: yourEarningsLabel.trailingAnchor),
 			
 			additionalDangeroussLabel.topAnchor.constraint(equalTo: grossSalaryLabel.bottomAnchor, constant: 10),
