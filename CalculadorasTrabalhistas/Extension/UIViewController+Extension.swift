@@ -6,7 +6,7 @@ extension UIViewController {
 		
 		switch nameCalculator {
 		case "NetSalaryViewController" :
-			return NetSalaryViewController(calculator: calculator)
+			return OtherAdditionalViewController(calculator: calculator)
 		case "VacationViewController" :
 			return VacationViewController(calculator: calculator)
 		default:

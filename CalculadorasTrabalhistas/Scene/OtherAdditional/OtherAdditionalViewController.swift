@@ -1,9 +1,9 @@
 import UIKit
 
-class NetSalaryViewController: UIViewController {
+class OtherAdditionalViewController: UIViewController {
 	
-	private let netSalaryView = NetSalaryView()
-	private let netSalaryVM = NetSalaryViewModel()
+	private let netSalaryView = OtherAdditionalView()
+	private let netSalaryVM = OtherAdditionalViewModel()
 	var currentString = ""
 	var currentStringDiscount = ""
 	
@@ -32,7 +32,7 @@ class NetSalaryViewController: UIViewController {
 	}
 }
 
-extension NetSalaryViewController: UITextFieldDelegate {
+extension OtherAdditionalViewController: UITextFieldDelegate {
 		
 	func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
 		if netSalaryView.otherDiscountTextField.isEditing {
@@ -77,7 +77,7 @@ extension NetSalaryViewController: UITextFieldDelegate {
 	}
 }
 
-extension NetSalaryViewController: NetSalaryViewProtocol {
+extension OtherAdditionalViewController: OtherAdditionalViewProtocol {
 	func tappedCalculate() {
 		let valueOtherAdditional = (NSString(string: currentString).doubleValue)/100
 		let valueOtherDiscount = (NSString(string: currentStringDiscount).doubleValue)/100

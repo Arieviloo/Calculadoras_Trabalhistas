@@ -1,6 +1,6 @@
 import UIKit
 
-class NetSalaryViewModel {
+class OtherAdditionalViewModel {
 	private(set) var calculator: Calculator?
 	
 	public func setCalculator(calculator: Calculator) { self.calculator = calculator }
