@@ -1,13 +1,13 @@
 import UIKit
 
-protocol NetSalaryViewProtocol: NSObject {
+protocol OtherAdditionalViewProtocol: NSObject {
 	func tappedCalculate()
 }
 
-class NetSalaryView: UIView {
+class OtherAdditionalView: UIView {
 	
-	private weak var delegate: NetSalaryViewProtocol?
-	public func delegate(delegate: NetSalaryViewProtocol) {
+	private weak var delegate: OtherAdditionalViewProtocol?
+	public func delegate(delegate: OtherAdditionalViewProtocol) {
 		self.delegate = delegate
 	}
 	
