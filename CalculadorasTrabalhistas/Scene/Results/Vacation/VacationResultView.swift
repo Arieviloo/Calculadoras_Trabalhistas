@@ -44,6 +44,54 @@ class VacationResultView: UIView {
 		return $0
 	}(UILabel())
 	
+	lazy var oneThirdVacationLabel: UILabel = {
+		$0.setTextSmall(title: "oneThirdVacation")
+		return $0
+	}(UILabel())
+	
+	lazy var valueOneThirdVacationLabel: UILabel = {
+		$0.translatesAutoresizingMaskIntoConstraints = false
+		$0.font = UIFont(name: "Montserrat-light", size: 12)
+		$0.text = "R$ 0.00"
+		return $0
+	}(UILabel())
+	
+	lazy var allowanceMonetaryLabel: UILabel = {
+		$0.setTextSmall(title: "allowanceMonetary")
+		return $0
+	}(UILabel())
+	
+	lazy var valueAllowanceMonetaryLabel: UILabel = {
+		$0.translatesAutoresizingMaskIntoConstraints = false
+		$0.font = UIFont(name: "Montserrat-light", size: 12)
+		$0.text = "R$ 0.00"
+		return $0
+	}(UILabel())
+	
+	lazy var oneThirdAllowanceMonetaryLabel: UILabel = {
+		$0.setTextSmall(title: "oneThirdAllowanceMonetary")
+		return $0
+	}(UILabel())
+	
+	lazy var valueOneThirdAllowanceMonetaryLabel: UILabel = {
+		$0.translatesAutoresizingMaskIntoConstraints = false
+		$0.font = UIFont(name: "Montserrat-light", size: 12)
+		$0.text = "R$ 0.00"
+		return $0
+	}(UILabel())	
+	
+	lazy var advancedThirteenthLabel: UILabel = {
+		$0.setTextSmall(title: "advancedThirteenth")
+		return $0
+	}(UILabel())
+	
+	lazy var valueAdvancedThirteenthLabel: UILabel = {
+		$0.translatesAutoresizingMaskIntoConstraints = false
+		$0.font = UIFont(name: "Montserrat-light", size: 12)
+		$0.text = "R$ 0.00"
+		return $0
+	}(UILabel())
+	
 	lazy var additionalDangeroussLabel: UILabel = {
 		$0.setTextSmall(title: "additionalDangerouss")
 		return $0
@@ -180,12 +228,22 @@ class VacationResultView: UIView {
 		contentView.addSubview(yourEarningsLabel)
 		contentView.addSubview(salaryVacationLabel)
 		contentView.addSubview(valueSalaryVacationLabel)
+		contentView.addSubview(oneThirdVacationLabel)
+		contentView.addSubview(valueOneThirdVacationLabel)
+		contentView.addSubview(allowanceMonetaryLabel)
+		contentView.addSubview(valueAllowanceMonetaryLabel)
+		contentView.addSubview(oneThirdAllowanceMonetaryLabel)
+		contentView.addSubview(valueOneThirdAllowanceMonetaryLabel)
+		contentView.addSubview(advancedThirteenthLabel)
+		contentView.addSubview(valueAdvancedThirteenthLabel)
+		
 		contentView.addSubview(additionalDangeroussLabel)
 		contentView.addSubview(valueAdditionalDangeroussLabel)
 		contentView.addSubview(additionalInsalubrityLabel)
 		contentView.addSubview(valueAdditionalInsalubrityLabel)
 		contentView.addSubview(otherAdditionalLabel)
 		contentView.addSubview(valueOtherAdditionalLabel)
+		
 		contentView.addSubview(yourDiscountsLabel)
 		contentView.addSubview(inssLabel)
 		contentView.addSubview(valueInssLabel)
@@ -201,14 +259,14 @@ class VacationResultView: UIView {
 	
 	private func configConstraints() {
 		NSLayoutConstraint.activate([
-			titleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 40),
+			titleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20),
 			titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
 			titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15),
 			
 			contentView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10),
 			contentView.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
 			contentView.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
-			contentView.heightAnchor.constraint(equalToConstant: 400),
+			contentView.heightAnchor.constraint(equalToConstant: 440),
 			
 			yourEarningsLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
 			yourEarningsLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
@@ -220,7 +278,31 @@ class VacationResultView: UIView {
 			valueSalaryVacationLabel.centerYAnchor.constraint(equalTo: salaryVacationLabel.centerYAnchor),
 			valueSalaryVacationLabel.trailingAnchor.constraint(equalTo: yourEarningsLabel.trailingAnchor),
 			
-			additionalDangeroussLabel.topAnchor.constraint(equalTo: salaryVacationLabel.bottomAnchor, constant: 10),
+			oneThirdVacationLabel.topAnchor.constraint(equalTo: salaryVacationLabel.bottomAnchor, constant: 10),
+			oneThirdVacationLabel.leadingAnchor.constraint(equalTo: yourEarningsLabel.leadingAnchor),
+		
+			valueOneThirdVacationLabel.centerYAnchor.constraint(equalTo: oneThirdVacationLabel.centerYAnchor),
+			valueOneThirdVacationLabel.trailingAnchor.constraint(equalTo: yourEarningsLabel.trailingAnchor),
+			
+			allowanceMonetaryLabel.topAnchor.constraint(equalTo: oneThirdVacationLabel.bottomAnchor, constant: 10),
+			allowanceMonetaryLabel.leadingAnchor.constraint(equalTo: yourEarningsLabel.leadingAnchor),
+		
+			valueAllowanceMonetaryLabel.centerYAnchor.constraint(equalTo: allowanceMonetaryLabel.centerYAnchor),
+			valueAllowanceMonetaryLabel.trailingAnchor.constraint(equalTo: yourEarningsLabel.trailingAnchor),
+			
+			oneThirdAllowanceMonetaryLabel.topAnchor.constraint(equalTo: allowanceMonetaryLabel.bottomAnchor, constant: 10),
+			oneThirdAllowanceMonetaryLabel.leadingAnchor.constraint(equalTo: yourEarningsLabel.leadingAnchor),
+		
+			valueOneThirdAllowanceMonetaryLabel.centerYAnchor.constraint(equalTo: oneThirdAllowanceMonetaryLabel.centerYAnchor),
+			valueOneThirdAllowanceMonetaryLabel.trailingAnchor.constraint(equalTo: yourEarningsLabel.trailingAnchor),
+			
+			advancedThirteenthLabel.topAnchor.constraint(equalTo: oneThirdAllowanceMonetaryLabel.bottomAnchor, constant: 10),
+			advancedThirteenthLabel.leadingAnchor.constraint(equalTo: yourEarningsLabel.leadingAnchor),
+		
+			valueAdvancedThirteenthLabel.centerYAnchor.constraint(equalTo: advancedThirteenthLabel.centerYAnchor),
+			valueAdvancedThirteenthLabel.trailingAnchor.constraint(equalTo: yourEarningsLabel.trailingAnchor),
+			
+			additionalDangeroussLabel.topAnchor.constraint(equalTo: advancedThirteenthLabel.bottomAnchor, constant: 10),
 			additionalDangeroussLabel.leadingAnchor.constraint(equalTo: yourEarningsLabel.leadingAnchor),
 			
 			valueAdditionalDangeroussLabel.centerYAnchor.constraint(equalTo: additionalDangeroussLabel.centerYAnchor),
@@ -238,7 +320,7 @@ class VacationResultView: UIView {
 			valueOtherAdditionalLabel.topAnchor.constraint(equalTo: otherAdditionalLabel.topAnchor),
 			valueOtherAdditionalLabel.trailingAnchor.constraint(equalTo: yourEarningsLabel.trailingAnchor),
 			
-			yourDiscountsLabel.topAnchor.constraint(equalTo: otherAdditionalLabel.bottomAnchor, constant: 50),
+			yourDiscountsLabel.topAnchor.constraint(equalTo: otherAdditionalLabel.bottomAnchor, constant: 20),
 			yourDiscountsLabel.leadingAnchor.constraint(equalTo: yourEarningsLabel.leadingAnchor),
 			yourDiscountsLabel.trailingAnchor.constraint(equalTo: yourEarningsLabel.trailingAnchor),
 			
