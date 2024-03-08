@@ -200,12 +200,12 @@ class VacationResultView: UIView {
 		valueAdditionalInsalubrityLabel.text = insalubrity
 		valueOtherAdditionalLabel.text = otherAdditional
 	}
-//	
-//	public func setValueDiscount(inss: String, irrf: String, otherDiscount: String) {
-//		valueInssLabel.text = inss
-//		valueIrrfLabel.text = irrf
-//		valueOtherDiscountsLabel.text = otherDiscount
-//	}
+
+	public func setValueDiscount(inss: String, irrf: String, otherDiscount: String) {
+		valueInssLabel.text = inss
+		valueIrrfLabel.text = irrf
+		valueOtherDiscountsLabel.text = otherDiscount
+	}
 	
 	public func setValueResult(result: String) {
 		valueResultLabel.text = result
