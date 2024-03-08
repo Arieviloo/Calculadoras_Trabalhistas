@@ -38,13 +38,13 @@ class VacationResultViewController: UIViewController {
 			otherAdditional: formatCurrency(value: resultCalculation.otherAdditional ?? 0)
 		)
 		
-//		resultView.setValueDiscount(
-//			inss: formatCurrency(value: resultCalculation.inss ?? 0),
-//			irrf: formatCurrency(value: resultCalculation.irrf ?? 0),
-//			otherDiscount: formatCurrency(value: resultCalculation.otherDiscount ?? 0)
-//		)
-//		
-//		resultView.setValueResult(result: formatCurrency(value: resultCalculation.total ?? 0))
+		vacationResultView.setValueDiscount(
+			inss: formatCurrency(value: resultCalculation.inss ?? 0),
+			irrf: formatCurrency(value: resultCalculation.irrf ?? 0),
+			otherDiscount: formatCurrency(value: resultCalculation.otherDiscount ?? 0)
+		)
+		
+		vacationResultView.setValueResult(result: formatCurrency(value: resultCalculation.total ?? 0))
 	}
 	
 }
