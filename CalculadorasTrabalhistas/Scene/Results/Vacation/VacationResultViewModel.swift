@@ -15,7 +15,7 @@ class VacationResultViewModel {
 		let valueOneThirdAllowancePecuniary = valueAllowancePecuniary / 3
 		let valueAdvanceFirstInstalmentThirteenth = (calculator?.valueSalaryGross ?? 0) / 2
 		
-		dump(calculator)
+		
 		
 		resultCalculation.grossSalary = calculator?.valueSalaryGross
 		resultCalculation.additionalDangerouss = porcentage(porcent: calculator?.valueAdditionalDangerousness ?? 0, of: resultCalculation.grossSalary ?? 0)
@@ -28,6 +28,8 @@ class VacationResultViewModel {
 		resultCalculation.allowancePecuniary = valueAllowancePecuniary
 		resultCalculation.oneThirdAllowancePecuniary = valueOneThirdAllowancePecuniary
 		resultCalculation.advanceFirstInstalmentThirteenth = valueAdvanceFirstInstalmentThirteenth
+		
+		dump(resultCalculation)
 		
 		let totalSalaryWithoutDiscount = Double(resultCalculation.grossSalary ?? 0) + Double(resultCalculation.additionalDangerouss ?? 0) + Double(resultCalculation.additionalInsalubrity ?? 0) + Double(resultCalculation.otherAdditional ?? 0)
 		resultCalculation.inss = totalSalaryWithoutDiscount.calculateInss()
