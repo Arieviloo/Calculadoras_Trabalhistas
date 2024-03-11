@@ -164,7 +164,7 @@ class VacationResultView: UIView {
 	}(UILabel())
 	
 	lazy var resultLabel: UILabel = {
-		$0.setTextStrong(title: "Seu salário líquido será de", color: UIColor.appBlue)
+		$0.setTextStrong(title: "O valor das férias será de", color: UIColor.appBlue)
 		return $0
 	}(UILabel())
 	

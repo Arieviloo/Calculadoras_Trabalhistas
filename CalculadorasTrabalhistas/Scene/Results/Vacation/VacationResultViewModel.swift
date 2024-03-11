@@ -7,15 +7,14 @@ class VacationResultViewModel {
 	public func setCalculator(calculator: Calculator) { self.calculator = calculator }
 	
 	func calculateVacation() -> ResultCalculation {
+		
 		let valueSalaryForDay = (calculator?.valueSalaryGross ?? 0) / 30
 		let quantityDaysVacation = calculator?.amountVacationDay ?? 0
 		let valueSalaryVacation = valueSalaryForDay * Double(quantityDaysVacation)
 		let valueOneThirdVacation = valueSalaryVacation / 3
 		let valueAllowancePecuniary = valueSalaryForDay * Double(calculator?.homManyDay ?? 0)
 		let valueOneThirdAllowancePecuniary = valueAllowancePecuniary / 3
-		let valueAdvanceFirstInstalmentThirteenth = (calculator?.valueSalaryGross ?? 0) / 2
-		
-		
+		let valueAdvanceFirstInstalmentThirteenth = (calculator?.willAntecipateThirteenth ?? false) ? (calculator?.valueSalaryGross ?? 0) / 2 : 0
 		
 		resultCalculation.grossSalary = calculator?.valueSalaryGross
 		resultCalculation.additionalDangerouss = porcentage(porcent: calculator?.valueAdditionalDangerousness ?? 0, of: resultCalculation.grossSalary ?? 0)
@@ -29,9 +28,12 @@ class VacationResultViewModel {
 		resultCalculation.oneThirdAllowancePecuniary = valueOneThirdAllowancePecuniary
 		resultCalculation.advanceFirstInstalmentThirteenth = valueAdvanceFirstInstalmentThirteenth
 		
-		dump(resultCalculation)
+//		dump(resultCalculation)
 		
-		let totalSalaryWithoutDiscount = Double(resultCalculation.grossSalary ?? 0) + Double(resultCalculation.additionalDangerouss ?? 0) + Double(resultCalculation.additionalInsalubrity ?? 0) + Double(resultCalculation.otherAdditional ?? 0)
+		let totalVacationWithoutDiscount = Double(resultCalculation.salaryVacation ?? 0) + Double(resultCalculation.oneThirdVacation ?? 0) + Double(resultCalculation.allowancePecuniary ?? 0) + Double(resultCalculation.oneThirdAllowancePecuniary ?? 0) + Double(resultCalculation.advanceFirstInstalmentThirteenth ?? 0)
+		let totalAdditionalyWithoutDiscount = Double(resultCalculation.additionalDangerouss ?? 0) + Double(resultCalculation.additionalInsalubrity ?? 0) + Double(resultCalculation.otherAdditional ?? 0)
+		let totalSalaryWithoutDiscount = totalVacationWithoutDiscount + totalAdditionalyWithoutDiscount
+		
 		resultCalculation.inss = totalSalaryWithoutDiscount.calculateInss()
 		let discount = Double(resultCalculation.otherDiscount ?? 0) + Double(resultCalculation.inss ?? 0)
 		resultCalculation.irrf = totalSalaryWithoutDiscount.calculateIrrf(discount: discount, numberDependent: calculator?.valueNumberDependent ?? 0)

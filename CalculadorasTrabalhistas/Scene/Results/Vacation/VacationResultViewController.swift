@@ -39,7 +39,7 @@ class VacationResultViewController: UIViewController {
 		)
 		
 		vacationResultView.setValueEarning(
-			grossSalary: formatCurrency(value: resultCalculation.grossSalary ?? 0),
+			grossSalary: formatCurrency(value: resultCalculation.salaryVacation ?? 0),
 			dangerouss: formatCurrency(value: resultCalculation.additionalDangerouss ?? 0),
 			insalubrity: formatCurrency(value: resultCalculation.additionalInsalubrity ?? 0),
 			otherAdditional: formatCurrency(value: resultCalculation.otherAdditional ?? 0)
