@@ -31,6 +31,13 @@ class VacationResultViewController: UIViewController {
 	private func calculateNetSalary() {
 		let resultCalculation = resultVM.calculateVacation()
 		
+		vacationResultView.setValueVacation(
+			oneThirdVacation: formatCurrency(value: resultCalculation.oneThirdVacation ?? 0),
+			allowancePecuniary: formatCurrency(value: resultCalculation.allowancePecuniary ?? 0),
+			oneThirdAllowancePecuniary: formatCurrency(value: resultCalculation.oneThirdAllowancePecuniary ?? 0),
+			firstInstalmentThirteenth: formatCurrency(value: resultCalculation.advanceFirstInstalmentThirteenth ?? 0)
+		)
+		
 		vacationResultView.setValueEarning(
 			grossSalary: formatCurrency(value: resultCalculation.grossSalary ?? 0),
 			dangerouss: formatCurrency(value: resultCalculation.additionalDangerouss ?? 0),

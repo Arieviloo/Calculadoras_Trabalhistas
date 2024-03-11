@@ -194,6 +194,13 @@ class VacationResultView: UIView {
 		self.delegate?.tappedOtherCalculationButton()
 	}
 	
+	public func setValueVacation(oneThirdVacation: String, allowancePecuniary: String, oneThirdAllowancePecuniary: String, firstInstalmentThirteenth: String ) {
+		valueOneThirdVacationLabel.text = oneThirdVacation
+		valueAllowanceMonetaryLabel.text = allowancePecuniary
+		valueOneThirdAllowanceMonetaryLabel.text = oneThirdAllowancePecuniary
+		valueAdvancedThirteenthLabel.text = firstInstalmentThirteenth
+	}
+	
 	public func setValueEarning(grossSalary: String, dangerouss: String, insalubrity: String, otherAdditional: String) {
 		valueSalaryVacationLabel.text = grossSalary
 		valueAdditionalDangeroussLabel.text = dangerouss
