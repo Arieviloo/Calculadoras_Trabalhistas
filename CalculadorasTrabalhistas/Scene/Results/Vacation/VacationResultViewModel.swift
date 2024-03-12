@@ -30,14 +30,13 @@ class VacationResultViewModel {
 		
 //		dump(resultCalculation)
 		
-		let totalVacationWithoutDiscount = Double(resultCalculation.salaryVacation ?? 0) + Double(resultCalculation.oneThirdVacation ?? 0) + Double(resultCalculation.allowancePecuniary ?? 0) + Double(resultCalculation.oneThirdAllowancePecuniary ?? 0) + Double(resultCalculation.advanceFirstInstalmentThirteenth ?? 0)
-		let totalAdditionalyWithoutDiscount = Double(resultCalculation.additionalDangerouss ?? 0) + Double(resultCalculation.additionalInsalubrity ?? 0) + Double(resultCalculation.otherAdditional ?? 0)
-		let totalSalaryWithoutDiscount = totalVacationWithoutDiscount + totalAdditionalyWithoutDiscount
+		let totalVacationWithoutDiscount = (resultCalculation.allowancePecuniary ?? 0.0) + (resultCalculation.oneThirdAllowancePecuniary ?? 0.0) + (resultCalculation.advanceFirstInstalmentThirteenth ?? 0.0)
+		let totalSalaryWithoutDiscount = Double(resultCalculation.salaryVacation ?? 0) + Double(resultCalculation.oneThirdVacation ?? 0) +  Double(resultCalculation.additionalDangerouss ?? 0) + Double(resultCalculation.additionalInsalubrity ?? 0) + Double(resultCalculation.otherAdditional ?? 0)
 		
 		resultCalculation.inss = totalSalaryWithoutDiscount.calculateInss()
 		let discount = Double(resultCalculation.otherDiscount ?? 0) + Double(resultCalculation.inss ?? 0)
 		resultCalculation.irrf = totalSalaryWithoutDiscount.calculateIrrf(discount: discount, numberDependent: calculator?.valueNumberDependent ?? 0)
-		resultCalculation.total = totalSalaryWithoutDiscount - (discount + Double(resultCalculation.irrf ?? 0))
+		resultCalculation.total = totalSalaryWithoutDiscount + totalVacationWithoutDiscount - (discount + Double(resultCalculation.irrf ?? 0))
 		
 		return resultCalculation
 	}
