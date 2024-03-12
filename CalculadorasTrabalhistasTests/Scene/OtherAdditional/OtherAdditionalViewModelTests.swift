@@ -1,15 +1,8 @@
-//
-//  NetSalaryViewModelTests.swift
-//  CalculadorasTrabalhistasTests
-//
-//  Created by Jadië Oliveira on 30/01/24.
-//
-
 import XCTest
 @testable import CalculadorasTrabalhistas
 
-final class NetSalaryViewModelTests: XCTestCase {
-	private let sut = NetSalaryViewModel()
+final class OtherAdditionalViewModelTests: XCTestCase {
+	private let sut = OtherAdditionalViewModel()
 	private var calculatorDummy = Calculator(name: "Salário Líquido", icon: "icon-salariominimo", nameViewController: "NetSalaryViewController")
 	
 	func test_set_calculator() {
