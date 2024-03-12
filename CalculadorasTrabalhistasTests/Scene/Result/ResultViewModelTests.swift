@@ -32,7 +32,7 @@ final class ResultViewModelTests: XCTestCase {
 		let otherAdditional = sut.calculator?.valueOtherAdditional ?? 0
 		let totalEarning = salaryGross + additionalDangerouss + additionalInsalubrity + otherAdditional
 		
-		let inss = sut.calculateInss(salary: totalEarning)
+		let inss = totalEarning.calculateInss()
 		XCTAssertEqual(inss, 532.819)
 	}
 	
@@ -45,10 +45,10 @@ final class ResultViewModelTests: XCTestCase {
 		let otherAdditional = sut.calculator?.valueOtherAdditional ?? 0
 		let otherDiscount = sut.calculator?.valueOtherDiscount ?? 0
 		let totalEarning = salaryGross + additionalDangerouss + additionalInsalubrity + otherAdditional
-		let inss = sut.calculateInss(salary: totalEarning)
+		let inss = totalEarning.calculateInss()
 		let totalDiscounts = otherDiscount + inss
 		
-		let irrf = sut.calculateIrrf(salary: totalEarning, discount: totalDiscounts, numberDependent: numberDependent)
+		let irrf = totalEarning.calculateIrrf(discount: totalDiscounts, numberDependent: numberDependent)
 		XCTAssertEqual(irrf, 243.22797500000013)
 	}
 	
@@ -61,9 +61,9 @@ final class ResultViewModelTests: XCTestCase {
 		let otherAdditional = sut.calculator?.valueOtherAdditional ?? 0
 		let otherDiscount = sut.calculator?.valueOtherDiscount ?? 0
 		let totalEarning = salaryGross + additionalDangerouss + additionalInsalubrity + otherAdditional
-		let inss = sut.calculateInss(salary: totalEarning)
+		let inss = totalEarning.calculateInss()
 		let totalDiscounts = otherDiscount + inss
-		let irrf = sut.calculateIrrf(salary: totalEarning, discount: totalDiscounts, numberDependent: numberDependent)
+		let irrf = totalEarning.calculateIrrf(discount: totalDiscounts, numberDependent: numberDependent)
 		
 		let result = totalEarning - (totalDiscounts + irrf)
 		XCTAssertEqual(result, 3923.953025)
