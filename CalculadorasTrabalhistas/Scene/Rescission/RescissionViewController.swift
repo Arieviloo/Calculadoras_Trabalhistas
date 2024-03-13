@@ -47,7 +47,9 @@ extension RescissionViewController: UITextFieldDelegate {
 
 extension RescissionViewController: RescissionViewProtocol {
 	func tappedNext() {
-		print("maaahoi")
+		let nextVC = ListReasonViewController()
+		
+		navigationController?.pushViewController(nextVC, animated: true)
 	}
 	
 	

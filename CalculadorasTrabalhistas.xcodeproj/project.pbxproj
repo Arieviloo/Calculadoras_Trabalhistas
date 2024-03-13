@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		E2000B622B63F722000B5544 /* AdditionalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2000B612B63F722000B5544 /* AdditionalViewModel.swift */; };
+		E20066962BA2171B00CAC884 /* ListReasonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20066952BA2171B00CAC884 /* ListReasonViewController.swift */; };
+		E20066982BA2172400CAC884 /* ListReasonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20066972BA2172400CAC884 /* ListReasonView.swift */; };
+		E200669A2BA2172F00CAC884 /* ListReasonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20066992BA2172F00CAC884 /* ListReasonViewModel.swift */; };
 		E201C0FC2B2C722800DFCDEF /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E201C0FB2B2C722800DFCDEF /* UIViewController+Extension.swift */; };
 		E21074862B2BC2FB00A7D523 /* OtherAdditionalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21074852B2BC2FB00A7D523 /* OtherAdditionalViewController.swift */; };
 		E21074882B2BC30200A7D523 /* OtherAdditionalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21074872B2BC30200A7D523 /* OtherAdditionalView.swift */; };
@@ -65,6 +68,9 @@
 
 /* Begin PBXFileReference section */
 		E2000B612B63F722000B5544 /* AdditionalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalViewModel.swift; sourceTree = "<group>"; };
+		E20066952BA2171B00CAC884 /* ListReasonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListReasonViewController.swift; sourceTree = "<group>"; };
+		E20066972BA2172400CAC884 /* ListReasonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListReasonView.swift; sourceTree = "<group>"; };
+		E20066992BA2172F00CAC884 /* ListReasonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListReasonViewModel.swift; sourceTree = "<group>"; };
 		E201C0FB2B2C722800DFCDEF /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		E21074852B2BC2FB00A7D523 /* OtherAdditionalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherAdditionalViewController.swift; sourceTree = "<group>"; };
 		E21074872B2BC30200A7D523 /* OtherAdditionalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherAdditionalView.swift; sourceTree = "<group>"; };
@@ -131,6 +137,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E20066942BA216B800CAC884 /* ListReason */ = {
+			isa = PBXGroup;
+			children = (
+				E20066952BA2171B00CAC884 /* ListReasonViewController.swift */,
+				E20066972BA2172400CAC884 /* ListReasonView.swift */,
+				E20066992BA2172F00CAC884 /* ListReasonViewModel.swift */,
+			);
+			path = ListReason;
+			sourceTree = "<group>";
+		};
 		E21074842B2BC2C400A7D523 /* OtherAdditional */ = {
 			isa = PBXGroup;
 			children = (
@@ -368,6 +384,7 @@
 				E21074842B2BC2C400A7D523 /* OtherAdditional */,
 				E2195B262B6BDEA000F029C0 /* Vacation */,
 				E254BF6C2BA0B72F0017F6C4 /* Rescission */,
+				E20066942BA216B800CAC884 /* ListReason */,
 				E21CC28B2B5565B00089933E /* Results */,
 			);
 			path = Scene;
@@ -503,6 +520,7 @@
 			files = (
 				E24090242B61508F00EBA746 /* HomeViewModel.swift in Sources */,
 				E290A6E72B28900200560137 /* SalaryView.swift in Sources */,
+				E20066962BA2171B00CAC884 /* ListReasonViewController.swift in Sources */,
 				E254BF722BA0B7630017F6C4 /* RescissionViewModel.swift in Sources */,
 				E2945DB32B29E20100A1C582 /* AdditionalViewController.swift in Sources */,
 				E24EFECB2B6528FE00B47572 /* ResultViewModel.swift in Sources */,
@@ -512,10 +530,12 @@
 				E201C0FC2B2C722800DFCDEF /* UIViewController+Extension.swift in Sources */,
 				E2000B622B63F722000B5544 /* AdditionalViewModel.swift in Sources */,
 				E290A6E52B288FFA00560137 /* SalaryViewController.swift in Sources */,
+				E200669A2BA2172F00CAC884 /* ListReasonViewModel.swift in Sources */,
 				E2F81B152B235A7700E181B7 /* UIColor+Extension.swift in Sources */,
 				E2BE94512B274FB3003FE825 /* HomeView.swift in Sources */,
 				E2195B282B6BDEBA00F029C0 /* VacationViewController.swift in Sources */,
 				E21074882B2BC30200A7D523 /* OtherAdditionalView.swift in Sources */,
+				E20066982BA2172400CAC884 /* ListReasonView.swift in Sources */,
 				E21CC28D2B5565C10089933E /* ResultViewController.swift in Sources */,
 				E2195B2C2B6BDED000F029C0 /* VacationViewModel.swift in Sources */,
 				E2AB18002B642CB100AAEBD8 /* OtherAdditionalViewModel.swift in Sources */,
