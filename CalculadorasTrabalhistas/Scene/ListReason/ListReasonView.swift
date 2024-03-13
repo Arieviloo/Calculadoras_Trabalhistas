@@ -17,6 +17,12 @@ class ListReasonView: UIView {
 		return $0
 	}(UILabel())
 	
+	lazy var listReasonTableView: UITableView = {
+		$0.translatesAutoresizingMaskIntoConstraints = false
+		$0.register(ListReasonTableViewCell.self, forCellReuseIdentifier: ListReasonTableViewCell.identifier)
+		return $0
+	}(UITableView())
+	
 	lazy var nextButton: UIButton = {
 		$0.setCustomButton(title: "next", colorBackground: UIColor.appBlue)
 		$0.addTarget(self, action: #selector(tappedNext), for: .touchUpInside)
@@ -31,6 +37,10 @@ class ListReasonView: UIView {
 		configConstraints()
 	}
 	
+	public func protocolsTableView(delegate: UITableViewDelegate, dataSource: UITableViewDataSource) {
+		listReasonTableView.delegate = delegate
+		listReasonTableView.dataSource = dataSource
+	}
 	
 	@objc func tappedNext() {
 		self.delegate?.tappedNext()
@@ -42,6 +52,7 @@ class ListReasonView: UIView {
 	
 	private func configAddView() {
 		addSubview(dateContractingLabel)
+		addSubview(listReasonTableView)
 		addSubview(nextButton)
 	}
 	
@@ -50,6 +61,11 @@ class ListReasonView: UIView {
 			dateContractingLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 40),
 			dateContractingLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
 			dateContractingLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
+			
+			listReasonTableView.topAnchor.constraint(equalTo: dateContractingLabel.bottomAnchor, constant: 10),
+			listReasonTableView.leadingAnchor.constraint(equalTo: dateContractingLabel.leadingAnchor),
+			listReasonTableView.trailingAnchor.constraint(equalTo: dateContractingLabel.trailingAnchor),
+			listReasonTableView.bottomAnchor.constraint(equalTo: nextButton.topAnchor, constant: -10),
 			
 			nextButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -200),
 			nextButton.centerXAnchor.constraint(equalTo: centerXAnchor),

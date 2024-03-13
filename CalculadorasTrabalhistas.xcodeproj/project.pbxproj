@@ -17,6 +17,7 @@
 		E2195B282B6BDEBA00F029C0 /* VacationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2195B272B6BDEBA00F029C0 /* VacationViewController.swift */; };
 		E2195B2A2B6BDEC800F029C0 /* VacationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2195B292B6BDEC800F029C0 /* VacationView.swift */; };
 		E2195B2C2B6BDED000F029C0 /* VacationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2195B2B2B6BDED000F029C0 /* VacationViewModel.swift */; };
+		E21A07BF2BA21E7000191FCD /* ListReasonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21A07BE2BA21E7000191FCD /* ListReasonTableViewCell.swift */; };
 		E21CC28D2B5565C10089933E /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21CC28C2B5565C10089933E /* ResultViewController.swift */; };
 		E21CC28F2B5565CB0089933E /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21CC28E2B5565CB0089933E /* ResultView.swift */; };
 		E24090242B61508F00EBA746 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24090232B61508F00EBA746 /* HomeViewModel.swift */; };
@@ -77,6 +78,7 @@
 		E2195B272B6BDEBA00F029C0 /* VacationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacationViewController.swift; sourceTree = "<group>"; };
 		E2195B292B6BDEC800F029C0 /* VacationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacationView.swift; sourceTree = "<group>"; };
 		E2195B2B2B6BDED000F029C0 /* VacationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacationViewModel.swift; sourceTree = "<group>"; };
+		E21A07BE2BA21E7000191FCD /* ListReasonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListReasonTableViewCell.swift; sourceTree = "<group>"; };
 		E21CC28C2B5565C10089933E /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		E21CC28E2B5565CB0089933E /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		E24090232B61508F00EBA746 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 			children = (
 				E20066952BA2171B00CAC884 /* ListReasonViewController.swift */,
 				E20066972BA2172400CAC884 /* ListReasonView.swift */,
+				E21A07BE2BA21E7000191FCD /* ListReasonTableViewCell.swift */,
 				E20066992BA2172F00CAC884 /* ListReasonViewModel.swift */,
 			);
 			path = ListReason;
@@ -525,6 +528,7 @@
 				E2945DB32B29E20100A1C582 /* AdditionalViewController.swift in Sources */,
 				E24EFECB2B6528FE00B47572 /* ResultViewModel.swift in Sources */,
 				E284F35F2B8F71F9002553B7 /* VacationResultViewController.swift in Sources */,
+				E21A07BF2BA21E7000191FCD /* ListReasonTableViewCell.swift in Sources */,
 				E21074862B2BC2FB00A7D523 /* OtherAdditionalViewController.swift in Sources */,
 				E254BF6E2BA0B74A0017F6C4 /* RescissionViewController.swift in Sources */,
 				E201C0FC2B2C722800DFCDEF /* UIViewController+Extension.swift in Sources */,
