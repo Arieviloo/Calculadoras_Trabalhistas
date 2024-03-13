@@ -20,6 +20,7 @@
 
 "dateYourContracting" = "Data da sua contratação?";
 "dateYourResignation" = "Data da sua demissão?";
+"selectReasonYourResignation" = "Selecione o motivo da sua demissão";
 
 //Button
 "next" = "Próximo";
