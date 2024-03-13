@@ -17,6 +17,7 @@ class ListReasonViewController: UIViewController {
 	
 	private func configView() {
 		listReasonView.protocolsTableView(delegate: self, dataSource: self)
+		listReasonView.delegate(delegate: self)
 	}
 }
 
@@ -27,18 +28,27 @@ extension ListReasonViewController: UITableViewDelegate, UITableViewDataSource, 
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: ListReasonTableViewCell.identifier, for: indexPath) as? ListReasonTableViewCell
-		cell?.reasonLabel.text = test[indexPath.row]
-		
 		let backgroundCell = UIView()
+		cell?.reasonLabel.text = test[indexPath.row]
 		backgroundCell.backgroundColor = UIColor.appBlueLight
 		cell?.selectedBackgroundView = backgroundCell
 		
 		return cell ?? UITableViewCell()
-		
 	}
 	
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 		45
 	}
 	
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		print(test[indexPath.row])
+	}
+	
+}
+
+extension ListReasonViewController: ListReasonViewProtocol {
+	func tappedNext() {
+		let nextVC =  NoticePeriodViewController()
+		navigationController?.pushViewController(nextVC, animated: true)
+	}
 }
