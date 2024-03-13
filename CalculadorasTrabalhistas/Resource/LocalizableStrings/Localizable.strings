@@ -18,6 +18,9 @@
 "homManyDays" = "Quantos dias?";
 "willAnticipateThirteenth" = "Você vai antecipar seu 13º Salário ?";
 
+"dateYourContracting" = "Data da sua contratação?";
+"dateYourResignation" = "Data da sua demissão?";
+
 //Button
 "next" = "Próximo";
 "calculate" = "Calcular";

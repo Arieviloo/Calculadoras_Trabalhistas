@@ -3,12 +3,14 @@ import UIKit
 extension UIViewController {
 	func getCalculatorViewController(calculator: Calculator) -> UIViewController {
 		let nameCalculator = calculator.nameViewController
-		
+	
 		switch nameCalculator {
 		case "NetSalaryViewController" :
 			return OtherAdditionalViewController(calculator: calculator)
 		case "VacationViewController" :
 			return VacationViewController(calculator: calculator)
+		case "RescissionViewController" :
+			return RescissionViewController()
 		default:
 			return UIViewController()
 		}
