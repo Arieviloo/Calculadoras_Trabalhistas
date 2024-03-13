@@ -20,6 +20,10 @@
 		E21A07BF2BA21E7000191FCD /* ListReasonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21A07BE2BA21E7000191FCD /* ListReasonTableViewCell.swift */; };
 		E21CC28D2B5565C10089933E /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21CC28C2B5565C10089933E /* ResultViewController.swift */; };
 		E21CC28F2B5565CB0089933E /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21CC28E2B5565CB0089933E /* ResultView.swift */; };
+		E23773A62BA2593E00171780 /* NoticePeriodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23773A52BA2593E00171780 /* NoticePeriodViewController.swift */; };
+		E23773A82BA2594500171780 /* NoticePeriodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23773A72BA2594500171780 /* NoticePeriodView.swift */; };
+		E23773AA2BA2594C00171780 /* NoticePeriodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23773A92BA2594C00171780 /* NoticePeriodViewModel.swift */; };
+		E23773AC2BA259BA00171780 /* NoticePeriodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23773AB2BA259BA00171780 /* NoticePeriodTableViewCell.swift */; };
 		E24090242B61508F00EBA746 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24090232B61508F00EBA746 /* HomeViewModel.swift */; };
 		E249714F2B28E5BF000AD4F8 /* CustomDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = E249714E2B28E5BF000AD4F8 /* CustomDesign.swift */; };
 		E24EFECB2B6528FE00B47572 /* ResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24EFECA2B6528FE00B47572 /* ResultViewModel.swift */; };
@@ -81,6 +85,10 @@
 		E21A07BE2BA21E7000191FCD /* ListReasonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListReasonTableViewCell.swift; sourceTree = "<group>"; };
 		E21CC28C2B5565C10089933E /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		E21CC28E2B5565CB0089933E /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
+		E23773A52BA2593E00171780 /* NoticePeriodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticePeriodViewController.swift; sourceTree = "<group>"; };
+		E23773A72BA2594500171780 /* NoticePeriodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticePeriodView.swift; sourceTree = "<group>"; };
+		E23773A92BA2594C00171780 /* NoticePeriodViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticePeriodViewModel.swift; sourceTree = "<group>"; };
+		E23773AB2BA259BA00171780 /* NoticePeriodTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticePeriodTableViewCell.swift; sourceTree = "<group>"; };
 		E24090232B61508F00EBA746 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		E249714E2B28E5BF000AD4F8 /* CustomDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDesign.swift; sourceTree = "<group>"; };
 		E24EFECA2B6528FE00B47572 /* ResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewModel.swift; sourceTree = "<group>"; };
@@ -177,6 +185,17 @@
 				E284F3562B8F71A0002553B7 /* Vacation */,
 			);
 			path = Results;
+			sourceTree = "<group>";
+		};
+		E23773A42BA2586100171780 /* NoticePeriod */ = {
+			isa = PBXGroup;
+			children = (
+				E23773A52BA2593E00171780 /* NoticePeriodViewController.swift */,
+				E23773A72BA2594500171780 /* NoticePeriodView.swift */,
+				E23773A92BA2594C00171780 /* NoticePeriodViewModel.swift */,
+				E23773AB2BA259BA00171780 /* NoticePeriodTableViewCell.swift */,
+			);
+			path = NoticePeriod;
 			sourceTree = "<group>";
 		};
 		E254BF6C2BA0B72F0017F6C4 /* Rescission */ = {
@@ -388,6 +407,7 @@
 				E2195B262B6BDEA000F029C0 /* Vacation */,
 				E254BF6C2BA0B72F0017F6C4 /* Rescission */,
 				E20066942BA216B800CAC884 /* ListReason */,
+				E23773A42BA2586100171780 /* NoticePeriod */,
 				E21CC28B2B5565B00089933E /* Results */,
 			);
 			path = Scene;
@@ -528,6 +548,7 @@
 				E2945DB32B29E20100A1C582 /* AdditionalViewController.swift in Sources */,
 				E24EFECB2B6528FE00B47572 /* ResultViewModel.swift in Sources */,
 				E284F35F2B8F71F9002553B7 /* VacationResultViewController.swift in Sources */,
+				E23773A82BA2594500171780 /* NoticePeriodView.swift in Sources */,
 				E21A07BF2BA21E7000191FCD /* ListReasonTableViewCell.swift in Sources */,
 				E21074862B2BC2FB00A7D523 /* OtherAdditionalViewController.swift in Sources */,
 				E254BF6E2BA0B74A0017F6C4 /* RescissionViewController.swift in Sources */,
@@ -544,6 +565,7 @@
 				E2195B2C2B6BDED000F029C0 /* VacationViewModel.swift in Sources */,
 				E2AB18002B642CB100AAEBD8 /* OtherAdditionalViewModel.swift in Sources */,
 				E2CB9F382B32303B003553F4 /* SalaryViewModel.swift in Sources */,
+				E23773A62BA2593E00171780 /* NoticePeriodViewController.swift in Sources */,
 				E284F35C2B8F71D3002553B7 /* VacationResultViewModel.swift in Sources */,
 				E2AAE4F12B2792F2008A5543 /* Calculator.swift in Sources */,
 				E21CC28F2B5565CB0089933E /* ResultView.swift in Sources */,
@@ -553,8 +575,10 @@
 				E254BF702BA0B7570017F6C4 /* RescissionView.swift in Sources */,
 				E2BE94582B275232003FE825 /* String+Extension.swift in Sources */,
 				E2C9384E2B9180AF008A5E83 /* Double+Extension.swift in Sources */,
+				E23773AC2BA259BA00171780 /* NoticePeriodTableViewCell.swift in Sources */,
 				E2F81AFF2B23592600E181B7 /* AppDelegate.swift in Sources */,
 				E2195B2A2B6BDEC800F029C0 /* VacationView.swift in Sources */,
+				E23773AA2BA2594C00171780 /* NoticePeriodViewModel.swift in Sources */,
 				E2AAE4EE2B279061008A5543 /* HomeCollectionViewCell.swift in Sources */,
 				E2945DB52B29E20900A1C582 /* AdditionalView.swift in Sources */,
 			);
