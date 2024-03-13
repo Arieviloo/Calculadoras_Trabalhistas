@@ -24,6 +24,9 @@
 		E23773A82BA2594500171780 /* NoticePeriodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23773A72BA2594500171780 /* NoticePeriodView.swift */; };
 		E23773AA2BA2594C00171780 /* NoticePeriodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23773A92BA2594C00171780 /* NoticePeriodViewModel.swift */; };
 		E23773AC2BA259BA00171780 /* NoticePeriodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23773AB2BA259BA00171780 /* NoticePeriodTableViewCell.swift */; };
+		E23773AF2BA2647100171780 /* VacationAccumulatedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23773AE2BA2647100171780 /* VacationAccumulatedViewController.swift */; };
+		E23773B12BA2647700171780 /* VacationAccumulatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23773B02BA2647700171780 /* VacationAccumulatedView.swift */; };
+		E23773B32BA2647F00171780 /* VacationAccumulatedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23773B22BA2647F00171780 /* VacationAccumulatedViewModel.swift */; };
 		E24090242B61508F00EBA746 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24090232B61508F00EBA746 /* HomeViewModel.swift */; };
 		E249714F2B28E5BF000AD4F8 /* CustomDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = E249714E2B28E5BF000AD4F8 /* CustomDesign.swift */; };
 		E24EFECB2B6528FE00B47572 /* ResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24EFECA2B6528FE00B47572 /* ResultViewModel.swift */; };
@@ -89,6 +92,9 @@
 		E23773A72BA2594500171780 /* NoticePeriodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticePeriodView.swift; sourceTree = "<group>"; };
 		E23773A92BA2594C00171780 /* NoticePeriodViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticePeriodViewModel.swift; sourceTree = "<group>"; };
 		E23773AB2BA259BA00171780 /* NoticePeriodTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticePeriodTableViewCell.swift; sourceTree = "<group>"; };
+		E23773AE2BA2647100171780 /* VacationAccumulatedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacationAccumulatedViewController.swift; sourceTree = "<group>"; };
+		E23773B02BA2647700171780 /* VacationAccumulatedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacationAccumulatedView.swift; sourceTree = "<group>"; };
+		E23773B22BA2647F00171780 /* VacationAccumulatedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacationAccumulatedViewModel.swift; sourceTree = "<group>"; };
 		E24090232B61508F00EBA746 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		E249714E2B28E5BF000AD4F8 /* CustomDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDesign.swift; sourceTree = "<group>"; };
 		E24EFECA2B6528FE00B47572 /* ResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewModel.swift; sourceTree = "<group>"; };
@@ -196,6 +202,16 @@
 				E23773AB2BA259BA00171780 /* NoticePeriodTableViewCell.swift */,
 			);
 			path = NoticePeriod;
+			sourceTree = "<group>";
+		};
+		E23773AD2BA2641A00171780 /* VacationAccumulated */ = {
+			isa = PBXGroup;
+			children = (
+				E23773AE2BA2647100171780 /* VacationAccumulatedViewController.swift */,
+				E23773B02BA2647700171780 /* VacationAccumulatedView.swift */,
+				E23773B22BA2647F00171780 /* VacationAccumulatedViewModel.swift */,
+			);
+			path = VacationAccumulated;
 			sourceTree = "<group>";
 		};
 		E254BF6C2BA0B72F0017F6C4 /* Rescission */ = {
@@ -408,6 +424,7 @@
 				E254BF6C2BA0B72F0017F6C4 /* Rescission */,
 				E20066942BA216B800CAC884 /* ListReason */,
 				E23773A42BA2586100171780 /* NoticePeriod */,
+				E23773AD2BA2641A00171780 /* VacationAccumulated */,
 				E21CC28B2B5565B00089933E /* Results */,
 			);
 			path = Scene;
@@ -542,6 +559,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E24090242B61508F00EBA746 /* HomeViewModel.swift in Sources */,
+				E23773B32BA2647F00171780 /* VacationAccumulatedViewModel.swift in Sources */,
 				E290A6E72B28900200560137 /* SalaryView.swift in Sources */,
 				E20066962BA2171B00CAC884 /* ListReasonViewController.swift in Sources */,
 				E254BF722BA0B7630017F6C4 /* RescissionViewModel.swift in Sources */,
@@ -572,12 +590,14 @@
 				E284F35A2B8F71C3002553B7 /* VacationResultView.swift in Sources */,
 				E249714F2B28E5BF000AD4F8 /* CustomDesign.swift in Sources */,
 				E2F81B032B23592600E181B7 /* HomeViewController.swift in Sources */,
+				E23773AF2BA2647100171780 /* VacationAccumulatedViewController.swift in Sources */,
 				E254BF702BA0B7570017F6C4 /* RescissionView.swift in Sources */,
 				E2BE94582B275232003FE825 /* String+Extension.swift in Sources */,
 				E2C9384E2B9180AF008A5E83 /* Double+Extension.swift in Sources */,
 				E23773AC2BA259BA00171780 /* NoticePeriodTableViewCell.swift in Sources */,
 				E2F81AFF2B23592600E181B7 /* AppDelegate.swift in Sources */,
 				E2195B2A2B6BDEC800F029C0 /* VacationView.swift in Sources */,
+				E23773B12BA2647700171780 /* VacationAccumulatedView.swift in Sources */,
 				E23773AA2BA2594C00171780 /* NoticePeriodViewModel.swift in Sources */,
 				E2AAE4EE2B279061008A5543 /* HomeCollectionViewCell.swift in Sources */,
 				E2945DB52B29E20900A1C582 /* AdditionalView.swift in Sources */,
