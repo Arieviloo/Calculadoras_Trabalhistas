@@ -12,7 +12,7 @@ class ListReasonView: UIView {
 		self.delegate = delegate
 	}
 	
-	lazy var dateContractingLabel: UILabel = {
+	lazy var selectReasonResignationLabel: UILabel = {
 		$0.setCustomTitleNormal(title: "selectReasonYourResignation")
 		return $0
 	}(UILabel())
@@ -51,20 +51,20 @@ class ListReasonView: UIView {
 	}
 	
 	private func configAddView() {
-		addSubview(dateContractingLabel)
+		addSubview(selectReasonResignationLabel)
 		addSubview(listReasonTableView)
 		addSubview(nextButton)
 	}
 	
 	private func configConstraints() {
 		NSLayoutConstraint.activate([
-			dateContractingLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 40),
-			dateContractingLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-			dateContractingLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
+			selectReasonResignationLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 40),
+			selectReasonResignationLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+			selectReasonResignationLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
 			
-			listReasonTableView.topAnchor.constraint(equalTo: dateContractingLabel.bottomAnchor, constant: 10),
-			listReasonTableView.leadingAnchor.constraint(equalTo: dateContractingLabel.leadingAnchor),
-			listReasonTableView.trailingAnchor.constraint(equalTo: dateContractingLabel.trailingAnchor),
+			listReasonTableView.topAnchor.constraint(equalTo: selectReasonResignationLabel.bottomAnchor, constant: 10),
+			listReasonTableView.leadingAnchor.constraint(equalTo: selectReasonResignationLabel.leadingAnchor),
+			listReasonTableView.trailingAnchor.constraint(equalTo: selectReasonResignationLabel.trailingAnchor),
 			listReasonTableView.bottomAnchor.constraint(equalTo: nextButton.topAnchor, constant: -10),
 			
 			nextButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -200),
