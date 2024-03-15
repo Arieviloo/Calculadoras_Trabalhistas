@@ -10,7 +10,7 @@ extension UIViewController {
 		case "VacationViewController" :
 			return VacationViewController(calculator: calculator)
 		case "RescissionViewController" :
-			return RescissionViewController()
+			return RescissionViewController(calculator: calculator)
 		default:
 			return UIViewController()
 		}
