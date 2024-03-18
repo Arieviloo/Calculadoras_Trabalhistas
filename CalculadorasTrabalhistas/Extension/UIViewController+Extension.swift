@@ -3,7 +3,7 @@ import UIKit
 extension UIViewController {
 	func getCalculatorViewController(calculator: Calculator) -> UIViewController {
 		let nameCalculator = calculator.nameViewController
-	
+		
 		switch nameCalculator {
 		case "NetSalaryViewController" :
 			return OtherAdditionalViewController(calculator: calculator)
@@ -20,8 +20,8 @@ extension UIViewController {
 		let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
 		tap.cancelsTouchesInView = false
 		view.addGestureRecognizer(tap)
-	   }
-
+	}
+	
 	func currencyInputFormatting(string: String, textField: UITextField) {
 		let formatter = NumberFormatter()
 		formatter.numberStyle = NumberFormatter.Style.currency
@@ -48,5 +48,5 @@ extension UIViewController {
 			return ResultViewController(calculator: calculator)
 		}
 	}
-
+	
 }

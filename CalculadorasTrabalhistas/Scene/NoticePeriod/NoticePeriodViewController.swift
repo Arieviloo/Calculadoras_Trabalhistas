@@ -60,7 +60,7 @@ extension NoticePeriodViewController: UITableViewDelegate, UITableViewDataSource
 extension NoticePeriodViewController: NoticePeriodViewProtocol {
 	func tappedNext() {
 		guard let calculator = noticePeriodVM.calculator else { return }
-		let nextVC = VacationAccumulatedViewController()
+		let nextVC = VacationAccumulatedViewController(calculator: calculator)
 		navigationController?.pushViewController(nextVC, animated: true)
 	}
 }
