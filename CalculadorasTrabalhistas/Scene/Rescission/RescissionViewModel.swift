@@ -11,7 +11,6 @@ class RescissionViewModel {
 		let dateFormatter = DateFormatter()
 		dateFormatter.dateFormat = "dd/MM/yy"
 		let date = dateFormatter.date(from: dateString) ?? Date()
-		
 		return date
 	}
 	

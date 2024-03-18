@@ -3,7 +3,17 @@ import UIKit
 class ListReasonViewController: UIViewController {
 	
 	private var listReasonView = ListReasonView()
+	private var listReasonVM = ListReasonViewModel()
 	let test = ["1", "2", "3", "4"]
+	
+	init(calculator: Calculator) {
+		super.init(nibName: nil, bundle: nil)
+		listReasonVM.setCalculator(calculator: calculator)
+	}
+	
+	required init?(coder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
+	}
 	
 	override func loadView() {
 		view = listReasonView
@@ -16,6 +26,7 @@ class ListReasonViewController: UIViewController {
 	}
 	
 	private func configView() {
+		title = listReasonVM.getTitle()
 		listReasonView.protocolsTableView(delegate: self, dataSource: self)
 		listReasonView.delegate(delegate: self)
 	}
@@ -41,7 +52,8 @@ extension ListReasonViewController: UITableViewDelegate, UITableViewDataSource, 
 	}
 	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		print(test[indexPath.row])
+		listReasonVM.setReasonResignation(reason: test[indexPath.row])
+		
 	}
 	
 }

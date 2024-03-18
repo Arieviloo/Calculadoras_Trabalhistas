@@ -25,6 +25,7 @@ class RescissionViewController: UIViewController {
 	}
 	
 	private func configView() {
+		title = rescissionVM.getTitle()
 		rescissionView.configTextFieldDelegate(delegate: self)
 		rescissionView.delegate(delegate: self)
 	}
@@ -32,8 +33,8 @@ class RescissionViewController: UIViewController {
 
 extension RescissionViewController: UITextFieldDelegate {
 	func textFieldDidEndEditing(_ textField: UITextField) {
-		var dateInitial = rescissionVM.stringFromDate(rescissionView.dateContractingTextField.text ?? "")
-		var dateFinal = rescissionVM.stringFromDate(rescissionView.dateResignationTextField.text ?? "")
+		let dateInitial = rescissionVM.stringFromDate(rescissionView.dateContractingTextField.text ?? "")
+		let dateFinal = rescissionVM.stringFromDate(rescissionView.dateResignationTextField.text ?? "")
 		
 		rescissionVM.setDateContratingdResignation(dateContrating: dateInitial, dateResignation: dateFinal)
 	}
@@ -67,7 +68,8 @@ extension RescissionViewController: UITextFieldDelegate {
 
 extension RescissionViewController: RescissionViewProtocol {
 	func tappedNext() {
-		let nextVC = ListReasonViewController()
+		guard let calculator = rescissionVM.calculator else { return }
+		let nextVC = ListReasonViewController(calculator: calculator)
 		navigationController?.pushViewController(nextVC, animated: true)
 	}
 	
