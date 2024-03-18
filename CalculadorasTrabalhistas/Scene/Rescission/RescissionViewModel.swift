@@ -7,12 +7,17 @@ class RescissionViewModel {
 	
 	public func getTitle() -> String { calculator?.name ?? ""}
 	
-	public func stringFromDate(_ dateString: String )  {
+	public func stringFromDate(_ dateString: String ) -> Date  {
 		let dateFormatter = DateFormatter()
 		dateFormatter.dateFormat = "dd/MM/yy"
-		let test = dateFormatter.date(from: dateString)
-	print("test -> \(test)")
+		let date = dateFormatter.date(from: dateString) ?? Date()
 		
+		return date
+	}
+	
+	public func setDateContratingdResignation(dateContrating: Date, dateResignation: Date) {
+		calculator?.dateContracting = dateContrating
+		calculator?.dateResignation = dateResignation
 	}
 
 }

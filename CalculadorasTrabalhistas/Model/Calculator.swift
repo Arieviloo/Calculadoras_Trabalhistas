@@ -1,3 +1,5 @@
+import Foundation
+
 struct Calculator {
 	var name: String
 	var icon: String
@@ -15,6 +17,13 @@ struct Calculator {
 	var willAntecipateThirteenth: Bool?
 	var willSellVacation: Bool?
 	var homManyDay: Int?
+	
+	var dateContracting: Date?
+	var dateResignation: Date?
+	var reasonResignation: String?
+	var noticePeriod: String?
+	var vacationAccumulated: Bool?
+	var homManyDayVacationAccumulated: Int?
 }
 
 struct ResultCalculation {
