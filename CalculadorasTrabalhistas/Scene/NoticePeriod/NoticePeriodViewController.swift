@@ -3,7 +3,17 @@ import UIKit
 class NoticePeriodViewController: UIViewController {
 	
 	private var noticePeriodView = NoticePeriodView()
+	private var noticePeriodVM = NoticePeriodViewModel()
 	let test = ["1", "2", "3", "4"]
+	
+	init(calculator: Calculator) {
+		super.init(nibName: nil, bundle: nil)
+		noticePeriodVM.setCalculator(calculator: calculator)
+	}
+	
+	required init?(coder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
+	}
 	
 	override func loadView() {
 		view = noticePeriodView
@@ -16,6 +26,7 @@ class NoticePeriodViewController: UIViewController {
 	}
 	
 	private func configView() {
+		title = noticePeriodVM.getTitle()
 		noticePeriodView.protocolsTableView(delegate: self, dataSource: self)
 		noticePeriodView.delegate(delegate: self)
 	}
@@ -41,13 +52,14 @@ extension NoticePeriodViewController: UITableViewDelegate, UITableViewDataSource
 	}
 	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		print(test[indexPath.row])
+		noticePeriodVM.setNoticePeriod(noticePeriod: test[indexPath.row])
 	}
 	
 }
 
 extension NoticePeriodViewController: NoticePeriodViewProtocol {
 	func tappedNext() {
+		guard let calculator = noticePeriodVM.calculator else { return }
 		let nextVC = VacationAccumulatedViewController()
 		navigationController?.pushViewController(nextVC, animated: true)
 	}
