@@ -60,7 +60,8 @@ extension ListReasonViewController: UITableViewDelegate, UITableViewDataSource, 
 
 extension ListReasonViewController: ListReasonViewProtocol {
 	func tappedNext() {
-		let nextVC =  NoticePeriodViewController()
+		guard let calculator = listReasonVM.calculator else { return }
+		let nextVC =  NoticePeriodViewController(calculator: calculator)
 		navigationController?.pushViewController(nextVC, animated: true)
 	}
 }
