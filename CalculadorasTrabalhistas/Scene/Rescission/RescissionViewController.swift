@@ -7,7 +7,7 @@ class RescissionViewController: UIViewController {
 	
 	init(calculator: Calculator) {
 		super.init(nibName: nil, bundle: nil)
-		dump(calculator)
+		rescissionVM.setCalculator(calculator: calculator)
 	}
 	
 	required init?(coder: NSCoder) {
@@ -31,15 +31,11 @@ class RescissionViewController: UIViewController {
 }
 
 extension RescissionViewController: UITextFieldDelegate {
-	
 	func textFieldDidEndEditing(_ textField: UITextField) {
-		if (rescissionView.dateContractingTextField.text?.count == 14) {
-			rescissionVM.stringFromDate(textField.text ?? "")
-		}
+		var dateInitial = rescissionVM.stringFromDate(rescissionView.dateContractingTextField.text ?? "")
+		var dateFinal = rescissionVM.stringFromDate(rescissionView.dateResignationTextField.text ?? "")
 		
-		if (rescissionView.dateResignationTextField.text?.count == 14) {
-			rescissionVM.stringFromDate(textField.text ?? "")
-		}
+		rescissionVM.setDateContratingdResignation(dateContrating: dateInitial, dateResignation: dateFinal)
 	}
 	
 	func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -55,10 +51,14 @@ extension RescissionViewController: UITextFieldDelegate {
 		}
 		
 		if rescissionView.dateResignationTextField.isEditing {
-			if textField.text?.count == 2 || textField.text?.count == 7 {
-				textField.text = (textField.text ?? "") + " / "
+			if rescissionView.dateResignationTextField.isEditing {
+				if rescissionView.dateResignationTextField.text?.count == 2 || rescissionView.dateResignationTextField.text?.count == 7 {
+					if !(string == "") {
+						rescissionView.dateResignationTextField.text = (rescissionView.dateResignationTextField.text ?? "") + " / "
+					}
+				}
+				return !(textField.text!.count > 13 && (string.count ) > range.length)
 			}
-			return !(textField.text?.count == 14)
 		}
 		
 		return false
@@ -68,9 +68,7 @@ extension RescissionViewController: UITextFieldDelegate {
 extension RescissionViewController: RescissionViewProtocol {
 	func tappedNext() {
 		let nextVC = ListReasonViewController()
-		
 		navigationController?.pushViewController(nextVC, animated: true)
 	}
-	
 	
 }
