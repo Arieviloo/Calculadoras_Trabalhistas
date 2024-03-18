@@ -1,6 +1,15 @@
 import UIKit
 
+protocol VacationAccumulatedViewProtocol: NSObject {
+	func tappedCalculate()
+}
+
 class VacationAccumulatedView: UIView {
+	
+	private weak var delegate: VacationAccumulatedViewProtocol?
+	public func delegate(delegate: VacationAccumulatedViewProtocol) {
+		self.delegate = delegate
+	}
 	
 	lazy var haveVacationAccumulatedLabel: UILabel = {
 		$0.setCustomTitleNormal(title: "YouHaveVacationAccumulated")
@@ -29,7 +38,7 @@ class VacationAccumulatedView: UIView {
 	
 	lazy var calculateButton: UIButton = {
 		$0.setCustomButton(title: "calculate", colorBackground: UIColor.appBlueHeavy)
-//		$0.addTarget(self, action: #selector(tappedCalculate), for: .touchUpInside)
+		$0.addTarget(self, action: #selector(tappedCalculate), for: .touchUpInside)
 		return $0
 	}(UIButton(type: .system))
 	
@@ -47,6 +56,11 @@ class VacationAccumulatedView: UIView {
 	
 	public func configTextFieldDelegate(delegate: UITextFieldDelegate) {
 		homManyDaysTextField.delegate = delegate
+	}
+	
+	@objc func tappedCalculate() {
+		self.delegate?.tappedCalculate()
+		
 	}
 	
 	private func configAddView() {
