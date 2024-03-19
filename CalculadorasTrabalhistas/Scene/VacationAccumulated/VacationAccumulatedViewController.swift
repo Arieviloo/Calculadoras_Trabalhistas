@@ -8,7 +8,6 @@ class VacationAccumulatedViewController: UIViewController {
 	init(calculator: Calculator) {
 		super.init(nibName: nil, bundle: nil)
 		vacationAccumulatedVM.setCalculator(calculator: calculator)
-		dump(calculator)
 	}
 	
 	required init?(coder: NSCoder) {
@@ -38,12 +37,15 @@ extension VacationAccumulatedViewController: UITextFieldDelegate {
 }
 
 extension VacationAccumulatedViewController: VacationAccumulatedViewProtocol {
+	
 	func tappedCalculate() {
 		vacationAccumulatedVM.setVacationAccumulated(isAccumulated: vacationAccumulatedView.haveVacationAccumulatedSwitch.isOn,
 													 quantityDay: NSString(string: vacationAccumulatedView.homManyDaysTextField.text ?? "0").integerValue
 		)
 		
-		dump(vacationAccumulatedVM.calculator)
+		guard let calculate = vacationAccumulatedVM.calculator else { return }
+		let nextVC = RescissionResultViewController(calculator: calculate)
+		navigationController?.pushViewController(nextVC, animated: true)
 	}
 	
 }
