@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		E2000B622B63F722000B5544 /* AdditionalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2000B612B63F722000B5544 /* AdditionalViewModel.swift */; };
+		E2005A682BA98A150084FC24 /* RescissionResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2005A672BA98A150084FC24 /* RescissionResultViewController.swift */; };
+		E2005A6A2BA98A300084FC24 /* RescissionResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2005A692BA98A300084FC24 /* RescissionResultView.swift */; };
+		E2005A6C2BA98A400084FC24 /* RescissionResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2005A6B2BA98A400084FC24 /* RescissionResultViewModel.swift */; };
 		E20066962BA2171B00CAC884 /* ListReasonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20066952BA2171B00CAC884 /* ListReasonViewController.swift */; };
 		E20066982BA2172400CAC884 /* ListReasonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20066972BA2172400CAC884 /* ListReasonView.swift */; };
 		E200669A2BA2172F00CAC884 /* ListReasonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20066992BA2172F00CAC884 /* ListReasonViewModel.swift */; };
@@ -76,6 +79,9 @@
 
 /* Begin PBXFileReference section */
 		E2000B612B63F722000B5544 /* AdditionalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalViewModel.swift; sourceTree = "<group>"; };
+		E2005A672BA98A150084FC24 /* RescissionResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RescissionResultViewController.swift; sourceTree = "<group>"; };
+		E2005A692BA98A300084FC24 /* RescissionResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RescissionResultView.swift; sourceTree = "<group>"; };
+		E2005A6B2BA98A400084FC24 /* RescissionResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RescissionResultViewModel.swift; sourceTree = "<group>"; };
 		E20066952BA2171B00CAC884 /* ListReasonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListReasonViewController.swift; sourceTree = "<group>"; };
 		E20066972BA2172400CAC884 /* ListReasonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListReasonView.swift; sourceTree = "<group>"; };
 		E20066992BA2172F00CAC884 /* ListReasonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListReasonViewModel.swift; sourceTree = "<group>"; };
@@ -153,6 +159,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E2005A662BA989F20084FC24 /* Rescission */ = {
+			isa = PBXGroup;
+			children = (
+				E2005A672BA98A150084FC24 /* RescissionResultViewController.swift */,
+				E2005A692BA98A300084FC24 /* RescissionResultView.swift */,
+				E2005A6B2BA98A400084FC24 /* RescissionResultViewModel.swift */,
+			);
+			path = Rescission;
+			sourceTree = "<group>";
+		};
 		E20066942BA216B800CAC884 /* ListReason */ = {
 			isa = PBXGroup;
 			children = (
@@ -189,6 +205,7 @@
 			children = (
 				E29208A72B8F71020037D105 /* NetSalary */,
 				E284F3562B8F71A0002553B7 /* Vacation */,
+				E2005A662BA989F20084FC24 /* Rescission */,
 			);
 			path = Results;
 			sourceTree = "<group>";
@@ -561,6 +578,7 @@
 				E24090242B61508F00EBA746 /* HomeViewModel.swift in Sources */,
 				E23773B32BA2647F00171780 /* VacationAccumulatedViewModel.swift in Sources */,
 				E290A6E72B28900200560137 /* SalaryView.swift in Sources */,
+				E2005A6A2BA98A300084FC24 /* RescissionResultView.swift in Sources */,
 				E20066962BA2171B00CAC884 /* ListReasonViewController.swift in Sources */,
 				E254BF722BA0B7630017F6C4 /* RescissionViewModel.swift in Sources */,
 				E2945DB32B29E20100A1C582 /* AdditionalViewController.swift in Sources */,
@@ -573,6 +591,7 @@
 				E201C0FC2B2C722800DFCDEF /* UIViewController+Extension.swift in Sources */,
 				E2000B622B63F722000B5544 /* AdditionalViewModel.swift in Sources */,
 				E290A6E52B288FFA00560137 /* SalaryViewController.swift in Sources */,
+				E2005A682BA98A150084FC24 /* RescissionResultViewController.swift in Sources */,
 				E200669A2BA2172F00CAC884 /* ListReasonViewModel.swift in Sources */,
 				E2F81B152B235A7700E181B7 /* UIColor+Extension.swift in Sources */,
 				E2BE94512B274FB3003FE825 /* HomeView.swift in Sources */,
@@ -599,6 +618,7 @@
 				E2195B2A2B6BDEC800F029C0 /* VacationView.swift in Sources */,
 				E23773B12BA2647700171780 /* VacationAccumulatedView.swift in Sources */,
 				E23773AA2BA2594C00171780 /* NoticePeriodViewModel.swift in Sources */,
+				E2005A6C2BA98A400084FC24 /* RescissionResultViewModel.swift in Sources */,
 				E2AAE4EE2B279061008A5543 /* HomeCollectionViewCell.swift in Sources */,
 				E2945DB52B29E20900A1C582 /* AdditionalView.swift in Sources */,
 			);
