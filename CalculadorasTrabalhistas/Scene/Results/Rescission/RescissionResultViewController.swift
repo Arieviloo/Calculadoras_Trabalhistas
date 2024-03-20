@@ -14,9 +14,12 @@ class RescissionResultViewController: UIViewController {
 		fatalError("init(coder:) has not been implemented")
 	}
 	
+	override func loadView() {
+		view = rescissionResultView
+	}
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		view.backgroundColor = .red
 	}
 
 	private func configView() {
