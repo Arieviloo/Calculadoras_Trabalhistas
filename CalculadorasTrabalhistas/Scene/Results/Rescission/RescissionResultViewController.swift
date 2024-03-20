@@ -20,10 +20,13 @@ class RescissionResultViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		configView()
 	}
 
 	private func configView() {
 		title = String(localizedKey: "result")
+		
+		rescissionResultVM.resultRescission()
 	}
 	
 }
