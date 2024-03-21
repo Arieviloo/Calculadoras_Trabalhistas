@@ -41,4 +41,9 @@ struct ResultCalculation {
 	var allowancePecuniary: Double?
 	var oneThirdAllowancePecuniary: Double?
 	var advanceFirstInstalmentThirteenth: Double?
+	
+	var verbsRescission: Double?
+	var discountsRescission: Double?
+	var totalFGTSRescission: Double?
+	var totalRescission: Double?
 }

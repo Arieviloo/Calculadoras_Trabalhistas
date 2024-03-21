@@ -7,10 +7,10 @@ class RescissionResultViewModel {
 	
 	public func setCalculator(calculator: Calculator) { self.calculator = calculator }
 	
-	public func resultRescission() {
-		guard let salary = calculator?.valueSalaryGross else { return }
-		guard let dateContracting = calculator?.dateContracting else { return }
-		guard let dateResignation = calculator?.dateResignation else { return }
+	public func resultRescission() -> ResultCalculation {
+		guard let salary = calculator?.valueSalaryGross else { return resultCalculation }
+		guard let dateContracting = calculator?.dateContracting else { return resultCalculation }
+		guard let dateResignation = calculator?.dateResignation else { return resultCalculation }
 		let valueSalaryForDay = salary / 30
 		
 		let dateComponents = DateComponents(calendar: calendar)
@@ -32,23 +32,17 @@ class RescissionResultViewModel {
 		let fgtsBalanceSalary = balanceSalary * 0.08
 		let fgtsThirteenthProportional = thirteenthProportional * 0.08
 		let fineFGTS = deposited * 0.4
-				
-		print(timeInterval)
-		print("- - - - - - - - - - - - - - -")
+		//result
+		let totalVerbsRescission = balanceSalary + vacationProportional + oneThirdVacation + thirteenthProportional
+		let totalDiscount = inss + inssThirteenth + irrf
+		let totalFGTS = deposited + fgtsBalanceSalary + fgtsThirteenthProportional + fineFGTS
 		
-		print(balanceSalary)
-		print(vacationProportional)
-		print(oneThirdVacation)
-		print(thirteenthProportional)
-		print("- - - - - - - - - - - - - - -")
-		print(inss)
-		print(inssThirteenth)
-		print(irrf)
-		print("- - - - - - - - - - - - - - -")
-		print(deposited)
-		print(fgtsBalanceSalary)
-		print(fgtsThirteenthProportional)
-		print(fineFGTS)
+		resultCalculation.verbsRescission = totalVerbsRescission
+		resultCalculation.discountsRescission = totalDiscount
+		resultCalculation.totalFGTSRescission = totalFGTS
+		resultCalculation.totalRescission = (totalVerbsRescission + totalFGTS) - totalDiscount
+		
+		return resultCalculation
 	}
 	
 	private func vacationProportional(_ salary: Double, _ dateContracting: Date, _ dateResignation: Date) -> Double {
@@ -78,5 +72,3 @@ class RescissionResultViewModel {
 	}
 
 }
-
-

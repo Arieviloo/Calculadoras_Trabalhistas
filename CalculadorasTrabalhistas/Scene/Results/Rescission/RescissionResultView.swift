@@ -83,6 +83,13 @@ class RescissionResultView: UIView {
 		fatalError("init(coder:) has not been implemented")
 	}
 	
+	public func setValueRescission(_ verbsRescision: String, _ discount: String, _ fgts: String, _ total: String) {
+		valueVerbsRescissionLabel.text = verbsRescision
+		valueDiscountsLabel.text = discount
+		valueTotalFGTSLabel.text = fgts
+		valueResultLabel.text = total
+	}
+	
 	private func configAddView() {
 		addSubview(titleLabel)
 		addSubview(contentView)
