@@ -22,11 +22,19 @@ class RescissionResultViewController: UIViewController {
 		super.viewDidLoad()
 		configView()
 	}
-
+	
 	private func configView() {
 		title = String(localizedKey: "result")
+		calculateRescission()
 		
-		rescissionResultVM.resultRescission()
+	}
+	
+	private func calculateRescission() {
+		let result = rescissionResultVM.resultRescission()
+		rescissionResultView.setValueRescission( formatCurrency(value: result.verbsRescission ?? 0),
+												 formatCurrency(value: result.discountsRescission ?? 0),
+												 formatCurrency(value: result.totalFGTSRescission ?? 0),
+												 formatCurrency(value: result.totalRescission ?? 0))
 	}
 	
 }
