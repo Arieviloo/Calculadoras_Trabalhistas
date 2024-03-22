@@ -39,11 +39,36 @@ class RescissionResultViewModel {
 		let totalVerbsRescission = balanceSalary + vacationProportional + oneThirdVacation + thirteenthProportional
 		let totalDiscount = inss + inssThirteenth + irrf
 		let totalFGTS = deposited + fgtsBalanceSalary + fgtsThirteenthProportional + fineFGTS
+		let valueNoticePeriod = getValueNoticePeriod(typeNoticePeriod: calculator?.noticePeriod ?? "", salary: grossSalary)
 		
 		resultCalculation.verbsRescission = totalVerbsRescission
 		resultCalculation.discountsRescission = totalDiscount
 		resultCalculation.totalFGTSRescission = totalFGTS
-		resultCalculation.totalRescission = (totalVerbsRescission + totalFGTS) - totalDiscount
+		resultCalculation.totalRescission = (totalVerbsRescission + totalFGTS + valueNoticePeriod.value) - totalDiscount
+		resultCalculation.noticePeriod = valueNoticePeriod.value
+		resultCalculation.noticePeriodColor = valueNoticePeriod.color
+		
+		dump(calculator)
+		dump(valueNoticePeriod)
+		print("-__-__-__-__-__-__-__-")
+		print("-__-__-__-__-__-__-__-")
+		print("-__-__-__-__-__-__-__-")
+		
+		print(grossSalary)
+		print("-__-__-__-__-__-__-__-")
+		print(balanceSalary)
+		print(vacationProportional)
+		print(oneThirdVacation)
+		print(thirteenthProportional)
+		print("-__-__-__-__-__-__-__-")
+		print(inss)
+		print(inssThirteenth)
+		print(irrf)
+		print("-__-__-__-__-__-__-__-")
+		print(deposited)
+		print(fgtsBalanceSalary)
+		print(fgtsThirteenthProportional)
+		print(fineFGTS)
 		
 		return resultCalculation
 	}
@@ -72,6 +97,17 @@ class RescissionResultViewModel {
 		let thirteenthProportional = Double(monthResignation) * salaryProportionalYear
 		
 		return thirteenthProportional
+	}
+	
+	private func getValueNoticePeriod(typeNoticePeriod: String, salary: Double) -> (value: Double, color: String){
+		switch typeNoticePeriod {
+		case "Indenizado pelo empregador":
+			return (value: salary, color: "green")
+		case "Não cumprido pelo empregado":
+			return (value: -salary, color: "red")
+		default:
+			return (value: 0, color: "")
+		}
 	}
 
 }

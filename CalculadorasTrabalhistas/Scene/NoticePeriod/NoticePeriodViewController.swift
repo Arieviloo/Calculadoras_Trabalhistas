@@ -4,7 +4,7 @@ class NoticePeriodViewController: UIViewController {
 	
 	private var noticePeriodView = NoticePeriodView()
 	private var noticePeriodVM = NoticePeriodViewModel()
-	let test = ["1", "2", "3", "4"]
+	let listNoticePeriod = ["Trabalhado", "Indenizado pelo empregador", "Não cumprido pelo empregado", "Dispensado"]
 	
 	init(calculator: Calculator) {
 		super.init(nibName: nil, bundle: nil)
@@ -34,13 +34,13 @@ class NoticePeriodViewController: UIViewController {
 
 extension NoticePeriodViewController: UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegateFlowLayout {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return test.count
+		return listNoticePeriod.count
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: NoticePeriodTableViewCell.identifier, for: indexPath) as? NoticePeriodTableViewCell
 		let backgroundCell = UIView()
-		cell?.noticeLabel.text = test[indexPath.row]
+		cell?.noticeLabel.text = listNoticePeriod[indexPath.row]
 		backgroundCell.backgroundColor = UIColor.appBlueLight
 		cell?.selectedBackgroundView = backgroundCell
 		
@@ -52,7 +52,7 @@ extension NoticePeriodViewController: UITableViewDelegate, UITableViewDataSource
 	}
 	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		noticePeriodVM.setNoticePeriod(noticePeriod: test[indexPath.row])
+		noticePeriodVM.setNoticePeriod(noticePeriod: listNoticePeriod[indexPath.row])
 	}
 	
 }

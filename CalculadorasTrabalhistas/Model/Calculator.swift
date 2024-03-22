@@ -46,4 +46,6 @@ struct ResultCalculation {
 	var discountsRescission: Double?
 	var totalFGTSRescission: Double?
 	var totalRescission: Double?
+	var noticePeriod: Double?
+	var noticePeriodColor: String?
 }
