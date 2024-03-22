@@ -1,5 +1,19 @@
 import UIKit
 
+enum Color: String {
+	case red
+	case green
+	
+	var create: UIColor {
+		switch self {
+		case .red:
+			return UIColor.appRed
+		case .green:
+			return UIColor.appGreen
+		}
+	}
+}
+
 class RescissionResultView: UIView {
 	
 	lazy var titleLabel: UILabel = {
@@ -59,6 +73,20 @@ class RescissionResultView: UIView {
 		return $0
 	}(UILabel())
 	
+	lazy var noticePeriodLabel: UILabel = {
+		$0.setTextSmall(title: "noticePeriod")
+		$0.isHidden = true
+		return $0
+	}(UILabel())
+	
+	lazy var valueNoticePeriodLabel: UILabel = {
+		$0.translatesAutoresizingMaskIntoConstraints = false
+		$0.font = UIFont(name: "Montserrat-light", size: 12)
+		$0.text = "R$ 0.00"
+		$0.isHidden = true
+		return $0
+	}(UILabel())
+	
 	lazy var resultLabel: UILabel = {
 		$0.setTextStrong(title: "O valor da rescisão será de", color: UIColor.appBlue)
 		return $0
@@ -90,6 +118,15 @@ class RescissionResultView: UIView {
 		valueResultLabel.text = total
 	}
 	
+	public func setValueNoticePeriod(_ value: String, _ color: String ) {
+		let color = Color(rawValue: color)
+		noticePeriodLabel.isHidden = false
+		valueNoticePeriodLabel.isHidden = false
+		valueNoticePeriodLabel.text = value
+		valueNoticePeriodLabel.textColor = color?.create
+		noticePeriodLabel.textColor = color?.create
+	}
+	
 	private func configAddView() {
 		addSubview(titleLabel)
 		addSubview(contentView)
@@ -102,6 +139,8 @@ class RescissionResultView: UIView {
 		contentView.addSubview(valueTotalFGTSLabel)
 		contentView.addSubview(resultLabel)
 		contentView.addSubview(valueResultLabel)
+		contentView.addSubview(noticePeriodLabel)
+		contentView.addSubview(valueNoticePeriodLabel)
 	}
 	
 	private func configConstraints() {
@@ -121,21 +160,27 @@ class RescissionResultView: UIView {
 			
 			verbsRescissionLabel.topAnchor.constraint(equalTo: resultCalculationLabel.bottomAnchor, constant: 10),
 			verbsRescissionLabel.leadingAnchor.constraint(equalTo: resultCalculationLabel.leadingAnchor),
-		
+			
 			valueVerbsRescissionLabel.centerYAnchor.constraint(equalTo: verbsRescissionLabel.centerYAnchor),
 			valueVerbsRescissionLabel.trailingAnchor.constraint(equalTo: resultCalculationLabel.trailingAnchor),
 			
 			discountsLabel.topAnchor.constraint(equalTo: verbsRescissionLabel.bottomAnchor, constant: 10),
 			discountsLabel.leadingAnchor.constraint(equalTo: resultCalculationLabel.leadingAnchor),
-		
+			
 			valueDiscountsLabel.centerYAnchor.constraint(equalTo: discountsLabel.centerYAnchor),
 			valueDiscountsLabel.trailingAnchor.constraint(equalTo: resultCalculationLabel.trailingAnchor),
 			
 			totalFGTSLabel.topAnchor.constraint(equalTo: discountsLabel.bottomAnchor, constant: 10),
 			totalFGTSLabel.leadingAnchor.constraint(equalTo: resultCalculationLabel.leadingAnchor),
-		
+			
 			valueTotalFGTSLabel.centerYAnchor.constraint(equalTo: totalFGTSLabel.centerYAnchor),
 			valueTotalFGTSLabel.trailingAnchor.constraint(equalTo: resultCalculationLabel.trailingAnchor),
+			
+			noticePeriodLabel.topAnchor.constraint(equalTo: totalFGTSLabel.bottomAnchor, constant: 10),
+			noticePeriodLabel.leadingAnchor.constraint(equalTo: resultCalculationLabel.leadingAnchor),
+			
+			valueNoticePeriodLabel.centerYAnchor.constraint(equalTo: noticePeriodLabel.centerYAnchor),
+			valueNoticePeriodLabel.trailingAnchor.constraint(equalTo: resultCalculationLabel.trailingAnchor),
 			
 			resultLabel.bottomAnchor.constraint(equalTo: valueResultLabel.topAnchor, constant: -10),
 			resultLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),

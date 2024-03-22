@@ -4,7 +4,7 @@ class ListReasonViewController: UIViewController {
 	
 	private var listReasonView = ListReasonView()
 	private var listReasonVM = ListReasonViewModel()
-	let test = ["1", "2", "3", "4"]
+	let listReason = ["Dispensa sem justa causa", "Dispensa com justa causa", "Pedido de demissão"]
 	
 	init(calculator: Calculator) {
 		super.init(nibName: nil, bundle: nil)
@@ -34,13 +34,13 @@ class ListReasonViewController: UIViewController {
 
 extension ListReasonViewController: UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegateFlowLayout {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return test.count
+		return listReason.count
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: ListReasonTableViewCell.identifier, for: indexPath) as? ListReasonTableViewCell
 		let backgroundCell = UIView()
-		cell?.reasonLabel.text = test[indexPath.row]
+		cell?.reasonLabel.text = listReason[indexPath.row]
 		backgroundCell.backgroundColor = UIColor.appBlueLight
 		cell?.selectedBackgroundView = backgroundCell
 		
@@ -52,7 +52,7 @@ extension ListReasonViewController: UITableViewDelegate, UITableViewDataSource, 
 	}
 	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		listReasonVM.setReasonResignation(reason: test[indexPath.row])
+		listReasonVM.setReasonResignation(reason: listReason[indexPath.row])
 		
 	}
 	
