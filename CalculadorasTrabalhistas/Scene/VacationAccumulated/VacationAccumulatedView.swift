@@ -1,6 +1,7 @@
 import UIKit
 
 protocol VacationAccumulatedViewProtocol: NSObject {
+	
 	func tappedCalculate()
 }
 
@@ -20,19 +21,19 @@ class VacationAccumulatedView: UIView {
 		$0.translatesAutoresizingMaskIntoConstraints = false
 		$0.onTintColor = UIColor.appGreenLight
 		$0.transform = CGAffineTransform(scaleX: 0.70, y: 0.70)
-//		$0.addTarget(self, action: #selector(tappedSellVacation), for: .touchUpInside)
+		$0.addTarget(self, action: #selector(tappedVacationAccumulated), for: .touchUpInside)
 		return $0
 	}(UISwitch())
 	
 	lazy var homManyDaysLabel: UILabel = {
 		$0.setCustomTitleNormal(title: "homManyDays")
-//		$0.isHidden = true
+		$0.isHidden = true
 		return $0
 	}(UILabel())
 	
 	lazy var homManyDaysTextField: UITextField = {
 		$0.setCustomTextField()
-//		$0.isHidden = true
+		$0.isHidden = true
 		return $0
 	}(UITextField())
 	
@@ -58,9 +59,14 @@ class VacationAccumulatedView: UIView {
 		homManyDaysTextField.delegate = delegate
 	}
 	
+	@objc func tappedVacationAccumulated() {
+		
+		homManyDaysLabel.isHidden = !haveVacationAccumulatedSwitch.isOn
+		homManyDaysTextField.isHidden = !haveVacationAccumulatedSwitch.isOn
+	}
+	
 	@objc func tappedCalculate() {
 		self.delegate?.tappedCalculate()
-		
 	}
 	
 	private func configAddView() {
