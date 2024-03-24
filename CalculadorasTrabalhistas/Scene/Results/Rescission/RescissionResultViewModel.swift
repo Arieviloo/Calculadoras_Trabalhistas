@@ -21,7 +21,8 @@ class RescissionResultViewModel {
 		let contractingDate = calendar.dateComponents([.day, .month, .year], from: dateContracting)
 		let resignationDate = calendar.dateComponents([.day, .month, .year], from: dateResignation)
 		let timeInterval = calendar.dateComponents([.month], from: contractingDate, to: resignationDate)
-		
+		let yearInterval = calendar.dateComponents([.year], from: contractingDate, to: resignationDate)
+				
 		//Verbs rescission
 		let balanceSalary = Double(resignationDate.day ?? 0) * valueSalaryForDay
 		let vacationProportional = vacationProportional(grossSalary, dateContracting, dateResignation)
@@ -44,7 +45,7 @@ class RescissionResultViewModel {
 			totalFGTS = deposited + fgtsBalanceSalary + fgtsThirteenthProportional + fineFGTS
 		}
 		
-		let valueNoticePeriod = getValueNoticePeriod(typeNoticePeriod: calculator?.noticePeriod ?? "", salary: grossSalary)
+		let valueNoticePeriod = getValueNoticePeriod(typeNoticePeriod: calculator?.noticePeriod ?? "", salary: grossSalary, yearWorked: yearInterval.year ?? 0)
 		
 		resultCalculation.verbsRescission = totalVerbsRescission
 		resultCalculation.discountsRescission = totalDiscount
@@ -52,13 +53,7 @@ class RescissionResultViewModel {
 		resultCalculation.totalRescission = (totalVerbsRescission + totalFGTS + valueNoticePeriod.value) - totalDiscount
 		resultCalculation.noticePeriod = valueNoticePeriod.value
 		resultCalculation.noticePeriodColor = valueNoticePeriod.color
-		
-		dump(calculator)
-		dump(valueNoticePeriod)
-		print("-__-__-__-__-__-__-__-")
-		print("-__-__-__-__-__-__-__-")
-		print("-__-__-__-__-__-__-__-")
-		
+
 		print(grossSalary)
 		print("-__-__-__-__-__-__-__-")
 		print(balanceSalary)
@@ -99,17 +94,31 @@ class RescissionResultViewModel {
 	private func thirteenthProportional(_ salary: Double, _ dateResignation: Date) -> Double {
 		let salaryProportionalYear = salary / 12
 		let monthResignation = calendar.component(.month, from: dateResignation)
-		let thirteenthProportional = Double(monthResignation) * salaryProportionalYear
+		let dayResignation = calendar.component(.day, from: dateResignation)
+		var thirteenthProportional = 0.0
 		
+		if dayResignation < 15 {
+			thirteenthProportional = Double(monthResignation - 1 ) * salaryProportionalYear
+		}
+		
+		if dayResignation >= 15 {
+			thirteenthProportional = Double(monthResignation) * salaryProportionalYear
+		}
+	
 		return thirteenthProportional
 	}
 	
-	private func getValueNoticePeriod(typeNoticePeriod: String, salary: Double) -> (value: Double, color: String){
+	private func getValueNoticePeriod(typeNoticePeriod: String, salary: Double, yearWorked: Int) -> (value: Double, color: String){
+		
+		let valueDayWorked = salary / 30
+		let dayNoticePeriod = (yearWorked * 3) + 30
+		let valueNoticePeriod = valueDayWorked * Double(dayNoticePeriod)
+		
 		switch typeNoticePeriod {
 		case "Indenizado pelo empregador":
-			return (value: salary, color: "green")
+			return (value: valueNoticePeriod, color: "green")
 		case "Não cumprido pelo empregado":
-			return (value: -salary, color: "red")
+			return (value: -valueNoticePeriod, color: "red")
 		default:
 			return (value: 0, color: "")
 		}
