@@ -37,7 +37,7 @@ extension VacationAccumulatedViewController: UITextFieldDelegate {
 }
 
 extension VacationAccumulatedViewController: VacationAccumulatedViewProtocol {
-	
+
 	func tappedCalculate() {
 		vacationAccumulatedVM.setVacationAccumulated(isAccumulated: vacationAccumulatedView.haveVacationAccumulatedSwitch.isOn,
 													 quantityDay: NSString(string: vacationAccumulatedView.homManyDaysTextField.text ?? "0").integerValue
