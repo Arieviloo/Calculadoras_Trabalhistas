@@ -99,8 +99,17 @@ class RescissionResultViewModel {
 	private func thirteenthProportional(_ salary: Double, _ dateResignation: Date) -> Double {
 		let salaryProportionalYear = salary / 12
 		let monthResignation = calendar.component(.month, from: dateResignation)
-		let thirteenthProportional = Double(monthResignation) * salaryProportionalYear
+		let dayResignation = calendar.component(.day, from: dateResignation)
+		var thirteenthProportional = 0.0
 		
+		if dayResignation < 15 {
+			thirteenthProportional = Double(monthResignation - 1 ) * salaryProportionalYear
+		}
+		
+		if dayResignation >= 15 {
+			thirteenthProportional = Double(monthResignation) * salaryProportionalYear
+		}
+	
 		return thirteenthProportional
 	}
 	
