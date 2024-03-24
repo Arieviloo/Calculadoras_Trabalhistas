@@ -15,6 +15,7 @@ class RescissionResultViewModel {
 		let additionalInsalubrity = salary * (calculator?.valueLevelInsalubrity ?? 0)
 		let grossSalary = salary + additionalDangerouss + additionalInsalubrity
 		let valueSalaryForDay = grossSalary / 30
+		var totalFGTS = 0.0
 			
 		let dateComponents = DateComponents(calendar: calendar)
 		let contractingDate = calendar.dateComponents([.day, .month, .year], from: dateContracting)
@@ -38,7 +39,11 @@ class RescissionResultViewModel {
 		//result
 		let totalVerbsRescission = balanceSalary + vacationProportional + oneThirdVacation + thirteenthProportional
 		let totalDiscount = inss + inssThirteenth + irrf
-		let totalFGTS = deposited + fgtsBalanceSalary + fgtsThirteenthProportional + fineFGTS
+		
+		if calculator?.reasonResignation == "Dispensa sem justa causa" {
+			totalFGTS = deposited + fgtsBalanceSalary + fgtsThirteenthProportional + fineFGTS
+		}
+		
 		let valueNoticePeriod = getValueNoticePeriod(typeNoticePeriod: calculator?.noticePeriod ?? "", salary: grossSalary)
 		
 		resultCalculation.verbsRescission = totalVerbsRescission
