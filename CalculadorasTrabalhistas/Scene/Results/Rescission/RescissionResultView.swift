@@ -14,7 +14,18 @@ enum Color: String {
 	}
 }
 
+protocol RescissionResultViewProtocol: NSObject {
+	func tappedSimulateAgainButton()
+	func tappedOtherCalculationButton()
+}
+
 class RescissionResultView: UIView {
+	
+	private var delegate: RescissionResultViewProtocol?
+	func delegate(delegate: RescissionResultViewProtocol) {
+		self.delegate = delegate
+	}
+	
 	
 	lazy var titleLabel: UILabel = {
 		$0.translatesAutoresizingMaskIntoConstraints = false
@@ -100,6 +111,18 @@ class RescissionResultView: UIView {
 		return $0
 	}(UILabel())
 	
+	lazy var simulateAgainButton: UIButton = {
+		$0.setCustomButton(title: "simulateAgain", colorBackground: UIColor.appBlueLight)
+		$0.addTarget(self, action: #selector(tappedSimulateAgainButton), for: .touchUpInside)
+		return $0
+	}(UIButton(type: .system))
+	
+	lazy var otherCalculationButton: UIButton = {
+		$0.setCustomButton(title: "doAnotherCalculation", colorBackground: UIColor.appBlueHeavy)
+		$0.addTarget(self, action: #selector(tappedOtherCalculationButton), for: .touchUpInside)
+		return $0
+	}(UIButton(type: .system))
+	
 	override init(frame: CGRect) {
 		super.init(frame: frame)
 		backgroundColor = .white
@@ -109,6 +132,13 @@ class RescissionResultView: UIView {
 	
 	required init?(coder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
+	}
+	
+	@objc func tappedSimulateAgainButton() {
+		self.delegate?.tappedSimulateAgainButton()
+	}
+	@objc func tappedOtherCalculationButton() {
+		self.delegate?.tappedOtherCalculationButton()
 	}
 	
 	public func setValueRescission(_ verbsRescision: String, _ discount: String, _ fgts: String, _ total: String) {
@@ -141,6 +171,8 @@ class RescissionResultView: UIView {
 		contentView.addSubview(valueResultLabel)
 		contentView.addSubview(noticePeriodLabel)
 		contentView.addSubview(valueNoticePeriodLabel)
+		addSubview(simulateAgainButton)
+		addSubview(otherCalculationButton)
 	}
 	
 	private func configConstraints() {
@@ -188,7 +220,15 @@ class RescissionResultView: UIView {
 			valueResultLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
 			valueResultLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
 			
+			simulateAgainButton.topAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 50),
+			simulateAgainButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+			simulateAgainButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+			simulateAgainButton.heightAnchor.constraint(equalToConstant: 45),
 			
+			otherCalculationButton.topAnchor.constraint(equalTo: simulateAgainButton.bottomAnchor, constant: 10),
+			otherCalculationButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+			otherCalculationButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+			otherCalculationButton.heightAnchor.constraint(equalToConstant: 45)
 		])
 	}
 }

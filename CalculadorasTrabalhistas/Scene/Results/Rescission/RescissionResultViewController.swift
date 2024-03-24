@@ -26,7 +26,7 @@ class RescissionResultViewController: UIViewController {
 	private func configView() {
 		title = String(localizedKey: "result")
 		calculateRescission()
-		
+		rescissionResultView.delegate(delegate: self)
 	}
 	
 	private func calculateRescission() {
@@ -41,6 +41,21 @@ class RescissionResultViewController: UIViewController {
 			rescissionResultView.setValueNoticePeriod(formatCurrency(value: noticePeriod), colorNoticePeriod )
 		}
 	}
+	
+}
+
+extension RescissionResultViewController: RescissionResultViewProtocol {
+	func tappedSimulateAgainButton() {
+		if let destinationViewController = navigationController?.viewControllers
+			.filter({$0 is SalaryViewController})
+			.first {navigationController?.popToViewController(destinationViewController, animated: true)
+		}
+	}
+	
+	func tappedOtherCalculationButton() {
+		navigationController?.popToRootViewController(animated: true)
+	}
+	
 	
 }
 
