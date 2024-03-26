@@ -24,6 +24,10 @@
 "HowWillItBeNoticePeriod" = "Como será o aviso prévio?";
 "YouHaveVacationAccumulated" = "Você tem férias acumuladas?";
 
+"monthWorked" = "Meses trabalhados";
+"typePayment" = "Tipo do pagamento";
+
+
 //Button
 "next" = "Próximo";
 "calculate" = "Calcular";

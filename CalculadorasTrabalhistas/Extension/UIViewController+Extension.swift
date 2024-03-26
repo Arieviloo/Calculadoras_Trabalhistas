@@ -11,6 +11,8 @@ extension UIViewController {
 			return VacationViewController(calculator: calculator)
 		case "RescissionViewController" :
 			return RescissionViewController(calculator: calculator)
+		case "ThirteenthViewController" :
+			return ThirteenthViewController()
 		default:
 			return UIViewController()
 		}

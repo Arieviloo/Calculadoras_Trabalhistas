@@ -24,6 +24,9 @@ struct Calculator {
 	var noticePeriod: String?
 	var vacationAccumulated: Bool?
 	var homManyDayVacationAccumulated: Int?
+	
+	var monthWorked: Int?
+	var typePayment: String?
 }
 
 struct ResultCalculation {
@@ -49,4 +52,5 @@ struct ResultCalculation {
 	var noticePeriod: Double?
 	var noticePeriodColor: String?
 	var accruedVacation: Double?
+
 }
