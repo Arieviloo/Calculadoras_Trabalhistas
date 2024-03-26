@@ -48,4 +48,5 @@ struct ResultCalculation {
 	var totalRescission: Double?
 	var noticePeriod: Double?
 	var noticePeriodColor: String?
+	var accruedVacation: Double?
 }

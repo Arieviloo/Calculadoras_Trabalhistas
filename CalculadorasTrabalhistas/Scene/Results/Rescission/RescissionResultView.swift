@@ -84,6 +84,22 @@ class RescissionResultView: UIView {
 		return $0
 	}(UILabel())
 	
+	lazy var accruedVacationLabel: UILabel = {
+		$0.setTextSmall(title: "accruedVacation")
+		$0.textColor = UIColor.appGreen
+		$0.isHidden = true
+		return $0
+	}(UILabel())
+	
+	lazy var valueAccruedVacationLabel: UILabel = {
+		$0.translatesAutoresizingMaskIntoConstraints = false
+		$0.font = UIFont(name: "Montserrat-light", size: 12)
+		$0.textColor = UIColor.appGreen
+		$0.isHidden = true
+		$0.text = "R$ 0.00"
+		return $0
+	}(UILabel())
+	
 	lazy var noticePeriodLabel: UILabel = {
 		$0.setTextSmall(title: "noticePeriod")
 		$0.isHidden = true
@@ -157,6 +173,14 @@ class RescissionResultView: UIView {
 		noticePeriodLabel.textColor = color?.create
 	}
 	
+	public func setValueAccruedVacation(_ value: String) {
+		
+		accruedVacationLabel.isHidden = false
+		valueAccruedVacationLabel.isHidden = false
+		valueAccruedVacationLabel.text = value
+		
+	}
+	
 	private func configAddView() {
 		addSubview(titleLabel)
 		addSubview(contentView)
@@ -171,6 +195,8 @@ class RescissionResultView: UIView {
 		contentView.addSubview(valueResultLabel)
 		contentView.addSubview(noticePeriodLabel)
 		contentView.addSubview(valueNoticePeriodLabel)
+		contentView.addSubview(accruedVacationLabel)
+		contentView.addSubview(valueAccruedVacationLabel)
 		addSubview(simulateAgainButton)
 		addSubview(otherCalculationButton)
 	}
@@ -214,6 +240,12 @@ class RescissionResultView: UIView {
 			valueNoticePeriodLabel.centerYAnchor.constraint(equalTo: noticePeriodLabel.centerYAnchor),
 			valueNoticePeriodLabel.trailingAnchor.constraint(equalTo: resultCalculationLabel.trailingAnchor),
 			
+			accruedVacationLabel.topAnchor.constraint(equalTo: noticePeriodLabel.bottomAnchor, constant: 10),
+			accruedVacationLabel.leadingAnchor.constraint(equalTo: resultCalculationLabel.leadingAnchor),
+			
+			valueAccruedVacationLabel.centerYAnchor.constraint(equalTo: accruedVacationLabel.centerYAnchor),
+			valueAccruedVacationLabel.trailingAnchor.constraint(equalTo: resultCalculationLabel.trailingAnchor),
+					
 			resultLabel.bottomAnchor.constraint(equalTo: valueResultLabel.topAnchor, constant: -10),
 			resultLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
 			
@@ -229,6 +261,7 @@ class RescissionResultView: UIView {
 			otherCalculationButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
 			otherCalculationButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
 			otherCalculationButton.heightAnchor.constraint(equalToConstant: 45)
+			
 		])
 	}
 }

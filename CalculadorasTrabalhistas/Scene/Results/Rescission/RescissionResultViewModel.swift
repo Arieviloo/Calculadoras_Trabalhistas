@@ -11,22 +11,28 @@ class RescissionResultViewModel {
 		guard let salary = calculator?.valueSalaryGross else { return resultCalculation }
 		guard let dateContracting = calculator?.dateContracting else { return resultCalculation }
 		guard let dateResignation = calculator?.dateResignation else { return resultCalculation }
+		
 		let additionalDangerouss = salary * (calculator?.valueAdditionalDangerousness ?? 0)
 		let additionalInsalubrity = salary * (calculator?.valueLevelInsalubrity ?? 0)
 		let grossSalary = salary + additionalDangerouss + additionalInsalubrity
 		let valueSalaryForDay = grossSalary / 30
 		var totalFGTS = 0.0
-			
+		var accruedVacation = 0.0
+		if calculator?.vacationAccumulated == true {
+			accruedVacation  = valueSalaryForDay * Double(calculator?.homManyDayVacationAccumulated ?? 0)
+		}
+				
 		let dateComponents = DateComponents(calendar: calendar)
 		let contractingDate = calendar.dateComponents([.day, .month, .year], from: dateContracting)
 		let resignationDate = calendar.dateComponents([.day, .month, .year], from: dateResignation)
 		let timeInterval = calendar.dateComponents([.month], from: contractingDate, to: resignationDate)
 		let yearInterval = calendar.dateComponents([.year], from: contractingDate, to: resignationDate)
+		
 				
 		//Verbs rescission
 		let balanceSalary = Double(resignationDate.day ?? 0) * valueSalaryForDay
 		let vacationProportional = vacationProportional(grossSalary, dateContracting, dateResignation)
-		let oneThirdVacation = vacationProportional / 3
+		let oneThirdVacation = (vacationProportional + accruedVacation) / 3
 		let thirteenthProportional = thirteenthProportional(grossSalary, dateResignation)
 		//Discounts
 		let inss = balanceSalary.calculateInss()
@@ -50,10 +56,13 @@ class RescissionResultViewModel {
 		resultCalculation.verbsRescission = totalVerbsRescission
 		resultCalculation.discountsRescission = totalDiscount
 		resultCalculation.totalFGTSRescission = totalFGTS
-		resultCalculation.totalRescission = (totalVerbsRescission + totalFGTS + valueNoticePeriod.value) - totalDiscount
 		resultCalculation.noticePeriod = valueNoticePeriod.value
 		resultCalculation.noticePeriodColor = valueNoticePeriod.color
+		resultCalculation.accruedVacation = accruedVacation
+		resultCalculation.totalRescission = (totalVerbsRescission + totalFGTS + valueNoticePeriod.value + accruedVacation) - totalDiscount
+		
 
+		print(accruedVacation)
 		print(grossSalary)
 		print("-__-__-__-__-__-__-__-")
 		print(balanceSalary)
