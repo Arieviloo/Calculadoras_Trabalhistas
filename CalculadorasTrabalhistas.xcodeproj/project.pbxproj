@@ -36,6 +36,10 @@
 		E254BF6E2BA0B74A0017F6C4 /* RescissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E254BF6D2BA0B74A0017F6C4 /* RescissionViewController.swift */; };
 		E254BF702BA0B7570017F6C4 /* RescissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E254BF6F2BA0B7570017F6C4 /* RescissionView.swift */; };
 		E254BF722BA0B7630017F6C4 /* RescissionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E254BF712BA0B7630017F6C4 /* RescissionViewModel.swift */; };
+		E26539DE2BB347A000D70C28 /* ThirteenthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26539DD2BB347A000D70C28 /* ThirteenthView.swift */; };
+		E26539E02BB347A900D70C28 /* ThirteenthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26539DF2BB347A900D70C28 /* ThirteenthViewController.swift */; };
+		E26539E22BB347AF00D70C28 /* ThirteenthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26539E12BB347AF00D70C28 /* ThirteenthViewModel.swift */; };
+		E26539E42BB34D3300D70C28 /* ListTypePaymentViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26539E32BB34D3300D70C28 /* ListTypePaymentViewCell.swift */; };
 		E284F35A2B8F71C3002553B7 /* VacationResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E284F3592B8F71C3002553B7 /* VacationResultView.swift */; };
 		E284F35C2B8F71D3002553B7 /* VacationResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E284F35B2B8F71D3002553B7 /* VacationResultViewModel.swift */; };
 		E284F35F2B8F71F9002553B7 /* VacationResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E284F35E2B8F71F9002553B7 /* VacationResultViewController.swift */; };
@@ -107,6 +111,10 @@
 		E254BF6D2BA0B74A0017F6C4 /* RescissionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RescissionViewController.swift; sourceTree = "<group>"; };
 		E254BF6F2BA0B7570017F6C4 /* RescissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RescissionView.swift; sourceTree = "<group>"; };
 		E254BF712BA0B7630017F6C4 /* RescissionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RescissionViewModel.swift; sourceTree = "<group>"; };
+		E26539DD2BB347A000D70C28 /* ThirteenthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirteenthView.swift; sourceTree = "<group>"; };
+		E26539DF2BB347A900D70C28 /* ThirteenthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirteenthViewController.swift; sourceTree = "<group>"; };
+		E26539E12BB347AF00D70C28 /* ThirteenthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirteenthViewModel.swift; sourceTree = "<group>"; };
+		E26539E32BB34D3300D70C28 /* ListTypePaymentViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTypePaymentViewCell.swift; sourceTree = "<group>"; };
 		E284F3592B8F71C3002553B7 /* VacationResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacationResultView.swift; sourceTree = "<group>"; };
 		E284F35B2B8F71D3002553B7 /* VacationResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacationResultViewModel.swift; sourceTree = "<group>"; };
 		E284F35E2B8F71F9002553B7 /* VacationResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacationResultViewController.swift; sourceTree = "<group>"; };
@@ -239,6 +247,17 @@
 				E254BF712BA0B7630017F6C4 /* RescissionViewModel.swift */,
 			);
 			path = Rescission;
+			sourceTree = "<group>";
+		};
+		E26539DC2BB3477100D70C28 /* Thirteenth */ = {
+			isa = PBXGroup;
+			children = (
+				E26539DD2BB347A000D70C28 /* ThirteenthView.swift */,
+				E26539E32BB34D3300D70C28 /* ListTypePaymentViewCell.swift */,
+				E26539DF2BB347A900D70C28 /* ThirteenthViewController.swift */,
+				E26539E12BB347AF00D70C28 /* ThirteenthViewModel.swift */,
+			);
+			path = Thirteenth;
 			sourceTree = "<group>";
 		};
 		E284F3562B8F71A0002553B7 /* Vacation */ = {
@@ -442,6 +461,7 @@
 				E20066942BA216B800CAC884 /* ListReason */,
 				E23773A42BA2586100171780 /* NoticePeriod */,
 				E23773AD2BA2641A00171780 /* VacationAccumulated */,
+				E26539DC2BB3477100D70C28 /* Thirteenth */,
 				E21CC28B2B5565B00089933E /* Results */,
 			);
 			path = Scene;
@@ -582,15 +602,18 @@
 				E20066962BA2171B00CAC884 /* ListReasonViewController.swift in Sources */,
 				E254BF722BA0B7630017F6C4 /* RescissionViewModel.swift in Sources */,
 				E2945DB32B29E20100A1C582 /* AdditionalViewController.swift in Sources */,
+				E26539E02BB347A900D70C28 /* ThirteenthViewController.swift in Sources */,
 				E24EFECB2B6528FE00B47572 /* ResultViewModel.swift in Sources */,
 				E284F35F2B8F71F9002553B7 /* VacationResultViewController.swift in Sources */,
 				E23773A82BA2594500171780 /* NoticePeriodView.swift in Sources */,
 				E21A07BF2BA21E7000191FCD /* ListReasonTableViewCell.swift in Sources */,
 				E21074862B2BC2FB00A7D523 /* OtherAdditionalViewController.swift in Sources */,
 				E254BF6E2BA0B74A0017F6C4 /* RescissionViewController.swift in Sources */,
+				E26539E42BB34D3300D70C28 /* ListTypePaymentViewCell.swift in Sources */,
 				E201C0FC2B2C722800DFCDEF /* UIViewController+Extension.swift in Sources */,
 				E2000B622B63F722000B5544 /* AdditionalViewModel.swift in Sources */,
 				E290A6E52B288FFA00560137 /* SalaryViewController.swift in Sources */,
+				E26539E22BB347AF00D70C28 /* ThirteenthViewModel.swift in Sources */,
 				E2005A682BA98A150084FC24 /* RescissionResultViewController.swift in Sources */,
 				E200669A2BA2172F00CAC884 /* ListReasonViewModel.swift in Sources */,
 				E2F81B152B235A7700E181B7 /* UIColor+Extension.swift in Sources */,
@@ -609,6 +632,7 @@
 				E284F35A2B8F71C3002553B7 /* VacationResultView.swift in Sources */,
 				E249714F2B28E5BF000AD4F8 /* CustomDesign.swift in Sources */,
 				E2F81B032B23592600E181B7 /* HomeViewController.swift in Sources */,
+				E26539DE2BB347A000D70C28 /* ThirteenthView.swift in Sources */,
 				E23773AF2BA2647100171780 /* VacationAccumulatedViewController.swift in Sources */,
 				E254BF702BA0B7570017F6C4 /* RescissionView.swift in Sources */,
 				E2BE94582B275232003FE825 /* String+Extension.swift in Sources */,
