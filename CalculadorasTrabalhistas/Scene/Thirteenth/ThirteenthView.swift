@@ -1,7 +1,16 @@
 import UIKit
 
+protocol ThirteenthViewProtocol: NSObject {
+	func tappedCalculate()
+}
+
 class ThirteenthView: UIView {
 	
+	private weak var delegate: ThirteenthViewProtocol?
+	public func delegate(delegate: ThirteenthViewProtocol) {
+		self.delegate = delegate
+	}
+		
 	lazy var monthWorkedLabel: UILabel = {
 		$0.setCustomTitleNormal(title: "monthWorked")
 		return $0
@@ -24,6 +33,12 @@ class ThirteenthView: UIView {
 		return $0
 	}(UITableView())
 	
+	lazy var calculateButton: UIButton = {
+		$0.setCustomButton(title: "calculate", colorBackground: UIColor.appBlueHeavy)
+		$0.addTarget(self, action: #selector(tappedCalculate), for: .touchUpInside)
+		return $0
+	}(UIButton(type: .system))
+	
 	
 	override init(frame: CGRect) {
 		super.init(frame: frame)
@@ -45,11 +60,16 @@ class ThirteenthView: UIView {
 		monthWorkedTextField.delegate = delegate
 	}
 	
+	@objc func tappedCalculate() {
+		self.delegate?.tappedCalculate()
+	}
+	
 	private func configAddView() {
 		addSubview(monthWorkedLabel)
 		addSubview(monthWorkedTextField)
 		addSubview(typePaymentLabel)
 		addSubview(typePaymentTableView)
+		addSubview(calculateButton)
 	}
 	
 	private func configConstraints() {
@@ -70,7 +90,12 @@ class ThirteenthView: UIView {
 			typePaymentTableView.topAnchor.constraint(equalTo: typePaymentLabel.bottomAnchor, constant: 10),
 			typePaymentTableView.leadingAnchor.constraint(equalTo: monthWorkedLabel.leadingAnchor),
 			typePaymentTableView.trailingAnchor.constraint(equalTo: monthWorkedLabel.trailingAnchor),
-			typePaymentTableView.heightAnchor.constraint(equalToConstant: 300),
+			typePaymentTableView.bottomAnchor.constraint(equalTo: calculateButton.topAnchor, constant: -10),
+			
+			calculateButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -200),
+			calculateButton.centerXAnchor.constraint(equalTo: centerXAnchor),
+			calculateButton.widthAnchor.constraint(equalToConstant: 160),
+			calculateButton.heightAnchor.constraint(equalToConstant: 45),
 		])
 	}
 }

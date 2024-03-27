@@ -12,7 +12,7 @@ extension UIViewController {
 		case "RescissionViewController" :
 			return RescissionViewController(calculator: calculator)
 		case "ThirteenthViewController" :
-			return ThirteenthViewController()
+			return ThirteenthViewController(calculator: calculator)
 		default:
 			return UIViewController()
 		}

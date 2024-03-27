@@ -6,6 +6,15 @@ class ThirteenthViewController: UIViewController {
 	private let thirteenVM = ThirteenthViewModel()
 	private let listTypePayment = ["Parcela única", "Primeira parcela", "Segunda parcela"]
 	
+	init(calculator: Calculator) {
+		super.init(nibName: nil, bundle: nil)
+		thirteenVM.setCalculator(calculator: calculator)
+	}
+	
+	required init?(coder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
+	}
+	
 	override func loadView() {
 		view = thirteenthView
 	}
@@ -17,8 +26,13 @@ class ThirteenthViewController: UIViewController {
 		hideKeyboardWhenTappedAround()
 		thirteenthView.protocolsTableView(delegate: self, dataSource: self)
 		thirteenthView.configTextFieldDelegate(delegate: self)
+		thirteenthView.delegate(delegate: self)
 
 	}
+}
+
+extension ThirteenthViewController: UITextFieldDelegate {
+
 }
 
 extension ThirteenthViewController: UITableViewDelegate, UITableViewDataSource {
@@ -41,11 +55,20 @@ extension ThirteenthViewController: UITableViewDelegate, UITableViewDataSource {
 	}
 	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		print(listTypePayment[indexPath.row])
-		
+		thirteenVM.setTypePayment(listTypePayment[indexPath.row])
 	}
 }
 
-extension ThirteenthViewController: UITextFieldDelegate {
+extension ThirteenthViewController: ThirteenthViewProtocol {
+	func tappedCalculate() {
+		let monthWorked = (NSString(string: thirteenthView.monthWorkedTextField.text ?? "0").integerValue)
+		thirteenVM.setMonthWorked(monthWorked)
+		guard let calculator = thirteenVM.calculator else { return }
+		let resultCalulator = ThirteenthResultViewController(calculator: calculator)
+		navigationController?.pushViewController(resultCalulator, animated: true)
+	}
+	
 	
 }
+
+

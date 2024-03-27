@@ -6,7 +6,11 @@ class ThirteenthViewModel {
 	
 	public func getTitle() -> String { calculator?.name ?? ""}
 	
-	public func setTypePayment(_ type: String) {
-		calculator?.typePayment = type
+	public func setTypePayment(_ valueTypePayment: String) {
+		calculator?.typePayment = valueTypePayment
+	}
+	
+	public func setMonthWorked(_ valueMonthWorked: Int) {
+		calculator?.monthWorked = valueMonthWorked
 	}
 }

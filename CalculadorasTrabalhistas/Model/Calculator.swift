@@ -53,4 +53,8 @@ struct ResultCalculation {
 	var noticePeriodColor: String?
 	var accruedVacation: Double?
 
+	var salaryProportional: Double?
+	var monthWorked: Int?
+	var typePayment: String?
+
 }
