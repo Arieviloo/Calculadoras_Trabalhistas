@@ -25,6 +25,7 @@ class ThirteenthResultViewController: UIViewController {
 	
 	private func configView() {
 		title = String(localizedKey: "result")
+		thirteenthResultView.delegate(delegate: self)
 		calculateResult()
 	}
 	
@@ -43,4 +44,19 @@ class ThirteenthResultViewController: UIViewController {
 		
 		thirteenthResultView.setValueResult(result: formatCurrency(value: result.total ?? 0))
 	}
+}
+
+
+extension ThirteenthResultViewController: ThirteenthResultViewProtocol {
+	func tappedSimulateAgainButton() {
+		if let destinationViewController = navigationController?.viewControllers
+			.filter({$0 is SalaryViewController})
+			.first {navigationController?.popToViewController(destinationViewController, animated: true)
+		}
+	}
+	
+	func tappedOtherCalculationButton() {
+		navigationController?.popToRootViewController(animated: true)
+	}
+	
 }
