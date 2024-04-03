@@ -22,7 +22,6 @@ class RescissionResultViewModel {
 			accruedVacation  = valueSalaryForDay * Double(calculator?.homManyDayVacationAccumulated ?? 0)
 		}
 				
-		let dateComponents = DateComponents(calendar: calendar)
 		let contractingDate = calendar.dateComponents([.day, .month, .year], from: dateContracting)
 		let resignationDate = calendar.dateComponents([.day, .month, .year], from: dateResignation)
 		let timeInterval = calendar.dateComponents([.month], from: contractingDate, to: resignationDate)
